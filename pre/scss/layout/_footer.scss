@@ -1,0 +1,41 @@
+/*=============================================
+Footer
+=============================================*/
+
+.main-footer {
+    display: flex;
+    padding: 2rem 0;
+    border-top: 3em solid darken($brand-color-1, 10%);
+    background: $brand-color-1;
+    color: #fff;
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    &__contact {
+        display: inline-block;
+        padding: 0 1em;
+        dd {
+            margin: 0.5em 0;
+        }
+    }
+    &__social {
+        padding: 0 1em;
+        text-align: center;
+    }
+}
+
+.social-icon {
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    text-indent: -9000px;
+    transition: 0.3s;
+    &--facebook {
+        @include retina(icon-fb, png, 3em, 3em);
+    }
+    &:hover {
+        opacity: 0.8;
+        transition: 0.5s;
+    }
+}

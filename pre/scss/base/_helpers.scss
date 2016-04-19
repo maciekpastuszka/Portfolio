@@ -1,0 +1,54 @@
+/*=============================================
+Helpers
+=============================================*/
+
+.clearfix {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.is-mobile-hidden {
+    display: none;
+    @include rwd(small) {
+        display: initial;
+    }
+}
+
+.is-display-none {
+    display: none;
+}
+
+
+/*=============================================
+Sections
+=============================================*/
+
+section {
+    &.gray {
+        background: $light-grey;
+    }
+    &.padding {
+        padding: 2em 0 3em 0;
+        @include rwd(small) {
+            padding: 4em 0 6em 0;
+        }
+    }
+    &.padding-small {
+        padding: 2em 0 3em 0;
+    }
+}
+
+
+/*=============================================
+Img
+=============================================*/
+
+.img {
+    &--circle {
+        border-radius: 50%;
+    }
+    &--responsive {
+        max-width: 100%;
+    }
+}

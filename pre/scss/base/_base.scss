@@ -1,0 +1,23 @@
+/*=============================================
+Base
+=============================================*/
+
+
+/**
+ * Set up a decent box model on the root element
+ */
+
+html {
+    box-sizing: border-box;
+    color: $text-color;
+}
+
+a, button {
+    transition: 0.3s;
+    text-decoration: none;
+    &:hover {
+        transition: 0.5s;
+        
+    }
+}
+

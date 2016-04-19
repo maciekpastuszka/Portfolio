@@ -1,0 +1,278 @@
+/*=============================================
+.main-nav Main navigation
+=============================================*/
+
+@keyframes circle {
+    from {
+        top: 2em;
+        right: 2em;
+        width: 2em;
+        height: 2em;
+    }
+    to {
+        top: -200em;
+        right: -200em;
+        width: 400em;
+        height: 400em;
+        opacity: 0.9;
+    }
+}
+
+@keyframes bgmenu {
+    from {
+        background: rgba(0, 0, 0, 0.5);
+    }
+    to {
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+@keyframes menulinks {
+    0% {
+        padding: 0 0;
+        opacity: 0;
+    }
+    60% {
+        padding: 0 0;
+        opacity: 0;
+    }
+    100% {
+        padding: 0.6em 0;
+        opacity: 1;
+    }
+}
+
+@keyframes underline {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    padding: 3em 0;
+    width: 100%;
+    transition: 0.3s;
+    @include rwd(medium) {
+        padding: 2.5em 0;
+        background-color: transparent;
+        &.is-move {
+            top: 0px;
+            padding: 2em 0;
+            background-color: #212121;
+            color: #fff;
+            transition: 0.3s;
+            .main-nav__logo {
+                background-position: 0px 50px;
+                transition: 0.3s;
+                transform: translateY(-15px);
+            }
+        }
+    }
+    &__logo {
+        position: absolute;
+        margin: 0 1em;
+        width: 70px;
+        height: 50px;
+        background-position: 0px 0px;
+        text-indent: -900px;
+        transition: 0.3s;
+        transform: translateY(-25px);
+        @include retina(logo, png, 70px, 50px);
+        @include rwd(medium) {
+            background-position: 0px 0px;
+            transform: translateY(-15px);
+        }
+    }
+    &__circle.is-open {
+        position: absolute;
+        top: -200em;
+        right: -200em;
+        z-index: 99;
+        box-sizing: border-box;
+        width: 400em;
+        height: 400em;
+        border-radius: 50%;
+        background: $brand-color-1;
+        opacity: 0.9;
+        animation-name: circle;
+        animation-duration: 2s;
+    }
+    &__toggle {
+        position: absolute;
+        top: 1.2em;
+        right: 1em;
+        z-index: 9999;
+        padding: 0.6em 0;
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 50%;
+        background: rgba(191, 52, 72, 0.9);
+        span {
+            margin-left: 0.7em;
+            margin-right: 0.7em;
+        }
+        span:after {
+            position: absolute;
+            bottom: 0;
+        }
+        span:before {
+            position: absolute;
+            top: 0;
+        }
+        @include rwd(medium) {
+            display: none;
+        }
+        span,
+        span:after,
+        span:before {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            display: block;
+            width: 2em;
+            height: 3px;
+            background: #fff;
+            content: "";
+            transition: 0.4s;
+        }
+        &.is-open {
+            background: none;
+        }
+        &.is-open span {
+            background: none;
+        }
+        &.is-open span:before {
+            transition: 0.4s;
+            transform: translatey(10px) rotate(-45deg);
+        }
+        &.is-open span:after {
+            transition: 0.4s;
+            transform: translatey(-10px) rotate(45deg);
+        }
+    }
+    &__colapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        display: none;
+        width: 100%;
+        height: 100%;
+        @include rwd(medium) {
+            position: initial;
+            display: inline-block;
+            background: none;
+        }
+        &.is-open {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-flow: column;
+            .main-nav__item {
+                animation-name: menulinks;
+                animation-duration: 0.5s;
+            }
+        }
+    }
+    &__list {
+        margin: auto;
+        padding-left: 0;
+        /*  position: absolute;
+        top: 45%;
+        padding-left: 0;
+        width: 100%;
+        text-align: center;
+        transform: translateY(-50%);*/
+        @include rwd(medium) {
+            position: initial;
+            width: 80%;
+            display: inline-block;
+            margin: 0;
+            text-align: center;
+            transform: none;
+        }
+    }
+    &__item {
+        display: block;
+        padding: 0.6em 0;
+        font-size: 1.7rem;
+        @include rwd(medium) {
+            display: inline-block;
+            padding: 0 1em;
+            font-size: 1.2em;
+        }
+        a {
+            position: relative;
+            padding-right: 0;
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                color: $brand-color-2;
+                @include rwd(medium) {
+                    color: $brand-color-1;
+                }
+                &:after {
+                    @include rwd(medium) {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        margin: 10px auto;
+                        height: 3px;
+                        width: 100%;
+                        background: $brand-color-1;
+                        animation-name: underline;
+                        animation-duration: 0.2s;
+                    }
+                }
+            }
+        }
+    }
+    &__social {
+        list-style: none;
+        padding-left: 0;
+        @include rwd(medium) {
+            float: right;
+            margin: 0;
+            text-align: center;
+            transform: none;
+        }
+    }
+    &__icon {
+        display: inline-block;
+        margin-left: 0.4em;
+        i {
+            display: block;
+            text-indent: -9000px;
+            width: 2.5em;
+            height: 2.5em;
+            margin-bottom: 1.5em;
+            @include rwd(small) {
+                width: 1.6em;
+                height: 1.6em;
+                margin-bottom: 0;
+            }
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+        .facebook {
+            background: url('../img/icon_facebook.svg');
+            background-size: 100%;
+        }
+        .linkedin {
+            background: url('../img/icon_linkedin.svg');
+            background-size: 100%;
+        }
+        .github {
+            background: url('../img/icon_github.svg');
+            background-size: 100%;
+        }
+    }
+}
