@@ -1,6 +1,10 @@
 (function () {
     //header layers
     var elements = [{
+            id: "layer0",
+            maxrange: -3
+},
+        {
             id: "layer1",
             maxrange: 5
 },
@@ -56,8 +60,10 @@
 
     //menu on scroll
     window.addEventListener("scroll", function () {
+
         var main_nav = document.querySelector(".main-nav"),
-            scroll = document.body.scrollTop;
+            scroll = (document.documentElement && document.documentElement.scrollTop) ||
+            document.body.scrollTop;
 
         if (scroll >= 20) {
             main_nav.classList.add("is-move");
