@@ -26,8 +26,8 @@
 
 .btn {
     cursor: pointer;
-    display: block;
-    margin: 2em auto 0;
+    display: inline-block;
+    margin: 0.5em 0;
     padding: 0.6em 1em;
     max-width: 12em;
     border-radius: 0px;
@@ -60,12 +60,12 @@
         &:hover,
         &:focus,
         &:active {
-                    text-shadow: none;
+            text-shadow: none;
             border: 1px solid $brand-color-1;
             background: $brand-color-1;
         }
     }
-    &--pink {
+    &--green-t {
         border: 1px solid $brand-color-1;
         background: transparent;
         color: $brand-color-1;
@@ -77,26 +77,139 @@
             color: #fff;
         }
     }
+    &--green {
+        border: 1px solid $brand-color-1;
+        background: $brand-color-1;
+        color: #fff;
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid $brand-color-1;
+            background: transparent;
+            color: $brand-color-1;
+        }
+    }
+    &--pink-t {
+        border: 1px solid $brand-color-2;
+        background: transparent;
+        color: $brand-color-2;
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid $brand-color-2;
+            background: $brand-color-2;
+            color: #fff;
+        }
+    }
+    &--pink {
+        border: 1px solid $brand-color-2;
+        background: $brand-color-2;
+        color: #fff;
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid $brand-color-2;
+            background: transparent;
+            color: $brand-color-2;
+        }
+    }
 }
 
 
 /*=============================================
-Section title
+icons
 =============================================*/
 
-.section__title {
-    text-align: center;
-    font-size: 2.5em;
-    &:after {
-        display: block;
-        margin: 1.25rem auto;
-        max-width: 11rem;
-        height: 3px;
-        background-color: $brand-color-1;
-        color: $brand-color-1;
-        content: " ";
+.icon {
+    display: block;
+    margin: 0 auto;
+    width: 2.5em;
+    height: 2.5em;
+    text-indent: -9000px;
+    transition: 0.3s;
+    @include rwd(small) {
+        width: 1.6em;
+        height: 1.6em;
+    }
+    &:hover {
+        opacity: 0.6;
+        transition: 0.5s;
+    }
+    &--phone {
+        background: url('../img/icons/icon_phone.svg');
+        background-size: 100%;
+    }
+    &--mail {
+        background: url('../img/icons/icon_mail.svg');
+        background-size: 100%;
+    }
+    &--arrow {
+        background: url('../img/icons/icon_arrow.svg');
+        background-size: 100%;
+    }
+    &--facebook {
+        background: url('../img/icons/icon_facebook.svg');
+        background-size: 100%;
+    }
+    &--linkedin {
+        background: url('../img/icons/icon_linkedin.svg');
+        background-size: 100%;
+    }
+    &--github {
+        background: url('../img/icons/icon_github.svg');
+        background-size: 100%;
+    }
+    &--bootstrap {
+        background: url('../img/icons/icon_bs.svg');
+        background-size: 100%;
+    }
+    &--css3 {
+        background: url('../img/icons/icon_css3.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    &--html {
+        background: url('../img/icons/icon_html.svg');
+        background-size: 100%;
+    }
+    &--js {
+        background: url('../img/icons/icon_js.svg');
+        background-size: 100%;
+    }
+    &--git {
+        background: url('../img/icons/icon_git.svg');
+        background-size: 100%;
+    }
+    &--gulp {
+        background: url('../img/icons/icon_gulp.svg');
+        background-size: 100%;
+    }
+    &--jquery {
+        background: url('../img/icons/icon_jquery.svg');
+        background-size: 100%;
+    }
+    &--mysql {
+        background: url('../img/icons/icon_mysql.svg');
+        background-size: 100%;
+    }
+    &--ps {
+        background: url('../img/icons/icon_ps.svg');
+        background-size: 100%;
+    }
+    &--php {
+        background: url('../img/icons/icon_php.svg');
+        background-size: 100%;
+    }
+    &--sass {
+        background: url('../img/icons/icon_sass.svg');
+        background-size: 100%;
+    }
+    &--wp {
+        background: url('../img/icons/icon_wp.svg');
+        background-size: 100%;
     }
 }
+
 
 /*=============================================
 Scrollbar

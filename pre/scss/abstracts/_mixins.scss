@@ -51,14 +51,17 @@ $type) {
     background-image: url('../img/' + $file + '.' + $type);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
     @include rwd(small) {
         background-image: url('../img/' + $file + '-t.' + $type);
         background-size: cover;
         background-attachment: fixed;
+        background-position: center;
     }
     @include rwd(large) {
         background-image: url('../img/' + $file + '-d.' + $type);
         background-size: cover;
+        background-position: center;
         background-attachment: fixed;
     }
 }

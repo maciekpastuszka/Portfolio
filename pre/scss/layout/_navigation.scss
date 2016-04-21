@@ -214,34 +214,6 @@
         position: relative;
         display: inline-block;
         margin: 0 0.2em;
-        i {
-            display: block;
-            margin-bottom: 1.5em;
-            width: 2.5em;
-            height: 2.5em;
-            text-indent: -9000px;
-            transition: 0.3s;
-            @include rwd(small) {
-                margin-bottom: 0;
-                width: 1.6em;
-                height: 1.6em;
-            }
-            &:hover {
-                opacity: 0.6;
-                transition: 0.5s;
-            }
-        }
-        .facebook {
-            background: url('../img/icon_facebook.svg');
-            background-size: 100%;
-        }
-        .linkedin {
-            background: url('../img/icon_linkedin.svg');
-            background-size: 100%;
-        }
-        .github {
-            background: url('../img/icon_github.svg');
-            background-size: 100%;
-        }
+       
     }
 }
