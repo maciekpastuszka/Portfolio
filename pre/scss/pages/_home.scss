@@ -1,28 +1,123 @@
-/*=============================================
+    /*=============================================
 Home
 =============================================*/
-
-.about {
-    background-image: url('../img/about_bg-d.jpg');
-    background-size: cover;
-    background-position: left;
-    &__article {
-        font-size: 1.4em;
-    }
-    &__skills {
-        font-size: 3em;
-        padding-top: 1.5em;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        
-        .icon {
-            margin: 0.3em 0.1em;
+    
+    .about {
+        background-image: url('../img/about_bg-d.jpg');
+        background-size: cover;
+        background-position: left;
+        &__article {
+            font-size: 1.4em;
+        }
+        &__skills {
+            font-size: 3em;
+            padding-top: 1.5em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .icon {
+                margin: 0.3em 0.1em;
+            }
         }
     }
-}
-
-.about__icon {
-    width: 3em;
-    height: 3em;
-}
+    
+    .about__icon {
+        width: 3em;
+        height: 3em;
+    }
+    
+    .learning {
+        background: linear-gradient(to top, #ededed , #ffffff);
+        &__stage {
+            font-size: 1.2em;
+            text-align: center;
+            &__list {
+                list-style: none;
+                padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: stretch;
+                li {
+                    padding: 0.3em 0.6em;
+                    border: 1px solid $brand-color-1;
+                    margin: 0.2em 0.2em;
+                    flex: 1 auto;
+                    transition: 0.3s;
+                    &:hover {
+                        border: 1px solid $brand-color-1;
+                        color: #fff;
+                        background: $brand-color-1;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+    
+    .portfolio {
+        &__container {
+            display: flex;
+            justify-content: stretch;
+            flex-wrap: wrap;
+        }
+        &__element {
+            font-size: 1.5em;
+            height: 10em;
+            flex: 1 12em;
+            position: relative;
+            overflow: hidden;
+            .icons {
+                width: 100%;
+                padding-left: 0;
+                list-style: none;
+                position: absolute;
+                bottom: -5em;
+                transition: 0.5s;
+                text-align: center;
+                li {
+                    display: inline-block;
+                }
+            }
+            .title {
+                color: #ffffff;
+                width: 100%;
+                position: absolute;
+                top: -5em;
+                transition: 0.5s;
+                text-align: center;
+                a {
+                    color: #ffffff;
+                }
+            }
+            &:before {
+                transition: 0.3s;
+                transition: 0.5s;
+                content: "";
+                display: block;
+                height: 100%;
+                width: 100%;
+                background: rgba(44, 12, 17, 0);
+            }
+            &:hover .icons {
+                bottom: 0;
+                transition: 0.5s;
+            }
+            &:hover .title {
+                top: 0;
+                transition: 0.5s;
+            }
+            &:hover:before {
+                background: rgba(89, 161, 62, 0.8);
+            }
+            &--swimming {
+                background: url('../img/p1.jpg');
+                background-position: center;
+                background-size: cover;
+            }
+            &--dentysta {
+                background: url('../img/p2.jpg');
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }

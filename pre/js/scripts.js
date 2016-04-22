@@ -51,7 +51,7 @@
         nav = document.querySelector(".main-nav__colapse")
     circle = document.querySelector(".main-nav__circle");
 
-
+    //toggle menu on click
     nav_toggle.addEventListener("click", function () {
         this.classList.toggle("is-open");
         nav.classList.toggle("is-open");
@@ -65,6 +65,7 @@
             scroll = (document.documentElement && document.documentElement.scrollTop) ||
             document.body.scrollTop;
 
+        //if scroll is more than 20 change navigation bar
         if (scroll >= 20) {
             main_nav.classList.add("is-move");
         } else {
@@ -72,3 +73,45 @@
         }
     });
 }());
+
+
+
+/*
+
+var a = document.querySelectorAll('a[href*="#"]');
+for (i = 0; i < a.length; i++) {
+
+    a[i].addEventListener("click", function () {
+          var target_name = this.hash.substr(2); 
+        
+        console.log(target_name);
+        var target = document.getElementById(target_name);
+        
+         console.log(target.offsetTop);
+         document.body.scrollTop = target.offsetTop;
+            
+    });
+}
+
+*/
+
+/*
+$(function () {
+
+
+
+
+    $('a[href*="#"]:not([href="#"])').click(function () {
+   
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+});*/

@@ -1226,6 +1226,12 @@ icons
   .icon--github {
     background: url("../img/icons/icon_github.svg");
     background-size: 100%; }
+  .icon--link {
+    background: url("../img/icons/icon_link.svg");
+    background-size: 100%; }
+  .icon--more {
+    background: url("../img/icons/icon_more.svg");
+    background-size: 100%; }
   .icon--bootstrap {
     background: url("../img/icons/icon_bs.svg");
     background-size: 100%; }
@@ -1329,3 +1335,97 @@ Home
 .about__icon {
   width: 3em;
   height: 3em; }
+
+.learning {
+  background: linear-gradient(to top, #ededed, #ffffff); }
+  .learning__stage {
+    font-size: 1.2em;
+    text-align: center; }
+    .learning__stage__list {
+      list-style: none;
+      padding-left: 0;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: stretch;
+      -ms-flex-pack: stretch;
+      justify-content: stretch; }
+      .learning__stage__list li {
+        padding: 0.3em 0.6em;
+        border: 1px solid #59a13e;
+        margin: 0.2em 0.2em;
+        -webkit-flex: 1 auto;
+        -ms-flex: 1 auto;
+        flex: 1 auto;
+        transition: 0.3s; }
+        .learning__stage__list li:hover {
+          border: 1px solid #59a13e;
+          color: #fff;
+          background: #59a13e;
+          transition: 0.5s; }
+
+.portfolio__container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.portfolio__element {
+  font-size: 1.5em;
+  height: 10em;
+  -webkit-flex: 1 12em;
+  -ms-flex: 1 12em;
+  flex: 1 12em;
+  position: relative;
+  overflow: hidden; }
+  .portfolio__element .icons {
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    position: absolute;
+    bottom: -5em;
+    transition: 0.5s;
+    text-align: center; }
+    .portfolio__element .icons li {
+      display: inline-block; }
+  .portfolio__element .title {
+    color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: -5em;
+    transition: 0.5s;
+    text-align: center; }
+    .portfolio__element .title a {
+      color: #ffffff; }
+  .portfolio__element:before {
+    transition: 0.3s;
+    transition: 0.5s;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgba(44, 12, 17, 0); }
+  .portfolio__element:hover .icons {
+    bottom: 0;
+    transition: 0.5s; }
+  .portfolio__element:hover .title {
+    top: 0;
+    transition: 0.5s; }
+  .portfolio__element:hover:before {
+    background: rgba(89, 161, 62, 0.8); }
+  .portfolio__element--swimming {
+    background: url("../img/p1.jpg");
+    background-position: center;
+    background-size: cover; }
+  .portfolio__element--dentysta {
+    background: url("../img/p2.jpg");
+    background-position: center;
+    background-size: cover; }
