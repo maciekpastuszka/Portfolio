@@ -1627,74 +1627,74 @@ Home
     bottom: -2.7em;
     opacity: 1; } }
 
-.screen {
-  font-size: 0.5em;
-  border: 2em solid #3c3c3e;
-  border-radius: 1em;
-  margin: 0 auto 4em;
-  position: relative; }
-  @media only screen and (min-width: 48rem) {
+/* 
     .screen {
-      font-size: 0.7em; } }
-  @media only screen and (min-width: 62rem) {
-    .screen {
-      font-size: 1em; } }
-  .screen:before, .screen:after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -6em;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%); }
-  .screen:before {
-    width: 10em;
-    height: 4em;
-    background: #bebfc1; }
-  .screen:after {
-    width: 15em;
-    height: 0.8em;
-    background: #d3d4d6; }
-  .screen.is-screen {
-    -webkit-animation-name: screen;
-    animation-name: screen;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s; }
-  .screen.is-phone {
-    -webkit-animation-name: phone;
-    animation-name: phone;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    font-size: 1em;
-    border-top: 3em;
-    border-bottom: 3.5em;
-    border-left: 0.7em;
-    border-right: 0.7em;
-    border-color: #3c3c3e;
-    border-style: solid;
-    border-radius: 1em;
-    max-width: 15em; }
-    .screen.is-phone:before {
-      -webkit-animation-name: phone-before;
-      animation-name: phone-before;
-      -webkit-animation-duration: 2s;
-      animation-duration: 2s;
-      width: 4em;
-      height: 0.2em;
-      background: #232731;
-      top: -1.6em; }
-    .screen.is-phone:after {
-      -webkit-animation-name: phone-after;
-      animation-name: phone-after;
-      -webkit-animation-duration: 2s;
-      animation-duration: 2s;
-      width: 2em;
-      height: 2em;
-      border-radius: 50%;
-      background: #505053;
-      bottom: -2.7em; }
-
+            transition: 2s;
+        font-size: 0.5em;
+        @include rwd(small) {
+            font-size: 0.7em;
+        }
+        @include rwd(medium) {
+            font-size: 1em;
+        }
+        border: 2em solid #3c3c3e;
+        border-radius: 1em;
+        margin: 0 auto 4em;
+        position: relative;
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -6em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:before {
+            width: 10em;
+            height: 4em;
+            background: #bebfc1;
+        }
+        &:after {
+            width: 15em;
+            height: 0.8em;
+            background: #d3d4d6;
+        }
+        &.is-screen {
+            animation-name: screen;
+            animation-duration: 2s;
+        }
+        &.is-phone {
+            animation-name: phone;
+            animation-duration: 2s;
+            font-size: 1em;
+            border-top: 3em;
+            border-bottom: 3.5em;
+            border-left: 0.7em;
+            border-right: 0.7em;
+            border-color: #3c3c3e;
+            border-style: solid;
+            border-radius: 1em;
+            max-width: 15em;
+            &:before {
+                animation-name: phone-before;
+                animation-duration: 2s;
+                width: 4em;
+                height: 0.2em;
+                background: #232731;
+                top: -1.6em;
+            }
+            &:after {
+                animation-name: phone-after;
+                animation-duration: 2s;
+                width: 2em;
+                height: 2em;
+                border-radius: 50%;
+                background: #505053;
+                bottom: -2.7em;
+            }
+        }
+    }*/
 /*
     .screen {
         font-size: 0.5em;

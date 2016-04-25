@@ -287,8 +287,9 @@ Home
             opacity: 1;
         }
     }
-    
+   /* 
     .screen {
+            transition: 2s;
         font-size: 0.5em;
         @include rwd(small) {
             font-size: 0.7em;
@@ -353,7 +354,7 @@ Home
                 bottom: -2.7em;
             }
         }
-    }
+    }*/
     /*
     .screen {
         font-size: 0.5em;
