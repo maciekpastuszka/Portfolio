@@ -27,7 +27,7 @@ Home
     }
     
     .learning {
-        background: linear-gradient(to top, #ededed, #ffffff);
+        background: #ededed;
         &__stage {
             font-size: 1.2em;
             text-align: center;
@@ -55,22 +55,35 @@ Home
     }
     
     .portfolio {
+        padding-top: 2em;
         &__container {
             display: flex;
             justify-content: stretch;
             flex-wrap: wrap;
+            margin-top: 3em;
+        }
+        &__description {
+            text-align: center;
+            font-size: 1.4em;
         }
         .btn {
-            margin: 3em auto;
+            margin: 3em auto 0;
             display: block;
             font-size: 1.5em;
         }
+        button {
+            display: table-cell;
+            vertical-align: top;
+        }
         &__element {
+            margin-bottom: 1em;
+            transition: 2s;
             font-size: 1.5em;
             height: 10em;
             flex: 1 12em;
             position: relative;
             overflow: hidden;
+            opacity: 1;
             .icons {
                 width: 100%;
                 padding-left: 0;
@@ -82,6 +95,12 @@ Home
                 li {
                     display: inline-block;
                 }
+            }
+            &.is-display-none {
+                height: 0;
+                display: block;
+                opacity: 0;
+                flex: none;
             }
             .title {
                 color: #ffffff;
@@ -197,7 +216,70 @@ Home
         }
     }
     
+    @keyframes phone__speaker {
+        0% {
+            width: 0;
+            font-size: 1rem;
+        }
+        80% {
+            width: 0;
+        }
+        100% {
+            width: 4em;
+        }
+    }
+    
+    @keyframes phone__button {
+        0% {
+            width: 0;
+            z-index: -1;
+        }
+        80% {
+            width: 0;
+            z-index: -1;
+        }
+        100% {
+            z-index: 1;
+        }
+    }
+    
+    @keyframes desktop__footer {
+        0% {
+            bottom: 0em;
+        }
+        100% {
+            bottom: -6em;
+        }
+    }
+    
+    @keyframes desktop__screen {
+        0% {
+            opacity: 0;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes phone__screen {
+        0% {
+            opacity: 0;
+            height: 25em;
+        }
+        80% {
+            height: 20em;
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
     .realization {
+        padding-top: 2em;
         .learning__stage__list {
             font-size: 1.2em;
         }
@@ -211,85 +293,34 @@ Home
             text-align: center;
             padding: 1em;
         }
-    }
-    
-    @keyframes phone {
-        from {
-            border: 2em solid #3c3c3e;
-            max-width: 100%;
+        &__switcher {
+            cursor: pointer;
+            max-width: 8em;
+            margin: 0 auto 2em;
+            display: block;
+            &__phone {
+                fill: #cccccc;
+                &.is-active {
+                    fill: $brand-color-2;
+                }
+            }
+            &__desktop {
+                fill: #cccccc;
+                &.is-active {
+                    fill: $brand-color-2;
+                }
+            }
         }
-        to {
-            border-top: 3em;
-            border-bottom: 3.5em;
-            border-left: 0.7em;
-            border-right: 0.7em;
-            border-color: #3c3c3e;
-            border-style: solid;
-            border-radius: 1em;
-            max-width: 15em;
-        }
-    }
-    
-    @keyframes screen {
-        from {
-            border-top: 3em;
-            border-bottom: 3.5em;
-            border-left: 0.7em;
-            border-right: 0.7em;
-            border-color: #3c3c3e;
-            border-style: solid;
-            border-radius: 1em;
-            max-width: 15em;
-        }
-        to {
-            border: 2em solid #3c3c3e;
-            max-width: 100%;
+        &.is-aframe {
+            .screen {
+                transform: rotate(90deg);
+            }
         }
     }
     
-    @keyframes phone-before {
-        from {
-            width: 10em;
-            height: 4em;
-            background: #bebfc1;
-            bottom: -6em;
-        }
-        to {
-            width: 4em;
-            height: 0.2em;
-            background: #232731;
-            top: -1.6em;
-        }
-    }
-    
-    @keyframes phone-after {
-        0% {
-            width: 15em;
-            height: 0.8em;
-            background: #d3d4d6;
-            bottom: -6em;
-            border-radius: 0;
-        }
-        90% {
-            width: 15em;
-            height: 0.8em;
-            background: #d3d4d6;
-            bottom: 0;
-            border-radius: 0;
-            opacity: 0;
-        }
-        100% {
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-            background: #505053;
-            bottom: -2.7em;
-            opacity: 1;
-        }
-    }
-   /* 
     .screen {
-            transition: 2s;
+        min-height: 10em;
+        background: #242426;
         font-size: 0.5em;
         @include rwd(small) {
             font-size: 0.7em;
@@ -297,12 +328,27 @@ Home
         @include rwd(medium) {
             font-size: 1em;
         }
+        transition: 2s;
         border: 2em solid #3c3c3e;
         border-radius: 1em;
-        margin: 0 auto 4em;
+        margin: 0 auto 6em;
         position: relative;
+        max-width: 100%;
+        .phone__screen {
+            display: none;
+        }
+        .desktop__screen {
+            display: block;
+            animation-name: desktop__screen;
+            animation-duration: 2s;
+        }
         &:before,
         &:after {
+            animation-name: desktop__footer;
+            animation-duration: 2s;
+            opacity: 1;
+            font-size: 1em;
+            z-index: -1;
             content: "";
             display: block;
             position: absolute;
@@ -320,13 +366,8 @@ Home
             height: 0.8em;
             background: #d3d4d6;
         }
-        &.is-screen {
-            animation-name: screen;
-            animation-duration: 2s;
-        }
         &.is-phone {
-            animation-name: phone;
-            animation-duration: 2s;
+            min-height: 20em;
             font-size: 1em;
             border-top: 3em;
             border-bottom: 3.5em;
@@ -335,93 +376,33 @@ Home
             border-color: #3c3c3e;
             border-style: solid;
             border-radius: 1em;
-            max-width: 15em;
+            max-width: 13em;
             &:before {
-                animation-name: phone-before;
+                animation-name: phone__speaker;
                 animation-duration: 2s;
                 width: 4em;
                 height: 0.2em;
                 background: #232731;
-                top: -1.6em;
+                z-index: 1;
+                top: -1.7em;
             }
             &:after {
-                animation-name: phone-after;
+                animation-name: phone__button;
                 animation-duration: 2s;
                 width: 2em;
                 height: 2em;
                 border-radius: 50%;
                 background: #505053;
                 bottom: -2.7em;
+                z-index: 1;
+            }
+            .phone__screen {
+                display: block;
+                animation-name: phone__screen;
+                animation-duration: 2.5s;
+            }
+            .desktop__screen {
+                display: none;
             }
         }
-    }*/
-    /*
-    .screen {
-        font-size: 0.5em;
-        @include rwd(small) {
-            font-size: 0.7em;
-        }
-        @include rwd(medium) {
-            font-size: 1em;
-        }
-        border: 2em solid #3c3c3e;
-        border-radius: 1em;
-        margin-bottom: 4em;
-        position: relative;
-        &:before,
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -6em;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        &:before {
-            width: 10em;
-            height: 4em;
-            background: #bebfc1;
-        }
-        &:after {
-            width: 15em;
-            height: 0.8em;
-            background: #d3d4d6;
-        }
     }
-    
-    .phone-screen {
-        border-top: 3em;
-        border-bottom: 3.5em;
-        border-left: 0.7em;
-        border-right: 0.7em;
-        border-color: #3c3c3e;
-        border-style: solid;
-        border-radius: 1em;
-        margin-bottom: 4em;
-        max-width: 15em;
-        margin: 0 auto;
-        position: relative;
-        &:before,
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        &:before {
-            width: 4em;
-            height: 0.2em;
-            background: #232731;
-            top: -1.6em;
-        }
-        &:after {
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-            background: #505053;
-            bottom: -2.7em;
-        }
-    }
-
-*/
