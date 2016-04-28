@@ -312,7 +312,7 @@ Home
             }
         }
         &.is-aframe {
-            .screen {
+            .screen.is-phone {
                 transform: rotate(90deg);
             }
         }

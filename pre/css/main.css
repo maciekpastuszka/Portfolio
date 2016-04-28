@@ -1620,7 +1620,7 @@ Home
       fill: #cccccc; }
       .realization__switcher__desktop.is-active {
         fill: #bf3448; }
-  .realization.is-aframe .screen {
+  .realization.is-aframe .screen.is-phone {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
