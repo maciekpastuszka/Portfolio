@@ -4,15 +4,15 @@ Home
     
     .about {
         background-image: url('../img/about_bg-d.jpg');
-        background-size: cover;
         background-position: left;
+        background-size: cover;
         &__article {
             font-size: 1.4em;
         }
         &__skills {
-            font-size: 3em;
-            padding-top: 1.5em;
             display: flex;
+            padding-top: 1.5em;
+            font-size: 3em;
             justify-content: center;
             flex-wrap: wrap;
             .icon {
@@ -29,24 +29,24 @@ Home
     .learning {
         background: #ededed;
         &__stage {
-            font-size: 1.2em;
             text-align: center;
+            font-size: 1.2em;
             &__list {
-                list-style: none;
-                padding-left: 0;
                 display: flex;
+                padding-left: 0;
+                list-style: none;
                 flex-wrap: wrap;
                 justify-content: stretch;
                 li {
+                    margin: 0.2em 0.2em;
                     padding: 0.3em 0.6em;
                     border: 1px solid $brand-color-1;
-                    margin: 0.2em 0.2em;
-                    flex: 1 auto;
                     transition: 0.3s;
+                    flex: 1 auto;
                     &:hover {
                         border: 1px solid $brand-color-1;
-                        color: #fff;
                         background: $brand-color-1;
+                        color: #fff;
                         transition: 0.5s;
                     }
                 }
@@ -58,17 +58,17 @@ Home
         padding-top: 2em;
         &__container {
             display: flex;
+            margin-top: 3em;
             justify-content: stretch;
             flex-wrap: wrap;
-            margin-top: 3em;
         }
         &__description {
             text-align: center;
             font-size: 1.4em;
         }
         .btn {
-            margin: 3em auto 0;
             display: block;
+            margin: 2em auto;
             font-size: 1.5em;
         }
         button {
@@ -76,51 +76,51 @@ Home
             vertical-align: top;
         }
         &__element {
-            margin-bottom: 1em;
-            transition: 2s;
-            font-size: 1.5em;
-            height: 10em;
-            flex: 1 12em;
             position: relative;
             overflow: hidden;
+            margin-bottom: 1em;
+            height: 10em;
+            font-size: 1.5em;
             opacity: 1;
+            transition: 2s;
+            flex: 1 12em;
             .icons {
-                width: 100%;
-                padding-left: 0;
-                list-style: none;
                 position: absolute;
                 bottom: -5em;
-                transition: 0.5s;
+                padding-left: 0;
+                width: 100%;
+                list-style: none;
                 text-align: center;
+                transition: 0.5s;
                 li {
                     display: inline-block;
                 }
             }
             &.is-display-none {
-                height: 0;
                 display: block;
+                height: 0;
                 opacity: 0;
                 flex: none;
             }
             .title {
-                color: #ffffff;
-                width: 100%;
                 position: absolute;
                 top: -5em;
-                transition: 0.5s;
+                width: 100%;
+                color: #ffffff;
                 text-align: center;
+                transition: 0.5s;
                 a {
                     color: #ffffff;
                 }
             }
             &:before {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba(44, 12, 17, 0);
+                content: "";
                 transition: 0.3s;
                 transition: 0.5s;
-                content: "";
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: rgba(44, 12, 17, 0);
             }
             &:hover .icons {
                 bottom: 0;
@@ -231,12 +231,12 @@ Home
     
     @keyframes phone__button {
         0% {
-            width: 0;
             z-index: -1;
+            width: 0;
         }
         80% {
-            width: 0;
             z-index: -1;
+            width: 0;
         }
         100% {
             z-index: 1;
@@ -266,8 +266,8 @@ Home
     
     @keyframes phone__screen {
         0% {
-            opacity: 0;
             height: 25em;
+            opacity: 0;
         }
         80% {
             height: 20em;
@@ -279,7 +279,15 @@ Home
     }
     
     .realization {
-        padding-top: 2em;
+        max-height: 0;
+        opacity: 0;
+        transition: 2s;
+        overflow: hidden;
+        &.is-visible {
+            opacity: 1;
+            max-height: 9999px;
+            transition: 2s;
+        }
         .learning__stage__list {
             font-size: 1.2em;
         }
@@ -289,15 +297,55 @@ Home
         p {
             font-size: 1.2em;
         }
+        &__close {
+            position: relative;
+            float: right;
+            margin-right: 1em;
+            z-index: 99;
+            padding: 0.6em 0;
+            outline: none;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            background: rgba(191, 52, 72, 0.9);
+            cursor: pointer;
+            span:after {
+                position: absolute;
+                bottom: 0;
+                background: #fff;
+                transform: translatey(-10px) rotate(45deg);
+            }
+            span:before {
+                position: absolute;
+                top: 0;
+                background: #fff;
+                transform: translatey(10px) rotate(-45deg);
+            }
+            span {
+                margin-right: 0.7em;
+                margin-left: 0.7em;
+            }
+            span,
+            span:after,
+            span:before {
+                display: block;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                width: 2em;
+                height: 3px;
+                content: "";
+                transition: 0.4s;
+            }
+        }
         &__header {
-            text-align: center;
             padding: 1em;
+            text-align: center;
         }
         &__switcher {
-            cursor: pointer;
-            max-width: 8em;
-            margin: 0 auto 2em;
             display: block;
+            margin: 0 auto 2em;
+            max-width: 8em;
+            cursor: pointer;
             &__phone {
                 fill: #cccccc;
                 &.is-active {

@@ -80,11 +80,17 @@ gulp.task('sass', function () {
 
 
 gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
+
     browserSync.init({
-         server: {
-            baseDir: "./app"
-        }
+        proxy: "localhost"
     });
+
+
+    /*  browserSync.init({
+           server: {
+              baseDir: "./app"
+          }
+      });*/
 
     gulp.watch("./pre/scss/**", ['sass']);
     gulp.watch("./pre/scss/**").on('change', browserSync.reload);

@@ -31,7 +31,6 @@ Footer
             height: 1em;
             width: 1em;
             margin: 0 0.2em;
-            
         }
     }
     &__social {
@@ -54,8 +53,7 @@ Footer
         position: absolute;
         top: -1.5em;
         right: 2em;
-        width: 3em;
-        height: 3em;
+        padding: 0.7em;
         border-radius: 50%;
         background: $brand-color-2;
         border: none;
