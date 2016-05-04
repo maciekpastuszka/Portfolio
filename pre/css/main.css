@@ -670,13 +670,13 @@ Main Header
       margin: 10px 10px;
       font-size: 1.2em;
       position: relative; }
-      .header__buttons .btn img {
-        max-width: 2em;
-        max-height: 1.2em;
+      .header__buttons .btn i {
+        max-width: 1.5em;
+        max-height: 1.5em;
         position: absolute;
         left: 0.7em; }
       .header__buttons .btn--fill {
-        padding-left: 3.5em; }
+        padding-left: 3em; }
   .header .layer {
     position: absolute;
     top: 0px;
@@ -1038,7 +1038,7 @@ Main Header
 Footer
 =============================================*/
 .footer {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   text-align: center;
   background-image: url("../img/contact.jpg");
@@ -1198,78 +1198,96 @@ icons
   display: block;
   border: none;
   margin: 0 auto;
-  width: 2.5em;
-  height: 2.5em;
   text-indent: -9000px;
-  transition: 0.3s; }
-  @media only screen and (min-width: 48rem) {
-    .icon {
-      width: 1.6em;
-      height: 1.6em; } }
+  transition: 0.3s;
+  width: 2em;
+  height: 2em; }
   .icon:hover {
     opacity: 0.6;
     transition: 0.5s; }
   .icon--phone {
-    background: url("../img/icons/icon_phone.svg");
-    background-size: 100%; }
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 5em 0; }
+  .icon--vr {
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 4.5em 0; }
   .icon--mail {
-    background: url("../img/icons/icon_mail.svg");
-    background-size: 100%; }
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 4em 0; }
   .icon--arrow {
-    background: url("../img/icons/icon_arrow.svg");
-    background-size: 100%; }
-  .icon--facebook {
-    background: url("../img/icons/icon_facebook.svg");
-    background-size: 100%; }
-  .icon--linkedin {
-    background: url("../img/icons/icon_linkedin.svg");
-    background-size: 100%; }
-  .icon--github {
-    background: url("../img/icons/icon_github.svg");
-    background-size: 100%; }
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 0 0; }
   .icon--link {
-    background: url("../img/icons/icon_link.svg");
-    background-size: 100%; }
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 4em 0; }
   .icon--more {
-    background: url("../img/icons/icon_more.svg");
-    background-size: 100%; }
+    background: url("../img/icons/main_icons.svg");
+    background-size: auto 100%;
+    background-position: 2em 0; }
+  .icon--facebook {
+    background: url("../img/icons/social_icons.svg");
+    background-size: auto 100%; }
+  .icon--linkedin {
+    background: url("../img/icons/social_icons.svg");
+    background-size: auto 100%;
+    background-position: 2em 0; }
+  .icon--github {
+    background: url("../img/icons/social_icons.svg");
+    background-size: auto 100%;
+    background-position: 4em 0; }
   .icon--bootstrap {
-    background: url("../img/icons/icon_bs.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 10em 0; }
   .icon--css3 {
-    background: url("../img/icons/icon_css3.svg");
-    background-size: 100%;
-    background-repeat: no-repeat; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 22em 0; }
   .icon--html {
-    background: url("../img/icons/icon_html.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 24em 0; }
   .icon--js {
-    background: url("../img/icons/icon_js.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 20em 0; }
   .icon--git {
-    background: url("../img/icons/icon_git.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 14em 0; }
   .icon--gulp {
-    background: url("../img/icons/icon_gulp.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 12em 0; }
   .icon--jquery {
-    background: url("../img/icons/icon_jquery.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 18em 0; }
   .icon--mysql {
-    background: url("../img/icons/icon_mysql.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 2em 0; }
   .icon--ps {
-    background: url("../img/icons/icon_ps.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 6em 0; }
   .icon--php {
-    background: url("../img/icons/icon_php.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 4em 0; }
   .icon--sass {
-    background: url("../img/icons/icon_sass.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 16em 0; }
   .icon--wp {
-    background: url("../img/icons/icon_wp.svg");
-    background-size: 100%; }
+    background: url("../img/icons/skills_icons.svg");
+    background-size: auto 100%;
+    background-position: 8em 0; }
 
 /*=============================================
 Other

@@ -54,14 +54,14 @@ Main Header
             margin: 10px 10px;
             font-size: 1.2em;
             position: relative;
-            img {
-                max-width: 2em;
-                max-height: 1.2em;
+            i {
+                max-width: 1.5em;
+                max-height: 1.5em;
                 position: absolute;
                 left: 0.7em;
             }
             &--fill {
-                padding-left: 3.5em;
+                padding-left: 3em;
             }
         }
     }
