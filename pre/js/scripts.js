@@ -72,12 +72,10 @@
 
     //toggle realization view
     var toggle_view = document.querySelector(".realization__switcher"),
-        screen = document.querySelector(".screen"),
-        switcher__phone = toggle_view.querySelector(".realization__switcher__phone"),
-        switcher__desktop = toggle_view.querySelector(".realization__switcher__desktop");
+        screen = document.querySelector(".screen");
+
     toggle_view.addEventListener("click", function () {
-        switcher__phone.classList.toggle("is-active");
-        switcher__desktop.classList.toggle("is-active");
+        toggle_view.classList.toggle("is-phone");
         screen.classList.toggle("is-phone");
     });
 
@@ -92,15 +90,7 @@
         this.style.display = "none";
     });
 
-
-
-
-
-
-
 }());
-
-
 
 (function () {
     var realization__container = document.querySelector(".realization"),
@@ -167,6 +157,9 @@
                 for (i = 0; i < realization.technologies.length; i++) {
                     technologies += '<li>' + realization.technologies[i] + '</li>';
                 }
+
+
+                realization__container.id = 'is-' + id;
                 realization_title.innerHTML = realization.name;
                 realization_url.innerHTML = '<a href="http://' + realization.url + '" target="_blank">' + realization.url + '</a>';
                 realization_desktop.src = '/img/projects/' + id + '/1.jpg';
@@ -176,9 +169,9 @@
         });
     }
 
-
     realization__close.addEventListener("click", function () {
         realization__container.classList.remove("is-visible");
+        realization__container.id = "";
 
     });
 
@@ -186,51 +179,76 @@
         icon__more[i].addEventListener("click", function () {
             get_realization(this.id);
             realization__container.classList.add("is-visible");
-
         });
     }
 
+    function show_vr() {
+        ajax({
+            type: "GET",
+            url: "aframe/index.html",
+            dataType: "text",
+            onError: function (msg) {
+                console.warn(msg);
+                /* wynik.innerHTML = "<div class=\"alert warning\">Coś poszło nie tak.</div>";*/
+            },
+            onSuccess: function (msg) {
+                var vr__container = document.getElementById("vr__container"),
+                    header__container = document.querySelector(".header__container");
+
+                header__container.classList.add("is-vr");
+                vr__container.classList.add("is-loading");
+                vr__container.innerHTML = "<div class=\"loader\"><span></span><span></span><span></span></div>";
 
 
-
-}());
-
-/*
-
-var a = document.querySelectorAll('a[href*="#"]');
-for (i = 0; i < a.length; i++) {
-
-    a[i].addEventListener("click", function () {
-          var target_name = this.hash.substr(2); 
-        
-        console.log(target_name);
-        var target = document.getElementById(target_name);
-        
-         console.log(target.offsetTop);
-         document.body.scrollTop = target.offsetTop;
-            
-    });
-}
-
-*/
-
-
-$(function () {
-
-
-
-
-    $('a[href*="#"]:not([href="#"])').click(function () {
-
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top
+                setTimeout(function () {
+                    vr__container.innerHTML = msg;
                 }, 1000);
-                return false;
+
+                setTimeout(function () {
+                    vr__container.classList.remove("is-loading");
+                }, 2000);
             }
-        }
-    });
-});
+        });
+    }
+
+    var vr_button = document.getElementById("vrversion");
+    vr_button.addEventListener("click", show_vr);
+
+
+    //scroll animation
+    var a = document.querySelectorAll('a[href*="#"]');
+    for (i = 0; i < a.length; i++) {
+
+        a[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            var target_name = this.hash.substr(1),
+                m = 0,
+                target = document.getElementById(target_name),
+                scroll_animation = setInterval(animate_scroll, 1);
+
+            actual_position = (document.documentElement && document.documentElement.scrollTop) ||
+                document.body.scrollTop;
+            target_position = target.offsetTop - 100;
+
+            function animate_scroll() {
+                m = m + 0.3;
+                if (actual_position < target_position) {
+                    actual_position = actual_position + (10 + m);
+                    document.documentElement.scrollTop = actual_position;
+                    document.body.scrollTop = actual_position;
+                    if (actual_position > target_position) {
+                        clearInterval(scroll_animation);
+                    }
+
+                } else {
+                    actual_position = actual_position - (10 + m);
+                    document.documentElement.scrollTop = actual_position;
+                    document.body.scrollTop = actual_position;
+                    if (actual_position < target_position) {
+                        clearInterval(scroll_animation);
+                    }
+                }
+            }
+        });
+    }
+}());

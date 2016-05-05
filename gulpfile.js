@@ -4,6 +4,7 @@ var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var purify = require('gulp-purifycss');
 
 var gutil = require('gulp-util');
 var ftp = require('gulp-ftp');
@@ -35,6 +36,12 @@ gulp.task('deploy', function () {
             remotePath: ''
         }))
         .pipe(gutil.noop());
+});
+
+gulp.task('purify', function() {
+  return gulp.src('./app/css/main.css')
+    .pipe(purify(['./app/**/*.js', './app/**/*.html']))
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('concat', function () {

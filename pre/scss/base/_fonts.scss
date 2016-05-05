@@ -2,19 +2,36 @@
 Fonts
 =============================================*/
 
-@import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext);
+@font-face {
+    font-family: 'open_sanscondensed_light';
+    src: url('../fonts/opensans-condlight-webfont.eot');
+    src: url('../fonts/opensans-condlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-condlight-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-condlight-webfont.woff') format('woff'),
+         url('../fonts/opensans-condlight-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 
-@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'open_sanscondensed_light', sans-serif;
     font-size: 16px;
 }
 
 h1,
 h2 {
-    
-    font-family: 'Lato', sans-serif;
- /*   font-family: 'Oswald', sans-serif;*/
+    font-family: 'latoregular', sans-serif;
 }

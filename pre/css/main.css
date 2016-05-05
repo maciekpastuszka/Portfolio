@@ -21,9 +21,6 @@ Header layers
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-@import url(https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -392,14 +389,27 @@ picture {
 /*=============================================
 Fonts
 =============================================*/
+@font-face {
+  font-family: 'open_sanscondensed_light';
+  src: url("../fonts/opensans-condlight-webfont.eot");
+  src: url("../fonts/opensans-condlight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-condlight-webfont.woff2") format("woff2"), url("../fonts/opensans-condlight-webfont.woff") format("woff"), url("../fonts/opensans-condlight-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoregular';
+  src: url("../fonts/lato-regular-webfont.eot");
+  src: url("../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular-webfont.woff2") format("woff2"), url("../fonts/lato-regular-webfont.woff") format("woff"), url("../fonts/lato-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'open_sanscondensed_light', sans-serif;
   font-size: 16px; }
 
 h1,
 h2 {
-  font-family: 'Lato', sans-serif;
-  /*   font-family: 'Oswald', sans-serif;*/ }
+  font-family: 'latoregular', sans-serif; }
 
 /*=============================================
 Grid
@@ -619,6 +629,7 @@ Main Header
   position: relative;
   height: 100vh; }
   .header__container {
+    transition: 2s;
     max-width: 100%;
     height: inherit;
     z-index: 9;
@@ -638,6 +649,11 @@ Main Header
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+    .header__container.is-vr {
+      transition: 2s;
+      -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      transform: translateY(100%); }
   .header__title {
     padding: 80px 0 0;
     text-shadow: 0 0 4px #242424; }
@@ -792,6 +808,24 @@ Main Header
       margin-left: 1.8em;
       -webkit-animation: loader 1.5s ease 0.4s infinite;
       animation: loader 1.5s ease 0.4s infinite; }
+
+.vr__container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  transition: 2s;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #000000; }
+  .vr__container.is-loading {
+    opacity: 1;
+    transition: 1s;
+    z-index: 999; }
 
 /*=============================================
 .main-nav Main navigation
@@ -1064,6 +1098,7 @@ Footer
   .footer .container {
     padding: 2em 0.5em; }
   .footer__contact {
+    overflow: hidden;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -1130,8 +1165,9 @@ Footer
 =============================================*/
 .btn {
   cursor: pointer;
-  display: inline-block;
-  margin: 0.5em 0;
+  display: block;
+  display: block;
+  margin: 0.5em auto;
   padding: 0.6em 1em;
   max-width: 12em;
   border-radius: 0px;
@@ -1290,14 +1326,6 @@ icons
     background-position: 8em 0; }
 
 /*=============================================
-Other
-=============================================*/
-.anchor {
-  -webkit-transform: translateY(-100px);
-  -ms-transform: translateY(-100px);
-  transform: translateY(-100px); }
-
-/*=============================================
 Scrollbar
 =============================================*/
 ::-webkit-scrollbar {
@@ -1343,19 +1371,22 @@ Home
   background-position: left;
   background-size: cover; }
   .about__article {
-    font-size: 1.4em; }
+    font-size: 1.3em; }
   .about__skills {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     padding-top: 1.5em;
-    font-size: 3em;
+    font-size: 2em;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
+    @media only screen and (min-width: 48rem) {
+      .about__skills {
+        font-size: 3em; } }
     .about__skills .icon {
       margin: 0.3em 0.1em; }
 
@@ -1401,9 +1432,9 @@ Home
     display: -ms-flexbox;
     display: flex;
     margin-top: 3em;
-    -webkit-justify-content: stretch;
-    -ms-flex-pack: stretch;
-    justify-content: stretch;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
@@ -1603,20 +1634,20 @@ Home
 
 @-webkit-keyframes phone__screen {
   0% {
-    height: 25em;
+    max-height: 25em;
     opacity: 0; }
   80% {
-    height: 20em;
+    max-height: 20em;
     opacity: 0; }
   100% {
     opacity: 1; } }
 
 @keyframes phone__screen {
   0% {
-    height: 25em;
+    max-height: 25em;
     opacity: 0; }
   80% {
-    height: 20em;
+    max-height: 20em;
     opacity: 0; }
   100% {
     opacity: 1; } }
@@ -1679,19 +1710,15 @@ Home
     padding: 1em;
     text-align: center; }
   .realization__switcher {
-    display: block;
-    margin: 0 auto 2em;
-    max-width: 8em;
-    cursor: pointer; }
-    .realization__switcher__phone {
-      fill: #cccccc; }
-      .realization__switcher__phone.is-active {
-        fill: #bf3448; }
-    .realization__switcher__desktop {
-      fill: #cccccc; }
-      .realization__switcher__desktop.is-active {
-        fill: #bf3448; }
-  .realization.is-aframe .screen.is-phone {
+    width: 10em;
+    height: 5em;
+    background: url(../img/icons/realization_icons.svg);
+    background-size: auto 100%; }
+    .realization__switcher.is-phone {
+      background-position: 10em 0; }
+    .realization__switcher:hover {
+      cursor: pointer; }
+  .realization#is-aframe .screen.is-phone {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
@@ -1715,11 +1742,12 @@ Home
   .screen .phone__screen {
     display: none; }
   .screen .desktop__screen {
-    display: block;
     -webkit-animation-name: desktop__screen;
     animation-name: desktop__screen;
     -webkit-animation-duration: 2s;
-    animation-duration: 2s; }
+    animation-duration: 2s;
+    display: block;
+    opacity: 1; }
   .screen:before, .screen:after {
     -webkit-animation-name: desktop__footer;
     animation-name: desktop__footer;
@@ -1778,9 +1806,11 @@ Home
       z-index: 1; }
     .screen.is-phone .phone__screen {
       display: block;
+      max-height: 20em;
       -webkit-animation-name: phone__screen;
       animation-name: phone__screen;
       -webkit-animation-duration: 2.5s;
       animation-duration: 2.5s; }
     .screen.is-phone .desktop__screen {
+      opacity: 0;
       display: none; }

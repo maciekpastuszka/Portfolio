@@ -26,8 +26,12 @@
 
 .btn {
     cursor: pointer;
-    display: inline-block;
-    margin: 0.5em 0;
+    display: block;
+    
+        display: block;
+
+    
+    margin: 0.5em auto;
     padding: 0.6em 1em;
     max-width: 12em;
     border-radius: 0px;
@@ -239,13 +243,6 @@ icons
 }
 
 
-/*=============================================
-Other
-=============================================*/
-
-.anchor {
-    transform: translateY(-100px);
-}
 
 
 /*=============================================

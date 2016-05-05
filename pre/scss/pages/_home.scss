@@ -7,14 +7,17 @@ Home
         background-position: left;
         background-size: cover;
         &__article {
-            font-size: 1.4em;
+            font-size: 1.3em;
         }
         &__skills {
             display: flex;
             padding-top: 1.5em;
-            font-size: 3em;
+            font-size: 2em;
             justify-content: center;
             flex-wrap: wrap;
+            @include rwd(small) {
+                font-size: 3em;
+            }
             .icon {
                 margin: 0.3em 0.1em;
             }
@@ -59,7 +62,7 @@ Home
         &__container {
             display: flex;
             margin-top: 3em;
-            justify-content: stretch;
+            justify-content: center;
             flex-wrap: wrap;
         }
         &__description {
@@ -76,6 +79,7 @@ Home
             vertical-align: top;
         }
         &__element {
+         
             position: relative;
             overflow: hidden;
             margin-bottom: 1em;
@@ -266,11 +270,11 @@ Home
     
     @keyframes phone__screen {
         0% {
-            height: 25em;
+            max-height: 25em;
             opacity: 0;
         }
         80% {
-            height: 20em;
+            max-height: 20em;
             opacity: 0;
         }
         100% {
@@ -342,24 +346,18 @@ Home
             text-align: center;
         }
         &__switcher {
-            display: block;
-            margin: 0 auto 2em;
-            max-width: 8em;
-            cursor: pointer;
-            &__phone {
-                fill: #cccccc;
-                &.is-active {
-                    fill: $brand-color-2;
-                }
+            width: 10em;
+            height: 5em;
+            background: url(../img/icons/realization_icons.svg);
+            background-size: auto 100%;
+            &.is-phone {
+                background-position: 10em 0;
             }
-            &__desktop {
-                fill: #cccccc;
-                &.is-active {
-                    fill: $brand-color-2;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
-        &.is-aframe {
+        &#is-aframe {
             .screen.is-phone {
                 transform: rotate(90deg);
             }
@@ -386,9 +384,10 @@ Home
             display: none;
         }
         .desktop__screen {
-            display: block;
             animation-name: desktop__screen;
             animation-duration: 2s;
+            display: block;
+            opacity: 1;
         }
         &:before,
         &:after {
@@ -446,10 +445,12 @@ Home
             }
             .phone__screen {
                 display: block;
+                max-height: 20em;
                 animation-name: phone__screen;
                 animation-duration: 2.5s;
             }
             .desktop__screen {
+                opacity: 0;
                 display: none;
             }
         }

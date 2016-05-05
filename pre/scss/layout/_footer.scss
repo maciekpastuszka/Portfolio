@@ -17,6 +17,7 @@ Footer
         padding: 2em 0.5em;
     }
     &__contact {
+        overflow: hidden;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
