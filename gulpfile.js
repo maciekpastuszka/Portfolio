@@ -4,7 +4,10 @@ var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
-var purify = require('gulp-purifycss');
+
+var uncss = require('gulp-uncss');
+var purify = require('purify-css');
+
 
 var gutil = require('gulp-util');
 var ftp = require('gulp-ftp');
@@ -38,11 +41,21 @@ gulp.task('deploy', function () {
         .pipe(gutil.noop());
 });
 
-gulp.task('purify', function() {
-  return gulp.src('./app/css/main.css')
-    .pipe(purify(['./app/**/*.js', './app/**/*.html']))
-    .pipe(gulp.dest('./dist/'));
+gulp.task('css', function() {
+  return gulp.src(CSS_SRC)
+    .pipe(purify(['./app/js/*.js', './app/index.html']))
+    .pipe(gulp.dest('dist'));
 });
+
+/*
+gulp.task('uncss', function () {
+    return gulp.src('app/css/main.css')
+        .pipe(uncss({
+            html: ['app/index.html']
+        }))
+        .pipe(gulp.dest('./app/css'));
+});
+*/
 
 gulp.task('concat', function () {
     return gulp.src(JS_SRC_CONCAT)

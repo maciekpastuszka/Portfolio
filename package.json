@@ -20,7 +20,9 @@
     "jshint": "^2.9.1",
     "purify-css": "^1.1.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-uncss": "^1.0.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

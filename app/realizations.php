@@ -43,10 +43,4 @@ echo json_encode($realization);
         }
 
 
-
-
-
-/*
-
-*/
 ?>

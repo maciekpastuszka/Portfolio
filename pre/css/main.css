@@ -667,7 +667,7 @@ Main Header
       line-height: 1.2em; }
       @media only screen and (min-width: 48rem) {
         .header__title h1 {
-          font-size: 4.5rem; } }
+          font-size: 4rem; } }
     .header__title h2 {
       margin-top: 0;
       font-size: 2rem;
