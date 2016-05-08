@@ -21,7 +21,7 @@ Main Header
         flex-wrap: wrap;
         &.is-vr {
             transition: 2s;
-           transform: translateY(100%);
+            transform: translateY(100%);
         }
     }
     &__title {
@@ -31,7 +31,7 @@ Main Header
             padding: 0;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 0;
             text-align: center;
             line-height: 1.2em;

@@ -53,11 +53,12 @@
         background-color: transparent;
         &.is-move {
             top: 0px;
-            padding: 2em 0;
+            padding: 1em 0;
             background-color: #212121;
             color: #fff;
             transition: 0.3s;
             .main-nav__logo {
+                top: 0.5em;
                 background-position: 0px 50px;
                 transition: 0.3s;
             }
@@ -214,6 +215,5 @@
         position: relative;
         display: inline-block;
         margin: 0 0.2em;
-       
     }
 }

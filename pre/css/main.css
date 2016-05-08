@@ -661,7 +661,7 @@ Main Header
       .header__title {
         padding: 0; } }
     .header__title h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       margin-bottom: 0;
       text-align: center;
       line-height: 1.2em; }
@@ -901,11 +901,12 @@ Main Header
       background-color: transparent; }
       .main-nav.is-move {
         top: 0px;
-        padding: 2em 0;
+        padding: 1em 0;
         background-color: #212121;
         color: #fff;
         transition: 0.3s; }
         .main-nav.is-move .main-nav__logo {
+          top: 0.5em;
           background-position: 0px 50px;
           transition: 0.3s; } }
   .main-nav__logo {
@@ -1426,7 +1427,7 @@ Home
           transition: 0.5s; }
 
 .portfolio {
-  padding-top: 2em; }
+  padding: 2em 1em 0; }
   .portfolio__container {
     display: -webkit-flex;
     display: -ms-flexbox;
