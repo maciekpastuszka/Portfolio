@@ -26,7 +26,7 @@
 }];
 
     //horizontal paralax on mouse
-    function getMouseX(e) {
+    function paralax(e) {
         var pageX = e.pageX,
             windowWidth = window.innerWidth,
             halfWindow = windowWidth / 2;
@@ -41,7 +41,7 @@
         }
     }
     var header = document.getElementById("header");
-    header.onmousemove = getMouseX;
+    header.onmousemove = paralax;
 
     //mobile navigation toggle
     var nav_toggle = document.querySelector(".main-nav__toggle"),
