@@ -1,4 +1,13 @@
-(function () {
+var APP = window.APP || {}; // create namespace for our app
+APP.menu = {};
+APP.paralax = {};
+APP.portfolio = {};
+APP.smoothscroll = {};
+APP.vr = {};
+APP.realization = {};
+
+APP.paralax = (function () {
+
     //header layers
     var elements = [{
             id: "layer0",
@@ -43,18 +52,11 @@
     var header = document.getElementById("header");
     header.onmousemove = paralax;
 
-    //mobile navigation toggle
-    var nav_toggle = document.querySelector(".main-nav__toggle"),
-        nav = document.querySelector(".main-nav__colapse")
-    circle = document.querySelector(".main-nav__circle");
+}());
 
-    //toggle menu on click
-    nav_toggle.addEventListener("click", function () {
-        this.classList.toggle("is-open");
-        nav.classList.toggle("is-open");
-        circle.classList.toggle("is-open");
-    });
 
+
+APP.menu = (function () {
     //menu on scroll
     window.addEventListener("scroll", function () {
         var main_nav = document.querySelector(".main-nav"),
@@ -68,8 +70,22 @@
         }
     });
 
+    //mobile navigation toggle
+    var nav_toggle = document.querySelector(".main-nav__toggle"),
+        nav = document.querySelector(".main-nav__colapse")
+    circle = document.querySelector(".main-nav__circle");
+
+    //toggle menu on click
+    nav_toggle.addEventListener("click", function () {
+        this.classList.toggle("is-open");
+        nav.classList.toggle("is-open");
+        circle.classList.toggle("is-open");
+    });
+}());
 
 
+
+APP.portfolio = (function () {
     //toggle realization view
     var toggle_view = document.querySelector(".realization__switcher"),
         screen = document.querySelector(".screen");
@@ -78,7 +94,6 @@
         toggle_view.classList.toggle("is-phone");
         screen.classList.toggle("is-phone");
     });
-
 
     //portfolio show more
     var portfolio__more = document.getElementById("portfolio__more"),
@@ -89,21 +104,53 @@
         }
         this.style.display = "none";
     });
-
 }());
 
-(function () {
-    var realization__container = document.querySelector(".realization"),
-        realization__close = document.getElementById("realization__close"),
-        icon__more = document.querySelectorAll(".icon--more"),
-        realization_title = document.getElementById("realization_title"),
-        realization_url = document.getElementById("realization_url"),
-        realization_desktop = document.getElementById("realization_desktop"),
-        realization_phone = document.getElementById("realization_phone"),
-        realization_description = document.getElementById("realization_description"),
-        realization_technologies = document.getElementById("realization_technologies");
 
-    function ajax(options) {
+
+APP.smoothscroll = (function () {
+    //scroll animation
+    var a = document.querySelectorAll('a[href*="#"]');
+    for (i = 0; i < a.length; i++) {
+
+        a[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            var target_name = this.hash.substr(1),
+                m = 0,
+                target = document.getElementById(target_name),
+                scroll_animation = setInterval(animate_scroll, 1);
+
+            actual_position = (document.documentElement && document.documentElement.scrollTop) ||
+                document.body.scrollTop;
+            target_position = target.offsetTop - 100;
+
+            function animate_scroll() {
+                m = m + 0.3;
+                if (actual_position < target_position) {
+                    actual_position = actual_position + (10 + m);
+                    document.documentElement.scrollTop = actual_position;
+                    document.body.scrollTop = actual_position;
+                    if (actual_position > target_position) {
+                        clearInterval(scroll_animation);
+                    }
+
+                } else {
+                    actual_position = actual_position - (10 + m);
+                    document.documentElement.scrollTop = actual_position;
+                    document.body.scrollTop = actual_position;
+                    if (actual_position < target_position) {
+                        clearInterval(scroll_animation);
+                    }
+                }
+            }
+        });
+    }
+}());
+
+
+
+APP.ajax = (function () {
+    return function (options) {
         options = {
             type: options.type || "POST",
             url: options.url || "",
@@ -141,51 +188,15 @@
             }
         }
     }
-
-    function get_realization(id) {
-        ajax({
-            type: "GET",
-            url: "realizations.php?realization=" + id,
-            dataType: "text",
-            onError: function (msg) {
-                console.warn(msg);
-                /* wynik.innerHTML = "<div class=\"alert warning\">Coś poszło nie tak.</div>";*/
-            },
-            onSuccess: function (msg) {
-                var realization = JSON.parse(msg),
-                    technologies = "";
-                for (i = 0; i < realization.technologies.length; i++) {
-                    technologies += '<li>' + realization.technologies[i] + '</li>';
-                }
+}());
 
 
-                realization__container.id = 'is-' + id;
-                realization_title.innerHTML = realization.name;
-                realization_url.innerHTML = '<a href="http://' + realization.url + '" target="_blank">' + realization.url + '</a>';
-                realization_desktop.src = '/img/projects/' + id + '/1.jpg';
-                realization_phone.src = '/img/projects/' + id + '/2.jpg';
-                realization_technologies.innerHTML = technologies;
-            }
-        });
-    }
 
-    realization__close.addEventListener("click", function () {
-        realization__container.classList.remove("is-visible");
-        realization__container.id = "";
-
-    });
-
-    for (i = 0; i < icon__more.length; i++) {
-        icon__more[i].addEventListener("click", function () {
-            get_realization(this.id);
-            realization__container.classList.add("is-visible");
-        });
-    }
-
+APP.vr = (function () {
     function show_vr() {
-        ajax({
+        APP.ajax({
             type: "GET",
-            url: "aframe/index.html",
+            url: "aframe/portfolio.html",
             dataType: "text",
             onError: function (msg) {
                 console.warn(msg);
@@ -210,45 +221,55 @@
             }
         });
     }
-
     var vr_button = document.getElementById("vrversion");
     vr_button.addEventListener("click", show_vr);
+}());
 
 
-    //scroll animation
-    var a = document.querySelectorAll('a[href*="#"]');
-    for (i = 0; i < a.length; i++) {
 
-        a[i].addEventListener("click", function (e) {
-            e.preventDefault();
-            var target_name = this.hash.substr(1),
-                m = 0,
-                target = document.getElementById(target_name),
-                scroll_animation = setInterval(animate_scroll, 1);
-
-            actual_position = (document.documentElement && document.documentElement.scrollTop) ||
-                document.body.scrollTop;
-            target_position = target.offsetTop - 100;
-
-            function animate_scroll() {
-                m = m + 0.3;
-                if (actual_position < target_position) {
-                    actual_position = actual_position + (10 + m);
-                    document.documentElement.scrollTop = actual_position;
-                    document.body.scrollTop = actual_position;
-                    if (actual_position > target_position) {
-                        clearInterval(scroll_animation);
-                    }
-
-                } else {
-                    actual_position = actual_position - (10 + m);
-                    document.documentElement.scrollTop = actual_position;
-                    document.body.scrollTop = actual_position;
-                    if (actual_position < target_position) {
-                        clearInterval(scroll_animation);
-                    }
+APP.realization = (function () {
+    var realization__container = document.querySelector(".realization"),
+        realization__close = document.getElementById("realization__close"),
+        icon__more = document.querySelectorAll(".icon--more"),
+        realization_title = document.getElementById("realization_title"),
+        realization_url = document.getElementById("realization_url"),
+        realization_desktop = document.getElementById("realization_desktop"),
+        realization_phone = document.getElementById("realization_phone"),
+        realization_description = document.getElementById("realization_description"),
+        realization_technologies = document.getElementById("realization_technologies");
+    function get_realization(id) {
+        APP.ajax({
+            type: "GET",
+            url: "realizations.php?realization=" + id,
+            dataType: "text",
+            onError: function (msg) {
+                console.warn(msg);
+                /* wynik.innerHTML = "<div class=\"alert warning\">Coś poszło nie tak.</div>";*/
+            },
+            onSuccess: function (msg) {
+                var realization = JSON.parse(msg),
+                    technologies = "";
+                for (i = 0; i < realization.technologies.length; i++) {
+                    technologies += '<li>' + realization.technologies[i] + '</li>';
                 }
+                realization__container.id = 'is-' + id;
+                realization_title.innerHTML = realization.name;
+                realization_url.innerHTML = '<a href="http://' + realization.url + '" target="_blank">' + realization.url + '</a>';
+                realization_desktop.src = '/img/projects/' + id + '/1.jpg';
+                realization_phone.src = '/img/projects/' + id + '/2.jpg';
+                realization_technologies.innerHTML = technologies;
             }
+        });
+    }
+    realization__close.addEventListener("click", function () {
+        realization__container.classList.remove("is-visible");
+        realization__container.id = "";
+
+    });
+    for (i = 0; i < icon__more.length; i++) {
+        icon__more[i].addEventListener("click", function () {
+            get_realization(this.id);
+            realization__container.classList.add("is-visible");
         });
     }
 }());
