@@ -5,10 +5,6 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 
-var uncss = require('gulp-uncss');
-var purify = require('purify-css');
-
-
 var gutil = require('gulp-util');
 var ftp = require('gulp-ftp');
 
@@ -17,7 +13,7 @@ var concat = require('gulp-concat');
 
 var reload = browserSync.reload();
 
-var JS_SRC = './pre/js/*.js';
+var JS_SRC = './pre/js/*';
 var JS_SRC_CONCAT = './pre/js/concat/*.js';
 var JS_DEST = 'app/js';
 
@@ -41,22 +37,6 @@ gulp.task('deploy', function () {
         .pipe(gutil.noop());
 });
 
-gulp.task('css', function() {
-  return gulp.src(CSS_SRC)
-    .pipe(purify(['./app/js/*.js', './app/index.html']))
-    .pipe(gulp.dest('dist'));
-});
-
-/*
-gulp.task('uncss', function () {
-    return gulp.src('app/css/main.css')
-        .pipe(uncss({
-            html: ['app/index.html']
-        }))
-        .pipe(gulp.dest('./app/css'));
-});
-*/
-
 gulp.task('concat', function () {
     return gulp.src(JS_SRC_CONCAT)
         .pipe(concat('scripts.js'))
@@ -70,20 +50,20 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest(JS_DEST));
 });
 
-gulp.task('compress-images', function () {
-    return gulp.src(IMG_SRC)
-        .pipe(imagemin({
-            progressive: true
-        }))
-        .pipe(gulp.dest(IMG_DEST));
-});
-
 gulp.task('minify-css', function () {
     return gulp.src(CSS_SRC)
         .pipe(minifyCSS({
             keepSpecialComments: 1
         }))
         .pipe(gulp.dest(CSS_DEST));
+});
+
+gulp.task('compress-images', function () {
+    return gulp.src(IMG_SRC)
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest(IMG_DEST));
 });
 
 gulp.task('sass', function () {
@@ -99,25 +79,21 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
-
+gulp.task('sync', ['sass', 'uglify'], function () {
     browserSync.init({
         proxy: "localhost"
     });
-
-
     /*  browserSync.init({
            server: {
               baseDir: "./app"
           }
       });*/
-
     gulp.watch("./pre/scss/**", ['sass']);
     gulp.watch("./pre/scss/**").on('change', browserSync.reload);
     gulp.watch(JS_SRC, ['uglify']);
     gulp.watch(JS_SRC).on('change', browserSync.reload);
-    gulp.watch(JS_SRC_CONCAT, ['concat']);
-    gulp.watch(JS_SRC_CONCAT).on('change', browserSync.reload);
+    /*  gulp.watch(JS_SRC_CONCAT, ['concat']);
+      gulp.watch(JS_SRC_CONCAT).on('change', browserSync.reload); */
     gulp.watch("./app/*").on('change', browserSync.reload);
 
 });
