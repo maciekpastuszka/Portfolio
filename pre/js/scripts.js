@@ -55,36 +55,6 @@ APP.paralax = (function () {
 }());
 
 
-
-APP.menu = (function () {
-    //menu on scroll
-    window.addEventListener("scroll", function () {
-        var main_nav = document.querySelector(".main-nav"),
-            scroll = (document.documentElement && document.documentElement.scrollTop) ||
-            document.body.scrollTop;
-        //if scroll is more than 20 change navigation bar
-        if (scroll >= 20) {
-            main_nav.classList.add("is-move");
-        } else {
-            main_nav.classList.remove("is-move");
-        }
-    });
-
-    //mobile navigation toggle
-    var nav_toggle = document.querySelector(".main-nav__toggle"),
-        nav = document.querySelector(".main-nav__colapse")
-    circle = document.querySelector(".main-nav__circle");
-
-    //toggle menu on click
-    nav_toggle.addEventListener("click", function () {
-        this.classList.toggle("is-open");
-        nav.classList.toggle("is-open");
-        circle.classList.toggle("is-open");
-    });
-}());
-
-
-
 APP.portfolio = (function () {
     //toggle realization view
     var toggle_view = document.querySelector(".realization__switcher"),
@@ -194,7 +164,10 @@ APP.ajax = (function () {
 
 APP.vr = (function () {
     function show_vr() {
-        APP.ajax({
+
+        var ajax = APP.ajax;
+
+        ajax({
             type: "GET",
             url: "aframe/portfolio.html",
             dataType: "text",
@@ -237,8 +210,10 @@ APP.realization = (function () {
         realization_phone = document.getElementById("realization_phone"),
         realization_description = document.getElementById("realization_description"),
         realization_technologies = document.getElementById("realization_technologies");
+
     function get_realization(id) {
-        APP.ajax({
+        var ajax = APP.ajax;
+        ajax({
             type: "GET",
             url: "realizations.php?realization=" + id,
             dataType: "text",
