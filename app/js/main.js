@@ -1,1 +1,0 @@
-require(["ajax"]),require(["menu"]),require(["paralax"]),require(["smoothscroll"]),require(["portfolio"]),require(["vr"]);

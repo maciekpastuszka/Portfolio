@@ -13,7 +13,7 @@ var concat = require('gulp-concat');
 
 var reload = browserSync.reload();
 
-var JS_SRC = './pre/js/*';
+var JS_SRC = './pre/js/*.js';
 var JS_SRC_CONCAT = './pre/js/concat/*.js';
 var JS_DEST = 'app/js';
 
@@ -79,7 +79,7 @@ gulp.task('sass', function () {
 });
 
 
-gulp.task('sync', ['sass', 'uglify'], function () {
+gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
     browserSync.init({
         proxy: "localhost"
     });
@@ -92,8 +92,8 @@ gulp.task('sync', ['sass', 'uglify'], function () {
     gulp.watch("./pre/scss/**").on('change', browserSync.reload);
     gulp.watch(JS_SRC, ['uglify']);
     gulp.watch(JS_SRC).on('change', browserSync.reload);
-    /*  gulp.watch(JS_SRC_CONCAT, ['concat']);
-      gulp.watch(JS_SRC_CONCAT).on('change', browserSync.reload); */
+    gulp.watch(JS_SRC_CONCAT, ['concat']);
+    gulp.watch(JS_SRC_CONCAT).on('change', browserSync.reload);
     gulp.watch("./app/*").on('change', browserSync.reload);
 
 });
