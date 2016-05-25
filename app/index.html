@@ -131,11 +131,9 @@
 Aktualnie uczę się
                 </h3>
                     <ul class="learning__stage__list">
-                        <li>BEM</li>
                         <li>OOP JS</li>
-                        <li>JS prototypes</li>
-                        <li>AngularJS</li>
-
+                        <li>JS module pattern</li>
+                        <li>RequireJS</li>
                     </ul>
                 </section>
                 <section class="learning__stage d-4 t-6 m-12">
@@ -144,7 +142,6 @@ W najbliższym czasie chcę nauczyć się
                 </h3>
                     <ul class="learning__stage__list">
                         <li>Design Patterns</li>
-                        <li>Dev team work</li>
                         <li>SCRUM</li>
                         <li>AngularJS</li>
                         <li>React</li>
@@ -162,7 +159,6 @@ W przyszłości planuje nauczyć się
                         <li>TypeScript</li>
                         <li>AngularJS 2.0</li>
                         <li>NodeJS</li>
-
                     </ul>
                 </section>
             </div>
@@ -386,5 +382,23 @@ W przyszłości planuje nauczyć się
 
     <script src="js/vendor/aframe.min.js"></script>
     <script data-main="js/scripts" src="js/vendor/require.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-27018704-9', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
+
 </html>
