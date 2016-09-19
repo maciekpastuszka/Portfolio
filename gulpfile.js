@@ -5,8 +5,6 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 
-var gutil = require('gulp-util');
-var ftp = require('gulp-ftp');
 
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
@@ -15,27 +13,17 @@ var reload = browserSync.reload();
 
 var JS_SRC = './pre/js/*.js';
 var JS_SRC_CONCAT = './pre/js/concat/*.js';
-var JS_DEST = 'app/js';
+var JS_DEST = 'public/js';
 
 var IMG_SRC = 'pre/img/*';
-var IMG_DEST = 'app/img';
+var IMG_DEST = 'public/img';
 
 var CSS_SRC = './pre/css/*';
-var CSS_DEST = 'app/css';
+var CSS_DEST = 'public/css';
 
 var SASS_SRC = './pre/scss/*.scss';
 var SASS_DEST = 'pre/css';
 
-gulp.task('deploy', function () {
-    return gulp.src('app/**')
-        .pipe(ftp({
-            host: '',
-            user: '',
-            pass: '',
-            remotePath: ''
-        }))
-        .pipe(gutil.noop());
-});
 
 gulp.task('concat', function () {
     return gulp.src(JS_SRC_CONCAT)
@@ -94,6 +82,6 @@ gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
     gulp.watch(JS_SRC).on('change', browserSync.reload);
     gulp.watch(JS_SRC_CONCAT, ['concat']);
     gulp.watch(JS_SRC_CONCAT).on('change', browserSync.reload);
-    gulp.watch("./app/*").on('change', browserSync.reload);
+    gulp.watch("./public/*").on('change', browserSync.reload);
 
 });

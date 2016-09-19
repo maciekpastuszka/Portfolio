@@ -34,7 +34,6 @@ define('portfolio', ['ajax'], function (ajax) {
             dataType: "text",
             onError: function (msg) {
                 console.warn(msg);
-                /* wynik.innerHTML = "<div class=\"alert warning\">Coś poszło nie tak.</div>";*/
             },
             onSuccess: function (msg) {
                 var realization = JSON.parse(msg),
