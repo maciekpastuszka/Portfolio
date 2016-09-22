@@ -68,14 +68,14 @@ gulp.task('sass', function () {
 
 
 gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
-    browserSync.init({
+  /*  browserSync.init({
         proxy: "localhost"
-    });
-    /*  browserSync.init({
+    }); */
+ browserSync.init({
            server: {
               baseDir: "./app"
           }
-      });*/
+      });
     gulp.watch("./pre/scss/**", ['sass']);
     gulp.watch("./pre/scss/**").on('change', browserSync.reload);
     gulp.watch(JS_SRC, ['uglify']);
