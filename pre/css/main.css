@@ -684,6 +684,7 @@ Main Header
       .header__buttons .btn--fill {
         padding-left: 3em; }
   .header .layer {
+    transition: 0.5s ease-out;
     position: absolute;
     top: 0px;
     width: 120%;

@@ -1,5 +1,8 @@
 define('paralax', function () {
-    //header layers
+    var windowWidth = window.innerWidth,
+        halfWindow = windowWidth / 2,
+        header = document.getElementById("header");;
+
     var elements = [{
             id: "layer0",
             maxrange: -3
@@ -25,11 +28,8 @@ define('paralax', function () {
             maxrange: 16
 }];
 
-    //horizontal paralax on mouse
-    function paralax(e) {
-        var pageX = e.pageX,
-            windowWidth = window.innerWidth,
-            halfWindow = windowWidth / 2;
+    var horizontalParalax = function (e) {
+        var pageX = e.pageX;
         for (i = 0; i < elements.length; i++) {
             var element = elements[i],
                 move = 0,
@@ -39,9 +39,36 @@ define('paralax', function () {
             move = (((pageX - halfWindow) / halfWindow) * -objectRange) - windowWidth / 10;
             dom_element.style.transform = "translateX(" + move + "px)";
         }
-    }
-    var header = document.getElementById("header");
-    header.onmousemove = paralax;
+    };
 
+    var mouseEvent = function () {
+        var scrollInit = false;
+        var event = null;
+        header.addEventListener('mousemove', function (e) {
+            event = e;
+            scrollInit = true;
+        });
+        setInterval(function () {
+            if (scrollInit) {
+                scrollInit = false;
+                horizontalParalax(event);
+            }
+        }, 200);
+    };
+
+    var events = function () {
+        mouseEvent();
+    };
+
+    var init = function () {
+        events();
+    };
+
+    init();
+
+    //API
+    return {
+        init: init
+    }
 
 });
