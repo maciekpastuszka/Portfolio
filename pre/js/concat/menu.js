@@ -45,9 +45,4 @@ define('menu', function () {
     };
 
     init();
-
-    //API
-    return {
-        init: init
-    }
 });

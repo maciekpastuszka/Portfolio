@@ -53,7 +53,7 @@ define('paralax', function () {
                 scrollInit = false;
                 horizontalParalax(event);
             }
-        }, 200);
+        }, 50);
     };
 
     var events = function () {
@@ -65,10 +65,4 @@ define('paralax', function () {
     };
 
     init();
-
-    //API
-    return {
-        init: init
-    }
-
 });
