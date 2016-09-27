@@ -33,7 +33,7 @@ define('smoothscroll', function () {
 
     var events = function () {
         for (i = 0; i < a.length; i++) {
-            a[i].addEventListener("click", function (e) {
+            a[i].addEventListener('click', function (e) {
                 e.preventDefault();
 
                 scrollTo(this);

@@ -1,30 +1,30 @@
 define('paralax', function () {
     var windowWidth = window.innerWidth,
         halfWindow = windowWidth / 2,
-        header = document.getElementById("header");;
+        header = document.getElementById('header');
 
     var elements = [{
-            id: "layer0",
+            id: 'layer0',
             maxrange: -3
 },
         {
-            id: "layer1",
+            id: 'layer1',
             maxrange: 5
 },
         {
-            id: "layer2",
+            id: 'layer2',
             maxrange: 7
 },
         {
-            id: "layer3",
+            id: 'layer3',
             maxrange: 10
 },
         {
-            id: "layer4",
+            id: 'layer4',
             maxrange: 12
 },
         {
-            id: "layer5",
+            id: 'layer5',
             maxrange: 16
 }];
 
@@ -37,7 +37,7 @@ define('paralax', function () {
                 actual_move = 0;
             objectRange = windowWidth * (element.maxrange / 100);
             move = (((pageX - halfWindow) / halfWindow) * -objectRange) - windowWidth / 10;
-            dom_element.style.transform = "translateX(" + move + "px)";
+            dom_element.style.transform = 'translateX(' + move + 'px)';
         }
     };
 
