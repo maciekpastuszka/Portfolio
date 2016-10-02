@@ -18,12 +18,11 @@ var JS_DEST = 'public/js';
 var IMG_SRC = 'pre/img/*';
 var IMG_DEST = 'public/img';
 
-var CSS_SRC = './pre/css/*';
 var CSS_DEST = 'public/css';
-
 var SASS_SRC = './pre/scss/*.scss';
-var SASS_DEST = 'pre/css';
 
+
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('concat', function () {
     return gulp.src(JS_SRC_CONCAT)
@@ -34,16 +33,10 @@ gulp.task('concat', function () {
 
 gulp.task('uglify', function () {
     return gulp.src(JS_SRC)
-        .pipe(uglify())
-        .pipe(gulp.dest(JS_DEST));
-});
-
-gulp.task('minify-css', function () {
-    return gulp.src(CSS_SRC)
-        .pipe(minifyCSS({
-            keepSpecialComments: 1
+        .pipe(uglify({
+            outSourceMap: true
         }))
-        .pipe(gulp.dest(CSS_DEST));
+        .pipe(gulp.dest(JS_DEST));
 });
 
 gulp.task('compress-images', function () {
@@ -56,26 +49,27 @@ gulp.task('compress-images', function () {
 
 gulp.task('sass', function () {
     gulp.src(SASS_SRC)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 3 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest(SASS_DEST))
         .pipe(minifyCSS())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(CSS_DEST));
 });
 
 
 gulp.task('sync', ['sass', 'uglify', 'concat'], function () {
-  /*  browserSync.init({
-        proxy: "localhost"
-    }); */
- browserSync.init({
-           server: {
-              baseDir: "./app"
-          }
-      });
+    /*  browserSync.init({
+          proxy: "localhost"
+      }); */
+    browserSync.init({
+        server: {
+            baseDir: "./app"
+        }
+    });
     gulp.watch("./pre/scss/**", ['sass']);
     gulp.watch("./pre/scss/**").on('change', browserSync.reload);
     gulp.watch(JS_SRC, ['uglify']);
