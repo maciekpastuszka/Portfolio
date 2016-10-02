@@ -28,9 +28,13 @@ Home
         width: 3em;
         height: 3em;
     }
+    /*=============================================
+Learning
+=============================================*/
     
     .learning {
-        background: #ededed;
+        background: #59a13e;
+        color: #ffffff;
         &__stage {
             text-align: center;
             font-size: 1.2em;
@@ -43,27 +47,31 @@ Home
                 li {
                     margin: 0.2em 0.2em;
                     padding: 0.3em 0.6em;
-                    border: 1px solid $brand-color-1;
+                    border: 1px solid #ffffff;
                     transition: 0.3s;
                     flex: 1 auto;
                     &:hover {
-                        border: 1px solid $brand-color-1;
-                        background: $brand-color-1;
-                        color: #fff;
+                        border: 1px solid #ffffff;
+                        background: #ffffff;
+                        color: $brand-color-1;
                         transition: 0.5s;
                     }
                 }
             }
         }
     }
+    /*=============================================
+Portfolio
+=============================================*/
     
     .portfolio {
+        background: #ededed;
         padding: 2em 1em 0;
         &__container {
             display: flex;
             margin-top: 3em;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: space-between;
         }
         &__description {
             text-align: center;
@@ -79,15 +87,24 @@ Home
             vertical-align: top;
         }
         &__element {
-         
             position: relative;
             overflow: hidden;
             margin-bottom: 1em;
             height: 10em;
             font-size: 1.5em;
             opacity: 1;
-            transition: 2s;
-            flex: 1 12em;
+            border: 1px solid #e0e0e0;
+            box-sizing: border-box;
+            flex-basis: 100%;
+            @include rwd(small) {
+                flex-basis: 48%;
+            }
+            @include rwd(medium) {
+                flex-basis: 23%;
+            }
+            @include rwd(large) {
+                flex-basis: 18%;
+            }
             .icons {
                 position: absolute;
                 bottom: -5em;
@@ -219,6 +236,9 @@ Home
             }
         }
     }
+    /*=============================================
+Realization
+=============================================*/
     
     @keyframes phone__speaker {
         0% {
@@ -291,6 +311,7 @@ Home
             opacity: 1;
             max-height: 9999px;
             transition: 2s;
+            padding: 2em 0 3em;
         }
         .learning__stage__list {
             font-size: 1.2em;
@@ -300,6 +321,26 @@ Home
         }
         p {
             font-size: 1.2em;
+        }
+        &__technologies {
+            display: flex;
+            padding-left: 0;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: stretch;
+            li {
+                margin: 0.2em 0.2em;
+                padding: 0.3em 0.6em;
+                border: 1px solid $brand-color-1;
+                transition: 0.3s;
+                flex: 1 auto;
+                &:hover {
+                    border: 1px solid $brand-color-1;
+                    background: $brand-color-1;
+                    color: #fff;
+                    transition: 0.5s;
+                }
+            }
         }
         &__close {
             position: relative;

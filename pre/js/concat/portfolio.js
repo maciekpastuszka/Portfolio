@@ -17,15 +17,6 @@ define('portfolio', ['ajax'], function (ajax) {
         screen.classList.toggle("is-phone");
     });
 
-    //portfolio show more
-    var portfolio__more = document.getElementById("portfolio__more"),
-        portfolio__element = document.querySelectorAll(".portfolio__element");
-    portfolio__more.addEventListener("click", function () {
-        for (i = 0; i < portfolio__element.length; i++) {
-            portfolio__element[i].classList.remove("is-display-none");
-        }
-        this.style.display = "none";
-    });
 
     function get_realization(id) {
         ajax({
