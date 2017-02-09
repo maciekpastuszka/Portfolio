@@ -4,29 +4,29 @@ define('paralax', function () {
         header = document.getElementById('header');
 
     var elements = [{
-            id: 'layer0',
-            maxrange: -3
-},
+        id: 'layer0',
+        maxrange: -3
+    },
         {
             id: 'layer1',
             maxrange: 5
-},
+        },
         {
             id: 'layer2',
             maxrange: 7
-},
+        },
         {
             id: 'layer3',
             maxrange: 10
-},
+        },
         {
             id: 'layer4',
             maxrange: 12
-},
+        },
         {
             id: 'layer5',
             maxrange: 16
-}];
+        }];
 
     var horizontalParalax = function (e) {
         var pageX = e.pageX;
@@ -54,6 +54,12 @@ define('paralax', function () {
                 horizontalParalax(event);
             }
         }, 50);
+    };
+
+    var heroZoomOut = function() {
+      //on window load
+
+        //mouse event
     };
 
     var events = function () {
