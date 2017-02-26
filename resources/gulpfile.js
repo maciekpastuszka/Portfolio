@@ -15,19 +15,26 @@ var imagemin = require('gulp-imagemin');
 var reload = browserSync.reload();
 
 var sourcemaps = require('gulp-sourcemaps');
+var runSequence = require('run-sequence');
 
 /*----config ---*/
 var JS_SRC = 'js';
 var JS_DEST = '../public/js';
 
-var SASS_SRC = 'scss';
+var SASS_SRC = 'css';
 var CSS_DEST = '../public/css';
 
 var IMG_SRC = 'img/*';
 var IMG_DEST = '../public/img';
 
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', function (callback) {
+    runSequence(
+        'css',
+        'js',
+        callback
+    );
+});
 
 gulp.task('js', function () {
     return gulp.src([
@@ -55,7 +62,7 @@ gulp.task('images', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(SASS_SRC + '/*.scss')
+    var stream = gulp.src(SASS_SRC + '/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
@@ -65,6 +72,11 @@ gulp.task('css', function () {
         .pipe(minifyCSS())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(CSS_DEST));
+    return stream;
+});
+
+gulp.task('reload', function () {
+    browserSync.reload()
 });
 
 
@@ -77,8 +89,7 @@ gulp.task('sync', ['css', 'js'], function () {
             baseDir: '../public'
         }
     });
-    gulp.watch(SASS_SRC + "/**", ['css']);
-    gulp.watch(SASS_SRC + "/**").on('change', browserSync.reload);
+    gulp.watch(SASS_SRC + "/**", ['css', 'reload']);
     gulp.watch(JS_SRC + "/**", ['js']);
     gulp.watch(JS_SRC + "/**").on('change', browserSync.reload);
     gulp.watch("../public/*.html").on('change', browserSync.reload);

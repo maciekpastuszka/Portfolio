@@ -22,7 +22,8 @@
     "purify-css": "^1.1.9"
   },
   "devDependencies": {
-    "gulp-uncss": "^1.0.5"
+    "gulp-uncss": "^1.0.5",
+    "run-sequence": "^1.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

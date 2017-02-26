@@ -28,6 +28,8 @@ define('paralax', function () {
             maxrange: 16
         }];
 
+    var layerZoom = header.querySelectorAll('.layer--hidden');
+
     var horizontalParalax = function (e) {
         var pageX = e.pageX;
         for (i = 0; i < elements.length; i++) {
@@ -56,18 +58,15 @@ define('paralax', function () {
         }, 50);
     };
 
-    var heroZoomOut = function() {
-      //on window load
-
-        //mouse event
-    };
-
-    var events = function () {
-        mouseEvent();
+    var heroZoomOut = function () {
+        for (var i = 0; i < layerZoom.length; i++) {
+            layerZoom[i].classList.remove('layer--hidden');
+        }​
     };
 
     var init = function () {
-        events();
+        window.onload = heroZoomOut();
+        mouseEvent();
     };
 
     init();
