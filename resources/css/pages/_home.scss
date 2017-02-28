@@ -62,6 +62,13 @@ Learning
   }
 }
 
+.project__element {
+  display: flex;
+  width: 200px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /*=============================================
 Portfolio
 =============================================*/
