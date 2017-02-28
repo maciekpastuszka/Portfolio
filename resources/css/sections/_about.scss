@@ -1,0 +1,31 @@
+/*=============================================
+Home
+=============================================*/
+
+.about {
+  background-image: url('../img/about_bg-d.jpg');
+  background-position: left;
+  background-size: cover;
+  &__article {
+    font-size: 1.3em;
+  }
+  &__skills {
+    display: flex;
+    padding-top: 1.5em;
+    font-size: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include rwd(small) {
+      font-size: 3em;
+    }
+    .icon {
+      margin: 0.3em 0.1em;
+    }
+  }
+}
+
+.about__icon {
+  width: 3em;
+  height: 3em;
+}
+
