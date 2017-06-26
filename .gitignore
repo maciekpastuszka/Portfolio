@@ -1,5 +1,6 @@
-resources/node_modules
+node_modules/
 public/css
 public/js
-public/config.php
-.idea
+public/img
+.idea/
+
