@@ -1,112 +1,112 @@
 
-.header {
+.hero {
   overflow: hidden;
   position: relative;
   height: 100vh;
   background-color: #210a34;
-  &__container {
+}
+
+.hero__container {
+  transition: 2s;
+  max-width: 100%;
+  height: inherit;
+  z-index: 9;
+  color: #fff;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 1em;
+  flex-wrap: wrap;
+  &.is-vr {
     transition: 2s;
-    max-width: 100%;
-    height: inherit;
-    z-index: 9;
-    color: #fff;
-    position: relative;
-    top: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0 1em;
-    flex-wrap: wrap;
-    &.is-vr {
-      transition: 2s;
-      transform: translateY(100%);
-    }
+    transform: translateY(100%);
   }
-  &__title {
-    padding: 80px 0 0;
-    text-shadow: 0 0 4px #242424;
-    @include rwd(medium) {
-      padding: 0;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0;
-      text-align: center;
-      line-height: 1.2em;
-      @include rwd(small) {
-        font-size: 4rem;
-      }
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 2rem;
-      text-align: center;
-    }
-    span {
-      color: $brand-color-1;
-      font-size: 0.7em;
-    }
+}
+
+.hero__header {
+  padding: 80px 0 0;
+  text-shadow: 0 0 4px #242424;
+  text-align: center;
+  @include rwd(medium) {
+    padding: 0;
   }
-  &__buttons {
-    flex: 1 100%;
-    margin-bottom: 40px;
-    text-align: center;
-    .btn {
-      display: inline-block;
-      margin: 10px 10px;
-      font-size: 1.2em;
-      position: relative;
-      i {
-        max-width: 1.5em;
-        max-height: 1.5em;
-        position: absolute;
-        left: 0.7em;
-      }
-      &--fill {
-        padding-left: 3em;
-      }
-    }
+}
+
+.hero__header-title {
+  margin-bottom: 0;
+}
+
+.hero__header-subtitle {
+
+}
+
+.hero__buttons {
+  flex: 1 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero__buttons-btn {
+  display: inline-block;
+  margin: 10px 10px;
+  font-size: 1.2em;
+  position: relative;
+}
+
+.hero__buttons-icon {
+  max-width: 1.5em;
+  max-height: 1.5em;
+  position: absolute;
+  left: 0.7em;
+}
+
+.layer {
+  transition: 0.5s ease-out;
+  position: absolute;
+  top: 0;
+  width: 120%;
+  height: 100%;
+  transform: translateX(-10%);
+  &--gradient {
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
   }
-  .layer {
-    transition: 0.5s ease-out;
-    position: absolute;
-    top: 0;
-    width: 120%;
-    height: 100%;
-    transform: translateX(-10%);
-    &--gradient {
-      background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
-    }
-    .glass {
-      background: #ffffff;
-      opacity: 0.15;
-      width: 200px;
-      height: 1000px;
-      transform: rotate(-45deg);
-      margin: -200px 400px;
-    }
-    &--hidden {
-      opacity: 0;
-    }
+  .glass {
+    background: #ffffff;
+    opacity: 0.15;
+    width: 200px;
+    height: 1000px;
+    transform: rotate(-45deg);
+    margin: -200px 400px;
   }
-  #layer0 {
-    @include layer("lay0.png");
+  &--hidden {
+    opacity: 0;
   }
-  #layer1 {
-    @include layer("lay1.svg");
-  }
-  #layer2 {
-    @include layer("lay2.svg");
-  }
-  #layer3 {
-    @include layer("lay3.svg");
-  }
-  #layer4 {
-    @include layer("lay4.svg");
-  }
-  #layer5 {
-    @include layer("lay5.svg");
-  }
+}
+
+#layer0 {
+  @include layer("lay0.png");
+}
+
+#layer1 {
+  @include layer("lay1.svg");
+}
+
+#layer2 {
+  @include layer("lay2.svg");
+}
+
+#layer3 {
+  @include layer("lay3.svg");
+}
+
+#layer4 {
+  @include layer("lay4.svg");
+}
+
+#layer5 {
+  @include layer("lay5.svg");
 }
 
 @keyframes loader {

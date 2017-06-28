@@ -4,22 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         Maciej Pastuszka | Portfolio
     </title>
-
-    <!--
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-
-    <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
-    <meta name="theme-color" content="#232731">
--->
     <link rel='stylesheet' href='css/main.css' type='text/css' media='all'>
 </head>
 
@@ -30,6 +18,7 @@
         <a href="/" class="main-nav__logo">Maciej Pastuszka</a>
 
         <div class="main-nav__circle"></div>
+
         <button class="main-nav__toggle">
             <span></span>
         </button>
@@ -40,8 +29,8 @@
                 <li class="main-nav__item"><a href="#skills">Skills</a></li>
                 <li class="main-nav__item"><a href="#portfolio">Realizations</a></li>
                 <li class="main-nav__item"><a href="#contact">Contact</a></li>
-
             </ul>
+
             <ul class="main-nav__social">
                 <li class="main-nav__icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank"><i
                         class="icon icon--facebook">Facebook</i></a></li>
@@ -54,17 +43,19 @@
     </div>
 </nav>
 
-<header id="header" class="header">
+<header id="header" class="hero">
     <div id="vr__container" class="vr__container"></div>
-    <div class="header__container">
 
-        <div class="header__title">
-            <h1>Hi, I'm Front-end Developer</h1>
-            <h2>Maciej Pastuszka</h2>
+    <div class="hero__container">
+        <div class="hero__header">
+            <h1 class="h1 hero__header-title">Hi, I'm Front-end Developer</h1>
+            <h2 class="h3 hero__header-subtitle">Maciej Pastuszka</h2>
         </div>
-        <div class="header__buttons">
-            <a href="#portfolio" class="btn btn--transparent" role="link"> Realizations</a>
-            <button class="btn btn--fill" role="button" id="vrversion"><i class="icon icon--vr"></i> VR Version
+
+        <div class="hero__buttons">
+            <a href="#portfolio" class="btn btn--transparent hero__buttons-btn" role="link"> Realizations</a>
+            <button class="btn btn--fill hero__buttons-btn" role="button" id="vrversion"><i
+                    class="icon icon--vr hero__buttons-icon"></i> VR Version
             </button>
         </div>
     </div>
@@ -82,32 +73,39 @@
 </header>
 
 <main>
-    <section class="about padding" id="about">
+    <section class="section section--padding about " id="about">
         <div class="container">
             <header>
-                <h2 class="section__title">About me</h2>
+                <h2 class="h2 section__title">About me</h2>
             </header>
-            <picture class="d-3 t-6 m-12">
-                <img src="/img/me.jpg" alt="About me" class="is-circle is-responsive">
-            </picture>
-            <article class="about__article d-9 t-6 m-12">
+            <div class="row">
+                <picture class="md-4 sm-6 xs-12">
+                    <img src="/img/me.jpg" alt="About me" class="about__image">
+                </picture>
+                <article class="about__article md-8 sm-6 xs-12">
 
-                <p>Hi, I'm Front-end developer. The most important for me are <strong>quality of code</strong>, <strong>communication</strong> and <strong>learning new things</strong>.
-                    I value experience exchange that's why I like to <strong>work in team</strong> and often I take part in <strong>local IT events</strong></p>
+                    <p>Hi, I'm Front-end developer. The most important for me are <strong>quality of code</strong>,
+                        <strong>communication</strong> and <strong>learning new things</strong>.
+                        I value experience exchange that's why I like to <strong>work in team</strong> and often I take
+                        part in <strong>local IT events</strong></p>
 
-                <p>I'am connected with IT industry since 2009 when at the first year of study I worked as a graphic designer.
-                    Since that time I had been searching my path, I tried different specialization from as I mentioned designer through web developer to CIO at startup.
-                    Additionally while studying I attended a students organization in which I was Vice prezident marketing and IT knowledge I translated into marketing activities. </p>
+                    <p>I'am connected with IT industry since 2009 when at the first year of study I worked as a graphic
+                        designer.
+                        Since that time I had been searching my path, I tried different specialization from as I
+                        mentioned designer through web developer to CIO at startup.
+                        Additionally while studying I attended a students organization in which I was Vice prezident
+                        marketing and IT knowledge I translated into marketing activities. </p>
 
-                <p>Above experience, both as a regular employee and also freelancer drove me to the front-end developer path, where I have been focusing for almost two years.</p>
+                    <p>Above experience, both as a regular employee and also freelancer drove me to the front-end
+                        developer path, where I have been focusing for almost two years.</p>
 
-                <a class="btn btn--pink-t" role="link" href="/maciejpastuszka.pdf"> Download CV</a>
-            </article>
-
+                    <a class="btn btn--pink-t" role="link" href="/maciejpastuszka.pdf"> Download CV</a>
+                </article>
+            </div>
             <div class="skills" id="skills">
 
-                <div class="skills__section">
-                    <h3>Very good</h3>
+                <div class="skills__section md-4">
+                    <h3 class="h4">Very good</h3>
                     <ul class="skill-list">
                         <li class="skill-list__element">HTML5</li>
                         <li class="skill-list__element">CSS3, Sass</li>
@@ -117,8 +115,8 @@
                     </ul>
                 </div>
 
-                <div class="skills__section">
-                    <h3>Intermediate</h3>
+                <div class="skills__section md-4">
+                    <h3 class="h4">Intermediate</h3>
                     <ul class="skill-list">
                         <li class="skill-list__element">JS ES6</li>
                         <li class="skill-list__element">React</li>
@@ -127,8 +125,8 @@
                     </ul>
                 </div>
 
-                <div class="skills__section">
-                    <h3>Basic</h3>
+                <div class="skills__section md-4">
+                    <h3 class="h4">Basic</h3>
                     <ul class="skill-list">
                         <li class="skill-list__element">Unit test, Karma</li>
                         <li class="skill-list__element">Redux</li>
@@ -143,18 +141,8 @@
                     </ul>
                 </div>
 
-                <div class="skills__section">
-                    <h3>Soft skills</h3>
-                    <ul class="skill-list">
-                        <li class="skill-list__element">Public speaking</li>
-                        <li class="skill-list__element">Team player</li>
-                        <li class="skill-list__element">Team management</li>
-                        <li class="skill-list__element">English B2</li>
-                    </ul>
-                </div>
-
-                <div class="skills__section">
-                    <h3>Other</h3>
+                <div class="skills__section md-6">
+                    <h3 class="h4">Other</h3>
                     <ul class="skill-list">
                         <li class="skill-list__element">BEM</li>
                         <li class="skill-list__element">ITCSS</li>
@@ -172,61 +160,77 @@
                         <li class="skill-list__element">Web storm</li>
                     </ul>
                 </div>
+
+                <div class="skills__section md-6">
+                    <h3 class="h4">Soft skills</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list__element">Public speaking</li>
+                        <li class="skill-list__element">Team player</li>
+                        <li class="skill-list__element">Team management</li>
+                        <li class="skill-list__element">Goal oriented</li>
+                        <li class="skill-list__element">English B2</li>
+                    </ul>
+                </div>
+
+
             </div>
         </div>
     </section>
 
-    <section class="learning padding-small">
+    <section class="section section--padding learning">
         <header>
-            <h2 class="section__title">
+            <h2 class="h2 section__title">
                 Development path
             </h2>
         </header>
         <div class="container">
-            <section class="learning__stage d-4 t-6 m-12">
-                <h3 class="learning__stage__title">
-                    Currently
-                </h3>
-                <ul class="learning__stage__list">
-                    <li>React</li>
-                    <li>Redux</li>
-                    <li>ES6</li>
-                </ul>
-            </section>
-            <section class="learning__stage d-4 t-6 m-12">
-                <h3 class="learning__stage__title">
-                    Closest future
-                </h3>
-                <ul class="learning__stage__list">
-                    <li>React</li>
-                    <li>Redux</li>
-                    <li>ES6</li>
-                </ul>
-            </section>
-            <section class="learning__stage d-4 t-12 m-12">
-                <h3 class="learning__stage__title">
-                    Further future
-                </h3>
-                <ul class="learning__stage__list">
-                    <li>Unit tests</li>
-                    <li>TDD</li>
-                </ul>
-            </section>
+            <div class="row">
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="learning__stage__title">
+                        Currently
+                    </h3>
+                    <ul class="learning__stage__list">
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>ES6</li>
+                    </ul>
+                </section>
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="learning__stage__title">
+                        Closest future
+                    </h3>
+                    <ul class="learning__stage__list">
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>ES6</li>
+                    </ul>
+                </section>
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="learning__stage__title">
+                        Further future
+                    </h3>
+                    <ul class="learning__stage__list">
+                        <li>Unit tests</li>
+                        <li>TDD</li>
+                    </ul>
+                </section>
+            </div>
         </div>
     </section>
 
 
-    <section class="projects" id="projects">
+    <section class="section section--padding projects" id="projects">
         <header>
-            <h1 class="section__title">
+            <h1 class="h2 section__title">
                 Open source projects
             </h1>
 
-            <p class="section__subtitle">A few sandbox project created for skills improvement and testing new
+            <p class="h4 section__subtitle">A few sandbox project created for skills improvement and testing new
                 solutions.</p>
         </header>
 
-        <div class="projects__container">
+        <div class="container projects__container">
+
             <div class="project">
                 <div class="project__technologies">
                     <i class="icon icon--html"></i>
@@ -281,12 +285,12 @@
     </section>
 
 
-    <section class="portfolio" id="portfolio">
+    <section class="section section--padding portfolio " id="portfolio">
         <header>
-            <h2 class="section__title">
+            <h2 class="h2 section__title">
                 Sample commercial projects
             </h2>
-            <p class="portfolio__description">Currently I do this kind of project very rarely because I prefer to work
+            <p class="h4 section__subtitle">Currently I do this kind of project very rarely because I prefer to work
                 on more complex solutions that requires team engagement. </p>
         </header>
 
@@ -312,11 +316,6 @@
                 <a href="http://nutricus.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
             </div>
 
-            <div class="portfolio__element portfolio__element--panelnutricus">
-                <h3 class="title"><a href="https://www.panel.nutricus.pl/" target="_blank">Panel Nutricus</a></h3>
-                <a href="https://www.panel.nutricus.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
-
             <div class="portfolio__element portfolio__element--athlestat">
                 <h3 class="title"><a href="http://www.athlestat.pl/" target="_blank">Athlestat</a></h3>
                 <a href="http://www.athlestat.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
@@ -325,11 +324,6 @@
             <div class="portfolio__element portfolio__element--dermashop">
                 <h3 class="title"><a href="http://dermashop.pl/" target="_blank">Dermashop</a></h3>
                 <a href="http://dermashop.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
-
-            <div class="portfolio__element portfolio__element--magazynpoc">
-                <h3 class="title"><a href="http://www.magazyn-poc.pl/">Magazyn POC</a></h3>
-                <a href="http://www.magazyn-poc.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
             </div>
 
             <div class="portfolio__element portfolio__element--starachowicka">
@@ -348,7 +342,7 @@
 
 <footer class="footer" id="contact">
     <div class="container">
-        <h2 class="section__title">Contact</h2>
+        <h2 class="h2 section__title">Contact</h2>
         <div class="footer__contact">
             <span><i class="icon icon--phone"></i> +48 796 946 849</span>
             <span><i class="icon icon--mail"></i> <a
