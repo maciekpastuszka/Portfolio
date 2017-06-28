@@ -1,0 +1,28 @@
+.project {
+
+}
+
+.project__technologies {
+  padding: 15px;
+  background-color: $light-grey;
+  border: 1px solid darken($light-grey, 10%);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__title {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.project__subtitle {
+  text-align: center;
+}
+
+.project__subtitle-technologies {
+  color: $mid-grey;
+  display: block;
+}
