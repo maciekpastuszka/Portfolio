@@ -1,6 +1,5 @@
-require(['ajax']);
-require(['menu']);
-require(['paralax']);
-require(['smoothscroll']);
-require(['portfolio']); //dependency ajax
-require(['vr']); //dependency ajax
+import Navigation from './components/nav';
+
+
+let nav = new Navigation(document.querySelector('.js-main-navd'));
+nav.init();
