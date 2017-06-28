@@ -1,0 +1,30 @@
+.section {}
+
+.section--gray {
+  background: $light-grey;
+}
+
+.section--padding {
+  padding: 2em 0 3em 0;
+  @include rwd(small) {
+    padding: 4em 0 6em 0;
+  }
+}
+
+.section--padding-small {
+  padding: 2em 0 3em 0;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2.5em;
+  &:after {
+    display: block;
+    margin: 1.25rem auto;
+    max-width: 5rem;
+    height: 2px;
+    background-color: $brand-color-1;
+    color: $brand-color-1;
+    content: " ";
+  }
+}

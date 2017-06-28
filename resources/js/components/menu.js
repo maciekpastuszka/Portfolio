@@ -1,3 +1,36 @@
+class Navigation {
+    constructor(nav) {
+        this.nav = nav;
+        this.nav_toggle = nav.querySelector('.main-nav__toggle');
+        this.nav_colapse = nav.querySelector('.main-nav__colapse');
+        this.nav_circle = nav.querySelector('.main-nav__circle');
+    }
+
+    menuMove() {
+        const scroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+
+
+        if (scroll >= 20) {
+            this.nav.classList.add('is-move');
+        } else {
+            this.nav.classList.remove('is-move');
+        }
+    }
+
+    events() {
+        window.addEventListener('scroll', () => {
+           this.menuMove();
+        });
+    }
+
+    init() {
+        events();
+    }
+}
+
+export default Navigation;
+
+
 define('menu', function () {
     var main_nav = document.querySelector('.main-nav'),
         nav_toggle = main_nav.querySelector('.main-nav__toggle'),
@@ -7,8 +40,8 @@ define('menu', function () {
     var menuMove = function () {
         var scroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         /*
-        if scroll is more than 20 change navigation bar
-        */
+         if scroll is more than 20 change navigation bar
+         */
         if (scroll >= 20) {
             main_nav.classList.add('is-move');
         } else {

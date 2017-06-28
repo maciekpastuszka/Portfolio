@@ -1,0 +1,20 @@
+/*
+a
+a:hover
+ */
+
+a, button {
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover {
+    transition: 0.5s;
+
+  }
+}
+
+a {
+  color: $brand-color-1;
+  &:hover {
+    color: $brand-color-2;
+  }
+}

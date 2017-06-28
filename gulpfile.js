@@ -48,7 +48,6 @@ gulp.task('default', function () {
 gulp.task('css', function () {
     return gulp.src(src + 'css/main.scss')
         .pipe(sassGlob())
-        .pipe(plumber({errorHandler: notify.onError({title: "CSS", message: 'Error!'})}))
         .pipe(sourcemaps.init())
         .pipe(sass({
             precision: 6
@@ -59,7 +58,6 @@ gulp.task('css', function () {
         .pipe(size({title: 'Styles'}))
         .pipe(gulp.dest(dest + 'css'))
         .pipe(notify({title: "CSS", message: 'Ready!', onLast: true}))
-        .pipe(plumber.stop());
 });
 
 gulp.task('js', function () {
@@ -130,7 +128,6 @@ gulp.task('sync', ['default'], function () {
             }
         });
     } else {
-        //Jeśli nie ma zdefiniowanej domeny odpal serwer w katalogu public
         browserSync.init({
             server: {
                 baseDir: 'public',
@@ -141,13 +138,11 @@ gulp.task('sync', ['default'], function () {
         });
     }
     gulp.watch(src + 'css/**', function () {
-        //zapobiega przeładowaniu przeglądarki przed końcem transpilacji
         runSequence('css', function () {
             browserSync.reload();
         });
     });
     gulp.watch([src + 'js/*.js', src + 'js/components/*.js'], function () {
-        //zapobiega przeładowaniu przeglądarki przed końcem transpilacji
         runSequence('js-scripts', 'js-build', function () {
             browserSync.reload();
         });
