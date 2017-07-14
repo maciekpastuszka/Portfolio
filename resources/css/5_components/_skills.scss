@@ -1,13 +1,12 @@
 .skills {
   @include row();
-  padding-top: 50px;
 }
 
 .skills__section {
-margin: 15px 0;
+  margin: 15px 0;
 }
 
-.skill-list {
+.skills__list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -16,7 +15,7 @@ margin: 15px 0;
   margin-top: 10px;
 }
 
-.skill-list__element {
+.skills__list-element {
   background-color: $light-grey;
   padding: 5px 20px;
   margin: 3px;
