@@ -71,3 +71,15 @@ button {
     color: #fff;
   }
 }
+
+.btn--secondary {
+  border: 1px solid #fff;
+  color:  #fff;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid darken($brand-color-1, 10%);
+    background:  darken($brand-color-1, 10%);
+    color: #fff;
+  }
+}

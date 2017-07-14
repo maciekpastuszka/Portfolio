@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +10,11 @@
     <link rel='stylesheet' href='css/main.css' type='text/css' media='all'>
 </head>
 
-
 <body>
 <nav class="main-nav js-main-nav">
     <div class="container">
-        <a href="/" class="main-nav__logo">Maciej Pastuszka</a>
+        <!-- todo logo -->
+        <a href="/" class="main-nav__logo"><h1>Front-end Developer Maciej Pastuszka</h1></a>
 
         <div class="main-nav__circle"></div>
 
@@ -25,18 +24,18 @@
 
         <div class="main-nav__colapse">
             <ul class="main-nav__list" role="navigation">
-                <li class="main-nav__item"><a href="#about">About me</a></li>
-                <li class="main-nav__item"><a href="#skills">Skills</a></li>
-                <li class="main-nav__item"><a href="#portfolio">Realizations</a></li>
-                <li class="main-nav__item"><a href="#contact">Contact</a></li>
+                <li class="main-nav__list-item"><a href="#about" class="main-nav__list-link">About me</a></li>
+                <li class="main-nav__list-item"><a href="#skills" class="main-nav__list-link">Skills</a></li>
+                <li class="main-nav__list-item"><a href="#portfolio" class="main-nav__list-link">Realizations</a></li>
+                <li class="main-nav__list-item"><a href="#contact" class="main-nav__list-link">Contact</a></li>
             </ul>
 
             <ul class="main-nav__social">
-                <li class="main-nav__icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank"><i
+                <li class="main-nav__social-icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank"><i
                         class="icon icon--facebook">Facebook</i></a></li>
-                <li class="main-nav__icon"><a href="https://www.linkedin.com/in/maciejpastuszka" target="_blank"><i
+                <li class="main-nav__social-icon"><a href="https://www.linkedin.com/in/maciejpastuszka" target="_blank"><i
                         class="icon icon--linkedin">Linkedin</i></a></li>
-                <li class="main-nav__icon"><a href="https://github.com/maciekpastuszka" target="_blank"><i
+                <li class="main-nav__social-icon"><a href="https://github.com/maciekpastuszka" target="_blank"><i
                         class="icon icon--github">Github</i></a></li>
             </ul>
         </div>
@@ -48,13 +47,13 @@
 
     <div class="hero__container">
         <div class="hero__header">
-            <h1 class="h1 hero__header-title">Hi, I'm Front-end Developer</h1>
-            <h2 class="h3 hero__header-subtitle">Maciej Pastuszka</h2>
+            <span class="h1 hero__header-title">Hi, I'm Front-end Developer</span>
+            <span class="h3 hero__header-subtitle">Maciej Pastuszka</span>
         </div>
 
         <div class="hero__buttons">
-            <a href="#portfolio" class="btn btn--transparent hero__buttons-btn" role="link"> Realizations</a>
-            <button class="btn btn--fill hero__buttons-btn" role="button" id="vrversion"><i
+            <a href="#portfolio" class="btn btn--secondary hero__buttons-btn" role="link"> Realizations</a>
+            <button class="btn btn--default btn--default-fill hero__buttons-btn" role="button" id="vrversion"><i
                     class="icon icon--vr hero__buttons-icon"></i> VR Version
             </button>
         </div>
@@ -78,32 +77,29 @@
             <header>
                 <h2 class="h2 section__title">About me</h2>
             </header>
+
             <div class="row">
                 <picture class="md-4 sm-6 xs-12">
                     <img src="/img/me.jpg" alt="About me" class="about__image">
                 </picture>
-                <article class="about__article md-8 sm-6 xs-12">
 
+                <div class="about__article md-8 sm-6 xs-12">
                     <p>Hi, I'm Front-end developer. The most important for me are <strong>quality of code</strong>,
                         <strong>communication</strong> and <strong>learning new things</strong>.
                         I value experience exchange that's why I like to <strong>work in team</strong> and often I take
                         part in <strong>local IT events</strong></p>
-
                     <p>I'am connected with IT industry since 2009 when at the first year of study I worked as a graphic
                         designer.
                         Since that time I had been searching my path, I tried different specialization from as I
                         mentioned designer through web developer to CIO at startup.
                         Additionally while studying I attended a students organization in which I was Vice prezident
                         marketing and IT knowledge I translated into marketing activities. </p>
-
                     <p>Above experience, both as a regular employee and also freelancer drove me to the front-end
                         developer path, where I have been focusing for almost two years.</p>
-
-                    <a class="btn btn--pink-t" role="link" href="/maciejpastuszka.pdf"> Download CV</a>
-                </article>
+                    <a class="btn btn--default" role="link" href="/maciejpastuszka.pdf"> Download CV</a>
+                </div>
             </div>
             <div class="skills" id="skills">
-
                 <div class="skills__section md-4">
                     <h3 class="h4">Very good</h3>
                     <ul class="skill-list">
@@ -171,8 +167,6 @@
                         <li class="skill-list__element">English B2</li>
                     </ul>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -183,6 +177,7 @@
                 Development path
             </h2>
         </header>
+
         <div class="container">
             <div class="row">
                 <section class="learning__stage md-4 sm-6 xs-12">
@@ -195,6 +190,7 @@
                         <li>ES6</li>
                     </ul>
                 </section>
+
                 <section class="learning__stage md-4 sm-6 xs-12">
                     <h3 class="learning__stage__title">
                         Closest future
@@ -205,6 +201,7 @@
                         <li>ES6</li>
                     </ul>
                 </section>
+
                 <section class="learning__stage md-4 sm-6 xs-12">
                     <h3 class="learning__stage__title">
                         Further future
@@ -218,19 +215,16 @@
         </div>
     </section>
 
-
     <section class="section section--padding projects" id="projects">
         <header>
-            <h1 class="h2 section__title">
+            <h2 class="h2 section__title">
                 Open source projects
-            </h1>
-
+            </h2>
             <p class="h4 section__subtitle">A few sandbox project created for skills improvement and testing new
                 solutions.</p>
         </header>
 
         <div class="container projects__container">
-
             <div class="row">
             <div class="project md-3">
                 <div class="project__technologies">
@@ -239,17 +233,18 @@
                     <i class="icon icon--js"></i>
                     VR
                 </div>
+
                 <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">maciejpastuszka.pl</a>
                 </h3>
                 <h4 class="project__subtitle">This site. <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span></h4>
             </div>
-
 
             <div class="project md-3">
                 <div class="project__technologies">
                     <i class="icon icon--gulp"></i>
                     <i class="icon icon--sass"></i>
                 </div>
+
                 <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Starter
                     pack</a>
                 </h3>
@@ -263,6 +258,7 @@
                     redux
                     es6
                 </div>
+
                 <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Youtube
                     Player</a>
                 </h3>
@@ -274,16 +270,15 @@
                     ionic
                     angular
                 </div>
+
                 <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Budget</a>
                 </h3>
                 <h4 class="project__subtitle">Lorem ipsum</h4>
             </div>
             </div>
         </div>
-
-        <a class="btn btn--pink-t" role="link" href="/maciejpastuszka.pdf"> More on github</a>
+        <a class="btn btn--primary btn--primary-fill" role="link" href="/maciejpastuszka.pdf"> More on github</a>
     </section>
-
 
     <section class="section section--padding portfolio " id="portfolio">
         <header>
@@ -295,7 +290,6 @@
         </header>
 
         <div class="portfolio__container">
-
             <div class="portfolio__element portfolio__element--pokaz">
                 <h3 class="title"><a href="http://swimmingchallenge.pl/" target="_blank">Pokaz Slajdów</a></h3>
                 <a href="http://pokazslajdow.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
@@ -339,7 +333,6 @@
     </section>
 </main>
 
-
 <footer class="footer" id="contact">
     <div class="container">
         <h2 class="h2 section__title">Contact</h2>
@@ -348,6 +341,7 @@
             <span><i class="icon icon--mail"></i> <a
                     href="mailto:maciej.pastuszka@gmail.com">maciej.pastuszka@gmail.com</a></span>
         </div>
+
         <ul class="footer__social">
             <li class="footer__icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank"><i
                     class="icon icon--facebook"></i> Facebook</a></li>
@@ -357,11 +351,11 @@
                     class="icon icon--github"></i> Github</a></li>
         </ul>
     </div>
+
     <div class="footer__copy">
         <a class="footer__top" href="#header"><i class="icon icon--arrow"></i></a>© 2017 | Maciej Pastuszka
     </div>
 </footer>
-
 
 <script src="js/scripts.js"></script>
 
@@ -382,5 +376,4 @@
     <!--ga('send', 'pageview');-->
 <!--</script>-->
 </body>
-
 </html>
