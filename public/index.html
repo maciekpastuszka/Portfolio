@@ -14,7 +14,8 @@
 <nav class="main-nav js-main-nav">
     <div class="container">
         <!-- todo logo -->
-        <a href="/" class="main-nav__logo"><h1>Front-end Developer Maciej Pastuszka</h1></a>
+        <a href="/" class="main-nav__logo"><img src="/img/logo.png">
+            <h1>Front-end Developer Maciej Pastuszka</h1></a>
 
         <div class="main-nav__circle"></div>
 
@@ -43,7 +44,7 @@
 </nav>
 
 <header id="header" class="hero">
-    <div id="vr__container" class="vr__container"></div>
+    <div id="vr__container" class="hero__vr hero-vr"></div>
 
     <div class="hero__container">
         <div class="hero__header">
@@ -51,24 +52,26 @@
             <span class="h3 hero__header-subtitle">Maciej Pastuszka</span>
         </div>
 
-        <div class="hero__buttons">
-            <a href="#portfolio" class="btn btn--secondary hero__buttons-btn" role="link"> Realizations</a>
-            <button class="btn btn--default btn--default-fill hero__buttons-btn" role="button" id="vrversion"><i
+        <div class="hero__footer">
+            <a href="#portfolio" class="btn btn--secondary hero__btn" role="link"> Realizations</a>
+            <button class="btn btn--default btn--default-fill hero__btn hero__btn--vr" role="button" id="vrversion"><i
                     class="icon icon--vr hero__buttons-icon"></i> VR Version
             </button>
         </div>
     </div>
 
-    <div class="layer layer--hidden" id="layer0"></div>
-    <div class="layer layer--hidden">
-        <div class="glass"></div>
+    <div class="hero__layers">
+        <div class="layer layer--hidden" id="layer0"></div>
+        <div class="layer layer--hidden">
+            <div class="layer__glass"></div>
+        </div>
+        <div class="layer layer--hidden" id="layer1"></div>
+        <div class="layer layer--hidden" id="layer2"></div>
+        <div class="layer layer--hidden" id="layer3"></div>
+        <div class="layer layer--hidden" id="layer4"></div>
+        <div class="layer layer--hidden" id="layer5"></div>
+        <div class="layer layer--gradient"></div>
     </div>
-    <div class="layer layer--hidden" id="layer1"></div>
-    <div class="layer layer--hidden" id="layer2"></div>
-    <div class="layer layer--hidden" id="layer3"></div>
-    <div class="layer layer--hidden" id="layer4"></div>
-    <div class="layer layer--hidden" id="layer5"></div>
-    <div class="layer layer--gradient"></div>
 </header>
 
 <main>
@@ -226,55 +229,62 @@
 
         <div class="container projects__container">
             <div class="row">
-            <div class="project md-3">
-                <div class="project__technologies">
-                    <i class="icon icon--html"></i>
-                    <i class="icon icon--css3"></i>
-                    <i class="icon icon--js"></i>
-                    VR
+                <div class="project md-3">
+                    <div class="project__technologies">
+                        <i class="icon icon--html"></i>
+                        <i class="icon icon--css3"></i>
+                        <i class="icon icon--js"></i>
+                        VR
+                    </div>
+
+                    <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
+                                                     target="_blank">maciejpastuszka.pl</a>
+                    </h3>
+                    <h4 class="project__subtitle">This site. <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span>
+                    </h4>
                 </div>
 
-                <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">maciejpastuszka.pl</a>
-                </h3>
-                <h4 class="project__subtitle">This site. <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span></h4>
-            </div>
+                <div class="project md-3">
+                    <div class="project__technologies">
+                        <i class="icon icon--gulp"></i>
+                        <i class="icon icon--sass"></i>
+                    </div>
 
-            <div class="project md-3">
-                <div class="project__technologies">
-                    <i class="icon icon--gulp"></i>
-                    <i class="icon icon--sass"></i>
+                    <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
+                                                     target="_blank">Starter
+                        pack</a>
+                    </h3>
+                    <h4 class="project__subtitle">Project starter boilerplate <span
+                            class="project__subtitle-technologies">Sass, ITCSS, Gulp, Browserify</span></h4>
                 </div>
 
-                <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Starter
-                    pack</a>
-                </h3>
-                <h4 class="project__subtitle">Project starter boilerplate <span class="project__subtitle-technologies">Sass, ITCSS, Gulp, Browserify</span></h4>
-            </div>
+                <div class="project md-3">
+                    <div class="project__technologies">
+                        <i class="icon icon--js"></i>
+                        react
+                        redux
+                        es6
+                    </div>
 
-            <div class="project md-3">
-                <div class="project__technologies">
-                    <i class="icon icon--js"></i>
-                    react
-                    redux
-                    es6
+                    <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
+                                                     target="_blank">Youtube
+                        Player</a>
+                    </h3>
+                    <h4 class="project__subtitle">Youtube voice controled player <span
+                            class="project__subtitle-technologies">ES6, React, Redux, Youtube API</span></h4>
                 </div>
 
-                <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Youtube
-                    Player</a>
-                </h3>
-                <h4 class="project__subtitle">Youtube voice controled player <span class="project__subtitle-technologies">ES6, React, Redux, Youtube API</span></h4>
-            </div>
+                <div class="project md-3">
+                    <div class="project__technologies">
+                        ionic
+                        angular
+                    </div>
 
-            <div class="project md-3">
-                <div class="project__technologies">
-                    ionic
-                    angular
+                    <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
+                                                     target="_blank">Budget</a>
+                    </h3>
+                    <h4 class="project__subtitle">Lorem ipsum</h4>
                 </div>
-
-                <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">Budget</a>
-                </h3>
-                <h4 class="project__subtitle">Lorem ipsum</h4>
-            </div>
             </div>
         </div>
         <a class="btn btn--primary btn--primary-fill" role="link" href="/maciejpastuszka.pdf"> More on github</a>
@@ -360,20 +370,20 @@
 <script src="js/scripts.js"></script>
 
 <!--<script>-->
-    <!--(function (i, s, o, g, r, a, m) {-->
-        <!--i['GoogleAnalyticsObject'] = r;-->
-        <!--i[r] = i[r] || function () {-->
-                <!--(i[r].q = i[r].q || []).push(arguments)-->
-            <!--}, i[r].l = 1 * new Date();-->
-        <!--a = s.createElement(o),-->
-            <!--m = s.getElementsByTagName(o)[0];-->
-        <!--a.async = 1;-->
-        <!--a.src = g;-->
-        <!--m.parentNode.insertBefore(a, m)-->
-    <!--})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');-->
+<!--(function (i, s, o, g, r, a, m) {-->
+<!--i['GoogleAnalyticsObject'] = r;-->
+<!--i[r] = i[r] || function () {-->
+<!--(i[r].q = i[r].q || []).push(arguments)-->
+<!--}, i[r].l = 1 * new Date();-->
+<!--a = s.createElement(o),-->
+<!--m = s.getElementsByTagName(o)[0];-->
+<!--a.async = 1;-->
+<!--a.src = g;-->
+<!--m.parentNode.insertBefore(a, m)-->
+<!--})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');-->
 
-    <!--ga('create', 'UA-27018704-9', 'auto');-->
-    <!--ga('send', 'pageview');-->
+<!--ga('create', 'UA-27018704-9', 'auto');-->
+<!--ga('send', 'pageview');-->
 <!--</script>-->
 </body>
 </html>
