@@ -1,24 +1,18 @@
-/*
-.btn
- */
-
 button {
   cursor: pointer;
   outline: none;
   &:active {
-    outline: none;
+    outline: 1px solid $brand-color-2;
   }
 }
-
 
 .btn {
   cursor: pointer;
   display: block;
-  display: block;
   margin: 0.5em auto;
   padding: 0.6em 1em;
   max-width: 12em;
-  border-radius: 0px;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -26,79 +20,54 @@ button {
   &:hover,
   &:focus,
   &:active {
-    color: #fff;
     text-decoration: none;
   }
-  &--fill {
+}
+
+.btn--default {
+  border: 1px solid $brand-color-2;
+  color: $brand-color-2;
+  &:hover,
+  &:focus,
+  &:active {
     border: 1px solid $brand-color-2;
     background: $brand-color-2;
     color: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      border: 1px solid #fff;
-      background: transparent;
-    }
   }
-  &--transparent {
-    border: 1px solid #fff;
-    background: transparent;
+}
+
+.btn--default-fill {
+  background: $brand-color-2;
+  color: #fff;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid darken($brand-color-2, 10%);
+    background: darken($brand-color-2, 10%);
     color: #fff;
-    text-shadow: 0 0 4px #000000;
-    &:hover,
-    &:focus,
-    &:active {
-      text-shadow: none;
-      border: 1px solid $brand-color-1;
-      background: $brand-color-1;
-    }
   }
-  &--green-t {
-    border: 1px solid $brand-color-1;
-    background: transparent;
-    color: $brand-color-1;
-    &:hover,
-    &:focus,
-    &:active {
-      border: 1px solid $brand-color-1;
-      background: $brand-color-1;
-      color: #fff;
-    }
-  }
-  &--green {
+}
+
+.btn--primary {
+  border: 1px solid $brand-color-1;
+  color:  $brand-color-1;
+  &:hover,
+  &:focus,
+  &:active {
     border: 1px solid $brand-color-1;
     background: $brand-color-1;
     color: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      border: 1px solid $brand-color-1;
-      background: transparent;
-      color: $brand-color-1;
-    }
   }
-  &--pink-t {
-    border: 1px solid $brand-color-2;
-    background: transparent;
-    color: $brand-color-2;
-    &:hover,
-    &:focus,
-    &:active {
-      border: 1px solid $brand-color-2;
-      background: $brand-color-2;
-      color: #fff;
-    }
-  }
-  &--pink {
-    border: 1px solid $brand-color-2;
-    background: $brand-color-2;
+}
+
+.btn--primary-fill {
+  background: $brand-color-1;
+  color:  #fff;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid darken($brand-color-1, 10%);
+    background:  darken($brand-color-1, 10%);
     color: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      border: 1px solid $brand-color-2;
-      background: transparent;
-      color: $brand-color-2;
-    }
   }
 }
