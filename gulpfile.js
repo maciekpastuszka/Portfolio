@@ -17,7 +17,8 @@ const sass = require('gulp-sass'),
     cssnano = require('gulp-cssnano'),
     autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
-    sassGlob = require('gulp-sass-glob');
+    sassGlob = require('gulp-sass-glob'),
+    gulpStylelint = require('gulp-stylelint');
 
 /* Image */
 const imagemin = require('gulp-imagemin');
@@ -45,7 +46,18 @@ gulp.task('default', function () {
     );
 });
 
-gulp.task('css', function () {
+gulp.task('css-lint', function () {
+    return gulp.src(src + 'css/5_components/**')
+        .pipe(gulpStylelint({
+            reporters: [
+                {formatter: 'string', console: true}
+            ]
+        }).on('error', function () {
+            console.log('CSS Lint failed');
+        }))
+});
+
+gulp.task('css', ['css-lint'], function () {
     return gulp.src(src + 'css/main.scss')
         .pipe(sassGlob())
         .pipe(sourcemaps.init())
