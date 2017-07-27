@@ -57,7 +57,7 @@ gulp.task('css-lint', function () {
         }))
 });
 
-gulp.task('css', ['css-lint'], function () {
+gulp.task('css', function () {
     return gulp.src(src + 'css/main.scss')
         .pipe(sassGlob())
         .pipe(sourcemaps.init())
