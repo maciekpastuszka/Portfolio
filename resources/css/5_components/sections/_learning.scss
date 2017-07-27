@@ -1,29 +1,25 @@
 .learning {
   background: #59a13e;
   color: #ffffff;
-  &__stage {
-    text-align: center;
-    font-size: 1.2em;
-    &__list {
-      display: flex;
-      padding-left: 0;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: stretch;
-      li {
-        margin: 0.2em 0.2em;
-        padding: 0.3em 0.6em;
-        border: 1px solid #ffffff;
-        transition: 0.3s;
-        flex: 1 auto;
-        &:hover {
-          border: 1px solid #ffffff;
-          background: #ffffff;
-          color: $brand-color-1;
-          transition: 0.5s;
-        }
-      }
-    }
-  }
 }
 
+.learning__stage {
+  text-align: center;
+}
+
+.learning__list {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: stretch;
+}
+
+.learning__list-element {
+  font-size: 1.2em;
+  margin: 0.2em 0.2em;
+  padding: 0.3em 0.6em;
+  border: 1px solid #ffffff;
+  transition: 0.3s;
+  flex: 1 auto;
+}

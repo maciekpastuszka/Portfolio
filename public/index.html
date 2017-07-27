@@ -176,41 +176,41 @@
     <section class="section section--padding learning">
         <header>
             <h2 class="h2 section__title">
-                Development path
+                Learning path
             </h2>
         </header>
 
         <div class="container">
             <div class="row">
                 <section class="learning__stage md-4 sm-6 xs-12">
-                    <h3 class="learning__stage__title">
+                    <h3 class="h4 learning__stage-title">
                         Currently
                     </h3>
-                    <ul class="learning__stage__list">
-                        <li>React</li>
-                        <li>Redux</li>
-                        <li>ES6</li>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">React</li>
+                        <li class="learning__list-element">Redux</li>
+                        <li class="learning__list-element">ES6</li>
                     </ul>
                 </section>
 
                 <section class="learning__stage md-4 sm-6 xs-12">
-                    <h3 class="learning__stage__title">
+                    <h3 class="h4 learning__stage-title">
                         Closest future
                     </h3>
-                    <ul class="learning__stage__list">
-                        <li>React</li>
-                        <li>Redux</li>
-                        <li>ES6</li>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">React</li>
+                        <li class="learning__list-element">Redux</li>
+                        <li class="learning__list-element">ES6</li>
                     </ul>
                 </section>
 
                 <section class="learning__stage md-4 sm-6 xs-12">
-                    <h3 class="learning__stage__title">
+                    <h3 class="h4 learning__stage-title">
                         Further future
                     </h3>
-                    <ul class="learning__stage__list">
-                        <li>Unit tests</li>
-                        <li>TDD</li>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">Unit tests</li>
+                        <li class="learning__list-element">TDD</li>
                     </ul>
                 </section>
             </div>
@@ -239,7 +239,8 @@
                     <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
                                                      target="_blank">maciejpastuszka.pl</a>
                     </h3>
-                    <h4 class="project__subtitle">This site. <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span>
+                    <h4 class="project__subtitle">This site.
+                        <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span>
                     </h4>
                 </div>
 
@@ -250,11 +251,11 @@
                     </div>
 
                     <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
-                                                     target="_blank">Starter
-                        pack</a>
+                                                     target="_blank">Starter pack</a>
                     </h3>
-                    <h4 class="project__subtitle">Project starter boilerplate <span
-                            class="project__subtitle-technologies">Sass, ITCSS, Gulp, Browserify</span></h4>
+                    <h4 class="project__subtitle">Project starter boilerplate
+                        <span class="project__subtitle-technologies">Sass, ITCSS, Gulp, Browserify</span>
+                    </h4>
                 </div>
 
                 <div class="project md-3">
@@ -266,11 +267,11 @@
                     </div>
 
                     <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
-                                                     target="_blank">Youtube
-                        Player</a>
+                                                     target="_blank">Youtube Player</a>
                     </h3>
-                    <h4 class="project__subtitle">Youtube voice controled player <span
-                            class="project__subtitle-technologies">ES6, React, Redux, Youtube API</span></h4>
+                    <h4 class="project__subtitle">Youtube voice controled player
+                        <span class="project__subtitle-technologies">ES6, React, Redux, Youtube API</span>
+                    </h4>
                 </div>
 
                 <div class="project md-3">
@@ -282,14 +283,17 @@
                     <h3 class="h4 project__title"><a href="https://github.com/maciekpastuszka/portfolio/"
                                                      target="_blank">Budget</a>
                     </h3>
-                    <h4 class="project__subtitle">Lorem ipsum</h4>
+                    <h4 class="project__subtitle">Personal finance app
+                        <span class="project__subtitle-technologies">Ionic, Angular</span>
+                    </h4>
                 </div>
             </div>
         </div>
-        <a class="btn btn--primary btn--primary-fill" role="link" href="/maciejpastuszka.pdf"> More on github</a>
+        <a class="btn btn--primary btn--primary-fill" role="link" href="https://github.com/maciekpastuszka"
+           target="_blank"> More on github</a>
     </section>
 
-    <section class="section section--padding portfolio " id="portfolio">
+    <section class="section section--padding portfolio" id="portfolio">
         <header>
             <h2 class="h2 section__title">
                 Sample commercial projects
@@ -299,45 +303,54 @@
         </header>
 
         <div class="portfolio__container">
-            <div class="portfolio__element portfolio__element--pokaz">
-                <h3 class="title"><a href="http://swimmingchallenge.pl/" target="_blank">Pokaz Slajdów</a></h3>
-                <a href="http://pokazslajdow.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://swimmingchallenge.pl/" target="_blank" class="portfolio__element portfolio__element--pokaz">
+                <h3 class="h3 portfolio__elemen-title">Pokaz Slajdów</h3>
+                <span class="portfolio__elemen-desc">Wordpress, Custom CSS, ITCSS, BEM</span>
+                <span class="portfolio__elemen-date">04.2017</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--swimming">
-                <h3 class="title"><a href="http://swimmingchallenge.pl/" target="_blank">Swimming Challenge</a></h3>
-                <a href="http://swimmingchallenge.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://swimmingchallenge.pl/" target="_blank"
+               class="portfolio__element portfolio__element--swimming">
+                <h3 class="h3 portfolio__elemen-title">Swimming Challenge</h3>
+                <span class="portfolio__elemen-desc">Wordpress, Sass, Bootstrap grid</span>
+                <span class="portfolio__elemen-date">02.2016</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--dentysta">
-                <h3 class="title"><a href="http://www.dentysta.lublin.pl/" target="_blank">Dentysta Lublin</a></h3>
-                <a href="http://www.dentysta.lublin.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://www.dentysta.lublin.pl/" target="_blank" class="portfolio__element portfolio__element--dentysta">
+                <h3 class="h3 portfolio__elemen-title">Dentysta Lublin</h3>
+                <span class="portfolio__elemen-desc">Wordpress, Bootstrap</span>
+                <span class="portfolio__elemen-date">01.2016</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--nutricus">
-                <h3 class="title"><a href="http://nutricus.pl/" target="_blank">Nutricus</a></h3>
-                <a href="http://nutricus.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://dermashop.pl/" target="_blank" class="portfolio__element portfolio__element--dermashop">
+                <h3 class="h3 portfolio__elemen-title">Dermashop</h3>
+                <span class="portfolio__elemen-desc">Shoplo</span>
+                <span class="portfolio__elemen-date">11.2015</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--athlestat">
-                <h3 class="title"><a href="http://www.athlestat.pl/" target="_blank">Athlestat</a></h3>
-                <a href="http://www.athlestat.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://www.starachowicka.pl/" target="_blank" class="portfolio__element portfolio__element--starachowicka">
+                <h3 class="h3 portfolio__elemen-title">Gazeta Starachowicka</h3>
+                <span class="portfolio__elemen-desc">Vanilla PHP, Bootstrap</span>
+                <span class="portfolio__elemen-date">01.2015</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--dermashop">
-                <h3 class="title"><a href="http://dermashop.pl/" target="_blank">Dermashop</a></h3>
-                <a href="http://dermashop.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://www.athlestat.pl/" target="_blank" class="portfolio__element portfolio__element--athlestat">
+                <h3 class="h3 portfolio__elemen-title">Athlestat</h3>
+                <span class="portfolio__elemen-desc">Vanilla PHP, Bootstrap</span>
+                <span class="portfolio__elemen-date">12.2014</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--starachowicka">
-                <h3 class="title"><a href="http://www.starachowicka.pl/" target="_blank">Gazeta Starachowicka</a></h3>
-                <a href="http://www.starachowicka.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://nutricus.pl/" target="_blank" class="portfolio__element portfolio__element--nutricus">
+                <h3 class="h3 portfolio__elemen-title">Nutricus</h3>
+                <span class="portfolio__elemen-desc">Wordpress, Bootstrap</span>
+                <span class="portfolio__elemen-date">10.2014</span>
+            </a>
 
-            <div class="portfolio__element portfolio__element--aiesec">
-                <h3 class="title"><a href="http://aiesec.pl/" target="_blank">AIESEC</a></h3>
-                <a href="http://aiesec.pl/" target="_blank"><i class="icon icon--link">Link</i></a>
-            </div>
+            <a href="http://aiesec.pl/" target="_blank" class="portfolio__element portfolio__element--aiesec">
+                <h3 class="h3 portfolio__elemen-title">AIESEC</h3>
+                <span class="portfolio__elemen-desc">Wordpress, Multisite, Foundation</span>
+                <span class="portfolio__elemen-date">02.2013</span>
+            </a>
         </div>
     </section>
 </main>
