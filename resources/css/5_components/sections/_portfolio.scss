@@ -1,173 +1,100 @@
-
 .portfolio {
   background: #ededed;
   padding: 2em 1em 0;
-  &__container {
-    display: flex;
-    margin-top: 3em;
-    flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.portfolio__container {
+  display: flex;
+  margin-top: 3em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.portfolio__element {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1em;
+  height: 10em;
+  font-size: 1.5em;
+  opacity: 1;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  flex-basis: 100%;
+  @include rwd(small) {
+    flex-basis: 48%;
   }
-  &__description {
-    text-align: center;
-    font-size: 1.4em;
+  @include rwd(medium) {
+    flex-basis: 23%;
   }
-  .btn {
+  @include rwd(large) {
+    flex-basis: 18%;
+  }
+  &:before {
     display: block;
-    margin: 2em auto;
-    font-size: 1.5em;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 12, 17, 0);
+    content: "";
+    transition: 0.3s;
   }
-  button {
-    display: table-cell;
-    vertical-align: top;
-  }
-  &__element {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 1em;
-    height: 10em;
-    font-size: 1.5em;
-    opacity: 1;
-    border: 1px solid #e0e0e0;
-    box-sizing: border-box;
-    flex-basis: 100%;
-    @include rwd(small) {
-      flex-basis: 48%;
-    }
-    @include rwd(medium) {
-      flex-basis: 23%;
-    }
-    @include rwd(large) {
-      flex-basis: 18%;
-    }
-    .icons {
-      position: absolute;
-      bottom: -5em;
-      padding-left: 0;
-      width: 100%;
-      list-style: none;
-      text-align: center;
-      transition: 0.5s;
-      li {
-        display: inline-block;
-      }
-    }
-    &.is-display-none {
-      display: block;
-      height: 0;
-      opacity: 0;
-      flex: none;
-    }
-    .title {
-      position: absolute;
-      top: -5em;
-      width: 100%;
-      color: #ffffff;
-      text-align: center;
-      transition: 0.5s;
-      a {
-        color: #ffffff;
-      }
-    }
-    &:before {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: rgba(44, 12, 17, 0);
-      content: "";
-      transition: 0.3s;
-      transition: 0.5s;
-    }
-    &:hover .icons {
-      bottom: 0;
-      transition: 0.5s;
-    }
-    &:hover .title {
-      top: 0;
-      transition: 0.5s;
-    }
-    &:hover:before {
-      background: rgba(89, 161, 62, 0.8);
-    }
-    &--swimming {
-      background: url('../img/projects/swimming/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--dentysta {
-      background: url('../img/projects/dentysta/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--boilerplate {
-      background: url('../img/projects/boilerplate/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--aframe {
-      background: url('../img/projects/aframe/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--landing {
-      background: url('../img/projects/landing/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--nutricus {
-      background: url('../img/projects/nutricus/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--panelnutricus {
-      background: url('../img/projects/panelnutricus/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--athlestat {
-      background: url('../img/projects/athlestat/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--dermashop {
-      background: url('../img/projects/dermashop/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--ubezpieczenia {
-      background: url('../img/projects/ubezpieczenia/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--starachowicka {
-      background: url('../img/projects/starachowicka/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--magazynpoc {
-      background: url('../img/projects/magazynpoc/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--klucze {
-      background: url('../img/projects/klucze/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--aiesec {
-      background: url('../img/projects/aiesec/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--promoplatform {
-      background: url('../img/projects/promoplatform/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-    &--regaly {
-      background: url('../img/projects/regaly/thumb.jpg');
-      background-position: top;
-      background-size: cover;
-    }
-  }
+}
+
+.portfolio__element--swimming {
+  background: url('../img/projects/swimming/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--dentysta {
+  background: url('../img/projects/dentysta/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--boilerplate {
+  background: url('../img/projects/boilerplate/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--nutricus {
+  background: url('../img/projects/nutricus/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--athlestat {
+  background: url('../img/projects/athlestat/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--dermashop {
+  background: url('../img/projects/dermashop/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--starachowicka {
+  background: url('../img/projects/starachowicka/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__element--aiesec {
+  background: url('../img/projects/aiesec/thumb.jpg');
+  background-position: top;
+  background-size: cover;
+}
+
+.portfolio__elemen-title {
+
+}
+
+.portfolio__elemen-desc {
+
+}
+
+.portfolio__elemen-date {
+
 }
