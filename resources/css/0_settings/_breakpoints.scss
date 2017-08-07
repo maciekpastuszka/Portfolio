@@ -1,3 +1,7 @@
 $rwd-small: 48rem; //768px;
 $rwd-medium: 62rem; //992px;
 $rwd-large: 75rem; //1200px;
+
+$rwd-max-small: 48rem - 1px; //768px;
+$rwd-max-medium: 62rem - 1px; //992px;
+$rwd-max-large: 75rem - 1px; //1200px;

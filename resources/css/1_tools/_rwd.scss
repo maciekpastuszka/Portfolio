@@ -20,6 +20,24 @@ Breakpoint
   }
 }
 
+@mixin rwdmax($width) {
+  @if $width==small {
+    @media only screen and (max-width: $rwd-max-small) {
+      @content;
+    }
+  }
+  @else if $width==medium {
+    @media only screen and (max-width: $rwd-max-medium) {
+      @content;
+    }
+  }
+  @else if $width==large {
+    @media only screen and (max-width: $rwd-max-large) {
+      @content;
+    }
+  }
+}
+
 /*------------------------------------------
 Retina
 ------------------------------------------*/
