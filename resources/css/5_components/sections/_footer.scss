@@ -1,59 +1,40 @@
-
 .footer {
   font-size: 1.2rem;
   color: #fff;
   text-align: center;
   @include section-bg('contact', 'jpg');
-  a {
-    color: #fff;
-    &:hover {
-      color: $brand-color-1;
-    }
-  }
-  .container {
-    padding: 2em 0.5em;
-  }
-  &__contact {
-    overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    font-size: 1.5em;
-    span {
-      display: flex;
-      align-items: center;
-      padding: 0 0.5em;
-    }
-    .icon {
-      display: inline-block;
-      height: 1em;
-      width: 1em;
-      margin: 0 0.2em;
-    }
-  }
-  &__social {
-    padding: 0;
-  }
-  &__icon {
-    display: inline-block;
-    min-width: 4em;
-    padding: 0.5em;
-    i {
-      margin-bottom: 0.5em;
-    }
-  }
-  &__copy {
-    position: relative;
-    background: $brand-color-1;
-    padding: 1.5em;
-  }
-  &__top {
-    position: absolute;
-    top: -1.5em;
-    right: 2em;
-    padding: 0.7em;
-    border-radius: 50%;
-    background: $brand-color-2;
-    border: none;
-  }
+}
+
+.footer__contact {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.5em;
+}
+
+.footer__social {
+  padding: 0;
+}
+
+.footer__icon {
+  display: inline-block;
+  min-width: 4em;
+  padding: 0.5em;
+}
+
+.footer__copy {
+  position: relative;
+  background: $brand-color-1;
+  padding: 1.5em;
+}
+
+.footer__top {
+  position: absolute;
+  top: -1.5em;
+  right: 2em;
+  padding: 0.7em;
+  border-radius: 50%;
+  background: $brand-color-2;
+  border: none;
 }
