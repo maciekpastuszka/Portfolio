@@ -24,13 +24,11 @@ const sass = require('gulp-sass'),
 const imagemin = require('gulp-imagemin');
 
 /* Other */
-const plumber = require('gulp-plumber'),
-    sourcemaps = require('gulp-sourcemaps'),
+const sourcemaps = require('gulp-sourcemaps'),
     size = require('gulp-size'),
     changed = require('gulp-changed'),
     runSequence = require('run-sequence'),
-    browserSync = require('browser-sync').create(),
-    notify = require("gulp-notify");
+    browserSync = require('browser-sync').create();
 
 /**
  * Project sources
@@ -67,9 +65,7 @@ gulp.task('css', function () {
         .pipe(postcss([ autoprefixer() ]))
         .pipe(cssnano())
         .pipe(sourcemaps.write('/'))
-        .pipe(size({title: 'Styles'}))
-        .pipe(gulp.dest(dest + 'css'))
-        .pipe(notify({title: "CSS", message: 'Ready!', onLast: true}))
+        .pipe(gulp.dest(dest + 'css'));
 });
 
 gulp.task('js', function () {
@@ -104,8 +100,7 @@ gulp.task('js-scripts', function () {
         .pipe(uglify())
         .pipe(concat('modules.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(src + 'js/temp'))
-        .pipe(plumber.stop());
+        .pipe(gulp.dest(src + 'js/temp'));
 });
 
 gulp.task('js-build', function () {
