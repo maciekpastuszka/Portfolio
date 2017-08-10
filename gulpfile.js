@@ -28,7 +28,10 @@ const sourcemaps = require('gulp-sourcemaps'),
     size = require('gulp-size'),
     changed = require('gulp-changed'),
     runSequence = require('run-sequence'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    args = require('yargs').argv,
+    gulpif = require('gulp-if');
+
 
 /**
  * Project sources
@@ -37,6 +40,11 @@ const domain = '',
     src = './resources/',
     dest = './public/',
     modules = './node_modules/';
+
+const isProduction = args.env === 'production';
+const isDevelopment = args.env === 'development';
+console.log('ENV: ' + args.env);
+
 
 gulp.task('default', function () {
     runSequence(
@@ -55,16 +63,20 @@ gulp.task('css-lint', function () {
         }))
 });
 
-gulp.task('css', function () {
+gulp.task('css', ['css-lint'], function () {
     return gulp.src(src + 'css/main.scss')
         .pipe(sassGlob())
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(isDevelopment, sourcemaps.init()))
         .pipe(sass({
             precision: 6
         }))
-        .pipe(postcss([ autoprefixer() ]))
-        .pipe(cssnano())
-        .pipe(sourcemaps.write('/'))
+        .on('error', function (err) {
+            console.log(err.message);
+            this.emit('end');
+        })
+        .pipe(postcss([autoprefixer()]))
+        .pipe(gulpif(isProduction, cssnano()))
+        .pipe(gulpif(isDevelopment, sourcemaps.write('/')))
         .pipe(gulp.dest(dest + 'css'));
 });
 
@@ -81,13 +93,15 @@ gulp.task('js-vendor', function () {
         .pipe(gulp.dest(src + 'js/temp'));
 });
 
-gulp.task('js-scripts', function () {
+gulp.task('js-hint', function () {
     gulp.src([
         src + 'js/components/*.js',
         src + 'js/main.js'
     ]).pipe(jshint())
         .pipe(jshint.reporter('default'));
+});
 
+gulp.task('js-scripts', ['js-hint'], function () {
     return browserify({
         entries: src + 'js/main.js',
         extensions: ['.js'], debug: true
@@ -96,10 +110,10 @@ gulp.task('js-scripts', function () {
         .bundle()
         .pipe(source('main.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
+        .pipe(gulpif(isDevelopment, sourcemaps.init({loadMaps: true})))
+        .pipe(gulpif(isProduction, uglify()))
         .pipe(concat('modules.js'))
-        .pipe(sourcemaps.write('./'))
+        .pipe(gulpif(isDevelopment, sourcemaps.write('./')))
         .pipe(gulp.dest(src + 'js/temp'));
 });
 
@@ -107,9 +121,9 @@ gulp.task('js-build', function () {
     return gulp.src([
         src + 'js/temp/vendor.js',
         src + 'js/temp/modules.js'
-    ]).pipe(sourcemaps.init({loadMaps: true}))
+    ]).pipe(gulpif(isDevelopment, sourcemaps.init({loadMaps: true})))
         .pipe(concat('scripts.js'))
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(isDevelopment, sourcemaps.write()))
         .pipe(gulp.dest(dest + 'js'));
 });
 
