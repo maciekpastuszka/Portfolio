@@ -5,9 +5,9 @@
 }
 
 .section--padding {
-  padding: 2em 0 3em 0;
+  padding: 2em 0 3em;
   @include rwd(small) {
-    padding: 4em 0 6em 0;
+    padding: 4em 0 6em;
   }
 }
 
@@ -19,7 +19,7 @@
 }
 
 .section--padding-small {
-  padding: 2em 0 3em 0;
+  padding: 2em 0 3em;
 }
 
 .section__title {

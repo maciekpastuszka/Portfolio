@@ -27,11 +27,11 @@
 
 @keyframes menulinks {
   0% {
-    padding: 0 0;
+    padding: 0;
     opacity: 0;
   }
   60% {
-    padding: 0 0;
+    padding: 0;
     opacity: 0;
   }
   100% {
@@ -50,14 +50,15 @@
     padding: 2.5em 0;
     background-color: transparent;
   }
-  &.is-move {
-    @include rwd(medium) {
-      top: 0;
-      padding: 1em 0;
-      background-color: #212121;
-      color: #fff;
-      transition: 0.3s;
-    }
+}
+
+.main-nav.is-move {
+  @include rwd(medium) {
+    top: 0;
+    padding: 1em 0;
+    background-color: #212121;
+    color: #fff;
+    transition: 0.3s;
   }
 }
 
@@ -156,15 +157,16 @@ Nav collapse
     display: inline-block;
     background: none;
   }
-  &.is-open {
-    display: flex;
-    height: 100vh;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    .main-nav__item {
-      animation-name: menulinks;
-      animation-duration: 0.5s;
-    }
+}
+
+.main-nav__colapse.is-open {
+  display: flex;
+  height: 100vh;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  .main-nav__item {
+    animation-name: menulinks;
+    animation-duration: 0.5s;
   }
 }
 
