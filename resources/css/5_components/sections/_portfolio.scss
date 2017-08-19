@@ -12,12 +12,15 @@
 .portfolio__element {
   position: relative;
   overflow: hidden;
-  height: 10em;
-  font-size: 1.5em;
+  height: 250px;
   opacity: 1;
   width: 100%;
   text-align: center;
   color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   @include rwd(small) {
     width: 50%;
   }
@@ -33,11 +36,40 @@
     height: 100%;
     background: rgba(89, 161, 32, 0);
     content: "";
-    transition: 0.3s;
+    transition: background-color 0.3s;
   }
-  &:hover:before {
-    background: rgba(89, 161, 32, .6);
+}
+
+.portfolio__element:hover {
+  color: #ffffff;
+  &:before {
+    background-color: rgba(89, 161, 32, 1);
   }
+  .portfolio__element-content {
+    opacity: 1;
+  }
+}
+
+.portfolio__element-content {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.portfolio__element-title {
+  font-size: 1.5rem;
+}
+
+.portfolio__element-desc {
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.portfolio__element-date {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
 }
 
 .portfolio__element--swimming {
@@ -48,12 +80,6 @@
 
 .portfolio__element--dentysta {
   background: url('../img/projects/dentysta/thumb.jpg');
-  background-position: top;
-  background-size: cover;
-}
-
-.portfolio__element--boilerplate {
-  background: url('../img/projects/boilerplate/thumb.jpg');
   background-position: top;
   background-size: cover;
 }
@@ -88,14 +114,3 @@
   background-size: cover;
 }
 
-.portfolio__elemen-title {
-
-}
-
-.portfolio__elemen-desc {
-
-}
-
-.portfolio__elemen-date {
-
-}
