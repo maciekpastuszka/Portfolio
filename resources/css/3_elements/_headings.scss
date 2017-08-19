@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
-  font-size: rem($base-font-size);
+  font-size: $base-font-size;
   margin: 0;
 }
 
@@ -10,11 +10,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .h1 {
-  font-size: 4rem;
+  font-size: 2rem;
+  @include rwd(small) {
+    font-size: 4rem;
+  }
 }
 
 .h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  @include rwd(small) {
+    font-size: 3rem;
+  }
 }
 
 .h3 {

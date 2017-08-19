@@ -2,14 +2,31 @@
 margin-bottom: 25px;
 }
 
-.project__technologies {
+.project__thumbnail {
   padding: 15px;
-  background-color: $light-grey;
   border: 1px solid darken($light-grey, 10%);
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.project__thumbnail--portfolio {
+  background: url('../img/projects/portfolio.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.project__thumbnail--starter {
+  background: url('../img/projects/starter.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.project__thumbnail--youtube {
+  background: url('../img/projects/youtube.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .project__title {

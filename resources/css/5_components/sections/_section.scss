@@ -24,7 +24,6 @@
 
 .section__title {
   text-align: center;
-  font-size: 2.5em;
   &:after {
     display: block;
     margin: 1.25rem auto;
@@ -38,4 +37,5 @@
 
 .section__subtitle {
   text-align: center;
+  padding: 0 1rem;
 }
