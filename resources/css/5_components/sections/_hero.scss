@@ -4,7 +4,6 @@
 }
 
 .hero__container {
-  transition: 2s;
   max-width: 100%;
   height: inherit;
   z-index: 9;
@@ -17,7 +16,6 @@
   padding: 0 1em;
   flex-wrap: wrap;
   &.is-vr {
-    transition: 2s;
     transform: translateY(100%);
   }
 }

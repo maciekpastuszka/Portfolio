@@ -35,12 +35,12 @@
 .hero-vr {
   display: flex;
   align-items: center;
-  transition: 2s;
+  //transition: 2s;
   opacity: 0;
   background: #000000;
   &.is-loading {
     opacity: 1;
-    transition: 1s;
+    //transition: 1s;
     z-index: 999;
   }
 }
