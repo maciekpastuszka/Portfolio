@@ -30,14 +30,17 @@
     "stylelint-selector-bem-pattern": "^1.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "yargs": "^8.0.2"
+    "yargs": "^8.0.2",
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
   },
   "scripts": {
     "dev": "gulp --env development",
     "predev": "npm install",
     "prod": "gulp --env production",
     "preprod": "npm install",
-    "watch": "gulp sync --env development"
+    "watch": "gulp sync --env development",
+    "test": "mocha --compilers js:babel/register"
   },
   "keywords": [],
   "author": "Maciej Pastuszka",
