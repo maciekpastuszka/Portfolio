@@ -33,7 +33,16 @@
     "stylelint-selector-bem-pattern": "^1.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "yargs": "^8.0.2"
+    "yargs": "^8.0.2",
+    "browserify-istanbul": "^0.2.1",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18"
   },
   "scripts": {
     "dev": "gulp --env development",

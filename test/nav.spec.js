@@ -1,18 +1,19 @@
 import chai from 'chai';
 chai.should();
 
-import Navigation from '../resources/js/components/nav';
+import Navigation from '../src/nav';
 
 
 describe('Nav', () => {
-    let navigation;
-    beforeEach(() => {
-        navigation = new Navigation('<div class=".js-main-nav"></div>');
-    });
-
+    let navigation = 10;
     describe('scroll', () => {
         it('returns the width', () => {
-            rectangle.width.should.equal(10);
+            navigation.should.equal(10);
+        });
+    });
+    describe('scrol2l', () => {
+        it('returns the width2', () => {
+            navigation.should.equal(10);
         });
     });
 });
