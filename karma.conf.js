@@ -1,14 +1,18 @@
 module.exports = function (config) {
     config.set({
         basePath: './',
-        files: ['resources/js/components/nav.js', 'test/**/*.js'],
+        files: ['resources/js/components/nav.js', 'test/**/*.js',
+            {
+                pattern: 'public/index.html',
+            }],
 
-        frameworks: ['browserify', 'mocha', 'chai'],
-        browsers: ['PhantomJS'], // 'Chrome'
+        frameworks: ['browserify', 'mocha', 'fixture', 'chai'],
+        browsers: ['Chrome'], // 'Chrome'
 
         preprocessors: {
             'resources/js/components/nav.js': ['browserify'],
-            'test/**/*.js': ['browserify']
+            'test/**/*.js': ['browserify'],
+            'public/index.html'   : ['html2js'],
         },
         browserify: {
             debug: true,
