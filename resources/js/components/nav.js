@@ -1,9 +1,8 @@
 class Navigation {
     constructor(nav) {
         this.nav = nav;
-        this.nav_toggle = nav.querySelector('.main-nav__toggle');
+        this.nav_toggle = nav.querySelector('.js-main-nav__toggle');
         this.nav_colapse = nav.querySelector('.js-main-nav__colapse');
-        this.nav_circle = nav.querySelector('.main-nav__circle');
         this.state = {
             scroll: true
         };
@@ -31,8 +30,6 @@ class Navigation {
     mobileNavToggle() {
         this.nav_toggle.classList.toggle('is-open');
         this.nav_colapse.classList.toggle('is-open');
-
-        console.log(this.nav_colapse);
     }
 
     events() {

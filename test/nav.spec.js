@@ -1,32 +1,26 @@
 import chai from 'chai';
 chai.should();
 
-import Navigation from '../src/nav';
+import Navigation from '../resources/js/components/nav';
 
 
 describe('Nav', () => {
-    before(function(){
+    before(function () {
         fixture.setBase('public');
-    });
-
-    beforeEach(function(){
         this.result = fixture.load('index.html');
+        this.navigation = new Navigation(fixture.el.querySelector('.js-main-nav'));
+        this.navigation.init();
     });
 
-    afterEach(function(){
-        fixture.cleanup()
-    });
+    describe('Navigation toggle', () => {
+        it('Open menu', function () {
+            fixture.el.querySelector('.js-main-nav__toggle').click();
+            expect(fixture.el.querySelector('.js-main-nav__toggle').classList.contains('is-open')).to.equal(true);
+        });
 
-    it('plays with the html fixture', function(){
-        // expect(fixture.el.firstChild).to.equal(this.result[0][0]);
-        console.log(fixture.el.querySelector('.main-nav__logo'));
-    });
-});
-
-
-describe('scroll', () => {
-    let navigation = 10;
-    it('returns the width', () => {
-        navigation.should.equal(10);
+        it('Close opened menu', function () {
+            fixture.el.querySelector('.js-main-nav__toggle.is-open').click();
+            expect(fixture.el.querySelector('.js-main-nav__toggle').classList.contains('is-open')).to.equal(false);
+        });
     });
 });
