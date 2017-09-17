@@ -12,13 +12,13 @@ describe('Nav', () => {
         this.navigation.init();
     });
 
-    describe('Navigation toggle', () => {
-        it('Open menu', function () {
+    describe('Mobile navigation toggle', () => {
+        it('Click toggle opens mobile nav', function () {
             fixture.el.querySelector('.js-main-nav__toggle').click();
             expect(fixture.el.querySelector('.js-main-nav__toggle').classList.contains('is-open')).to.equal(true);
         });
 
-        it('Close opened menu', function () {
+        it('Click toggle in opened menu closes mobile nav', function () {
             fixture.el.querySelector('.js-main-nav__toggle.is-open').click();
             expect(fixture.el.querySelector('.js-main-nav__toggle').classList.contains('is-open')).to.equal(false);
         });
