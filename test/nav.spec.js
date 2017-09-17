@@ -23,4 +23,18 @@ describe('Nav', () => {
             expect(fixture.el.querySelector('.js-main-nav__toggle').classList.contains('is-open')).to.equal(false);
         });
     });
+
+    describe('Nav changes display on scroll', () => {
+        it('Add background if scroll is more than 20px', function () {
+            window.scroll(0, 30);
+            this.navigation.menuMove();
+            expect(fixture.el.querySelector('.js-main-nav').classList.contains('is-move')).to.equal(true);
+        });
+
+        it('Return default background if scroll is less than 20px', function () {
+            window.scroll(0, 19);
+            this.navigation.menuMove();
+            expect(fixture.el.querySelector('.js-main-nav').classList.contains('is-move')).to.equal(false);
+        });
+    });
 });
