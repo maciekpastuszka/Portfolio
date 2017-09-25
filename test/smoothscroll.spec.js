@@ -1,13 +1,13 @@
 import chai from 'chai';
 chai.should();
 
-import Navigation from '../resources/js/components/smoothscroll';
+import SmoothScroll from '../resources/js/components/smoothscroll';
 
 describe('Smoothscroll', () => {
     before(function () {
         fixture.setBase('public');
         this.result = fixture.load('index.html');
-        this.smoothscroll = new Smoothscroll();
+        this.smoothscroll = new SmoothScroll();
         this.smoothscroll.init();
     });
 
