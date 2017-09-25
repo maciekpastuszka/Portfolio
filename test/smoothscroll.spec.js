@@ -12,12 +12,16 @@ describe('Smoothscroll', () => {
     });
 
     describe('Clicked link scrolls to element', () => {
-        it('scroll is element above link', function () {
+        it('scroll to element below link', function () {
+            let start_position  = window.pageYOffset || document.documentElement.scrollTop;
+            this.smoothscroll.scrollTo('about');
+            let stop_position  = window.pageYOffset || document.documentElement.scrollTop;
 
-            expect(true).to.equal(true);
+            expect(stop_position).to.be.above(start_position);
         });
 
-        it('scroll is element below link', function () {
+        it('scroll to element above link', function () {
+
 
         });
     });
