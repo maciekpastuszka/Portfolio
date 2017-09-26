@@ -1,35 +1,38 @@
 class SmoothScroll {
     constructor() {
-        this.time = 1;
         this.speed = 0.5;
-        this.scroll_animation_interval = {};
     }
 
-    animate_scroll(start_position, target_position) {
-        this.time += this.speed;
-        if (start_position < target_position) {
-            document.body.scrollTop += this.time;
-            if (document.body.scrollTop > target_position) {
-                clearInterval(this.scroll_animation_interval);
-                this.time = 0;
-            }
-        } else {
-            document.body.scrollTop -= this.time;
-            if (document.body.scrollTop < target_position) {
-                clearInterval(this.scroll_animation_interval);
-                this.time = 0;
-            }
-        }
-    }
-
-    scrollTo(target_id) {
+    scroll(target_id) {
         let target = document.querySelector(`#${target_id}`);
         let start_position = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         let target_position = target.offsetTop - 100;
+        let time = 0;
 
-        this.scroll_animation_interval = setInterval(() => {
-            this.animate_scroll(start_position, target_position);
-        }, 1);
+        return new Promise((resolve, reject) => {
+            const scroll_animation_interval = setInterval(() => {
+                time += this.speed;
+                if (start_position < target_position) {
+                    document.body.scrollTop += time;
+                    if (document.body.scrollTop > target_position) {
+                        clearInterval(scroll_animation_interval);
+                        resolve('scrolled');
+                    }
+                } else {
+                    document.body.scrollTop -= time;
+                    if (document.body.scrollTop < target_position) {
+                        clearInterval(scroll_animation_interval);
+                        resolve('scrolled');
+                    }
+                }
+            }, 1);
+        });
+    }
+
+    scrollTo(target_id) {
+        this.scroll(target_id)
+            .then(result => console.log(result));
+
     }
 
     events() {
