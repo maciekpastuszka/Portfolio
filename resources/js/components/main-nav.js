@@ -1,4 +1,4 @@
-class Navigation {
+class MainNav {
     constructor(nav) {
         this.nav = nav;
         this.nav_toggle = nav.querySelector('.js-main-nav__toggle');
@@ -47,4 +47,4 @@ class Navigation {
     }
 }
 
-export default Navigation;
+export default MainNav;

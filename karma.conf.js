@@ -1,7 +1,7 @@
 module.exports = function (config) {
     config.set({
         basePath: './',
-        files: ['resources/js/components/nav.js', 'resources/js/components/smoothscroll.js', 'test/**/*.js',
+        files: ['resources/js/components/main-nav.js', 'resources/js/components/smoothscroll.js', 'test/**/*.js',
             {
                 pattern: 'public/index.html',
             }],
@@ -9,7 +9,7 @@ module.exports = function (config) {
         frameworks: ['browserify', 'mocha', 'fixture', 'chai'],
         browsers: ['Chrome'], // 'Chrome'
         preprocessors: {
-            'resources/js/components/nav.js': ['browserify'],
+            'resources/js/components/main-nav.js': ['browserify'],
             'resources/js/components/smoothscroll.js': ['browserify'],
             'test/**/*.js': ['browserify'],
             'public/index.html'   : ['html2js'],
