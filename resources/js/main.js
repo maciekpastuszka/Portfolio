@@ -1,5 +1,8 @@
-import Navigation from './components/main-nav';
+import MainNav from './components/main-nav';
 import SmoothScroll from './components/smoothscroll';
 
-let nav = new Navigation(document.querySelector('.js-main-nav'));
-nav.init();
+let mainNAv = new MainNav(document.querySelector('.js-main-nav'));
+mainNAv.init();
+
+let smoothScroll = new SmoothScroll();
+smoothScroll.init();

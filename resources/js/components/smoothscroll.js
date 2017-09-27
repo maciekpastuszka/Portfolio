@@ -1,6 +1,7 @@
 class SmoothScroll {
-    constructor() {
-        this.speed = 0.5;
+    constructor(speed = 0.5) {
+        this.speed = speed;
+        this.links = document.querySelectorAll('.js-anchor');
     }
 
     scroll(target_id) {
@@ -14,7 +15,7 @@ class SmoothScroll {
                 time += this.speed;
                 if (start_position < target_position) {
                     document.documentElement.scrollTop += time;
-                    if (document.documentElement.scrollTop> target_position) {
+                    if (document.documentElement.scrollTop > target_position || document.documentElement.scrollHeight - document.documentElement.scrollTop == document.documentElement.clientHeight) {
                         clearInterval(scroll_animation_interval);
                         resolve('scrolled');
                     }
@@ -35,18 +36,16 @@ class SmoothScroll {
     }
 
     events() {
-        // var target_name = link.hash.substr(1)
-        // for (i = 0; i < a.length; i++) {
-//             a[i].addEventListener('click', function (e) {
-//                 e.preventDefault();
-//
-//                 scrollTo(this);
-//             });
-//         }
+        this.links.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.scrollTo(link.hash.substr(1));
+            });
+        });
     }
 
     init() {
-
+        this.events();
     }
 }
 
