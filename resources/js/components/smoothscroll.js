@@ -5,7 +5,7 @@ class SmoothScroll {
 
     scroll(target_id) {
         let target = document.querySelector(`#${target_id}`);
-        let start_position = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        let start_position = document.documentElement.scrollTop;
         let target_position = target.offsetTop - 100;
         let time = 0;
 
@@ -13,14 +13,14 @@ class SmoothScroll {
             const scroll_animation_interval = setInterval(() => {
                 time += this.speed;
                 if (start_position < target_position) {
-                    document.body.scrollTop += time;
-                    if (document.body.scrollTop > target_position) {
+                    document.documentElement.scrollTop += time;
+                    if (document.documentElement.scrollTop> target_position) {
                         clearInterval(scroll_animation_interval);
                         resolve('scrolled');
                     }
                 } else {
-                    document.body.scrollTop -= time;
-                    if (document.body.scrollTop < target_position) {
+                    document.documentElement.scrollTop -= time;
+                    if (document.documentElement.scrollTop < target_position) {
                         clearInterval(scroll_animation_interval);
                         resolve('scrolled');
                     }
@@ -32,7 +32,6 @@ class SmoothScroll {
     scrollTo(target_id) {
         this.scroll(target_id)
             .then(result => console.log(result));
-
     }
 
     events() {
@@ -51,4 +50,4 @@ class SmoothScroll {
     }
 }
 
-export  default SmoothScroll;
+export default SmoothScroll;

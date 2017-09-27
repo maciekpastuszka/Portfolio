@@ -11,18 +11,27 @@ describe('Smoothscroll', () => {
         this.smoothscroll.init();
     });
 
-    describe('Clicked link scrolls to element', () => {
+    describe('Click anchor', () => {
         it('scroll to element below link', function () {
-            let start_position  = window.pageYOffset || document.documentElement.scrollTop;
-            this.smoothscroll.scrollTo('about');
-            let stop_position  = window.pageYOffset || document.documentElement.scrollTop;
-
-            expect(stop_position).to.be.above(start_position);
+            let start_position = window.pageYOffset || document.documentElement.scrollTop;
+            return this.smoothscroll.scroll('about').then(function(result) {
+                let stop_position = window.pageYOffset || document.documentElement.scrollTop;
+                expect(stop_position).to.be.above(start_position);
+            });
         });
 
         it('scroll to element above link', function () {
+            let start_position = window.pageYOffset || document.documentElement.scrollTop;
+            return this.smoothscroll.scroll('about').then(function (result) {
+                let stop_position = window.pageYOffset || document.documentElement.scrollTop;
+                expect(stop_position).to.be.below(start_position);
+            });
+        });
 
-
+        it('after scroll return finish', function () {
+            return this.smoothscroll.scroll('about').then(function (result) {
+                expect(result).to.equal('scrolled');
+            });
         });
     });
 });
