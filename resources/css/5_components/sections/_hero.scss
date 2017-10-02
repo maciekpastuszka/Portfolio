@@ -69,6 +69,14 @@
   width: 100%;
   height: 100%;
   background-color: #210a34;
+  &:before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+  }
 }
 
 .hero__vr {
