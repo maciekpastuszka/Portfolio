@@ -23,26 +23,26 @@
   margin: -200px 400px;
 }
 
-#layer0 {
+.layer--0 {
   @include layer("lay0.png");
 }
 
-#layer1 {
+.layer--1 {
   @include layer("lay1.svg");
 }
 
-#layer2 {
+.layer--2 {
   @include layer("lay2.svg");
 }
 
-#layer3 {
+.layer--3 {
   @include layer("lay3.svg");
 }
 
-#layer4 {
+.layer--4 {
   @include layer("lay4.svg");
 }
 
-#layer5 {
+.layer--5 {
   @include layer("lay5.svg");
 }

@@ -41,7 +41,7 @@
     </div>
 </nav>
 
-<header id="header" class="hero">
+<header id="hero" class="hero">
     <div id="vr__container" class="hero__vr hero-vr"></div>
 
     <div class="hero__container">
@@ -58,17 +58,16 @@
         </div>
     </div>
 
-    <div class="hero__layers">
-        <div class="layer layer--hidden" id="layer0"></div>
-        <div class="layer layer--hidden">
-            <div class="layer__glass"></div>
-        </div>
-        <div class="layer layer--hidden" id="layer1"></div>
-        <div class="layer layer--hidden" id="layer2"></div>
-        <div class="layer layer--hidden" id="layer3"></div>
-        <div class="layer layer--hidden" id="layer4"></div>
-        <div class="layer layer--hidden" id="layer5"></div>
-        <div class="layer layer--gradient"></div>
+    <div class="hero__layers js-layers">
+        <div class="layer layer--0 is-hidden" data-id="layer0" data-range=""></div>
+        <!--<div class="layer layer&#45;&#45;hidden">-->
+            <!--<div class="layer__glass"></div>-->
+        <!--</div>-->
+        <div class="layer layer--1 is-hidden" data-id="layer1" data-range=""></div>
+        <div class="layer layer--2 is-hidden" data-id="layer2" data-range=""></div>
+        <div class="layer layer--3 is-hidden" data-id="layer3" data-range=""></div>
+        <div class="layer layer--4 is-hidden" data-id="layer4" data-range=""></div>
+        <div class="layer layer--5 is-hidden" data-id="layer5" data-range=""></div>
     </div>
 </header>
 
@@ -379,7 +378,7 @@
     </div>
 
     <div class="footer__copy">© 2017 | Maciej Pastuszka
-        <a class="footer__top" href="#header"><i class="icon icon--arrow"></i></a>
+        <a class="footer__top" href="#hero"><i class="icon icon--arrow"></i></a>
     </div>
 </footer>
 
