@@ -6,6 +6,14 @@ class Layers {
         this.inclination_state = {};
     }
 
+    _loadLayers() {
+        window.onload = () => {
+            this.layers.forEach((layer) => {
+                layer.classList.remove('is-hidden');
+            });
+        }
+    }
+
     _moveLayer(layer, layer_inclination) {
         let layer_id = layer.getAttribute('data-id');
 
@@ -48,6 +56,7 @@ class Layers {
     init() {
         if (this.layer_container) {
             this._mouseEventDebounce();
+            this._loadLayers();
         }
     }
 }
