@@ -1,13 +1,12 @@
 .layer {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   width: 120%;
   height: 100%;
   transform: translateX(-10%);
   position: absolute;
-}
-
-.layer--hidden {
-  opacity: 0;
+  @include rwdmax(medium) {
+    transform: translateX(-10%) !important;
+  }
 }
 
 .layer--0 {
@@ -20,7 +19,9 @@
     width: 200px;
     height: 1000px;
     transform: rotate(-45deg);
-    margin: -200px 400px;
+    top: 0;
+    left: 15%;
+    z-index: 0;
   }
 }
 

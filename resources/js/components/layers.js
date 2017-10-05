@@ -8,9 +8,10 @@ class Layers {
 
     _loadLayers() {
         window.onload = () => {
-            this.layers.forEach((layer) => {
-                layer.classList.remove('is-hidden');
-            });
+            // this.layers.forEach((layer) => {
+            //     layer.classList.remove('layer--hidden');
+            // });
+            this.layer_container.classList.remove('hero__layers--hidden');
         }
     }
 
@@ -50,7 +51,7 @@ class Layers {
                 scrollInit = false;
                 this._calcInclination(event.pageX);
             }
-        }, 100);
+        }, 60);
     }
 
     init() {
