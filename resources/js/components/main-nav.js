@@ -42,8 +42,10 @@ class MainNav {
     }
 
     init() {
-        this.events();
-        this.scroll();
+        if (this.nav) {
+            this.events();
+            this.scroll();
+        }
     }
 }
 

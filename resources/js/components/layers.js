@@ -8,9 +8,6 @@ class Layers {
 
     _loadLayers() {
         window.onload = () => {
-            // this.layers.forEach((layer) => {
-            //     layer.classList.remove('layer--hidden');
-            // });
             this.layer_container.classList.remove('hero__layers--hidden');
         }
     }
@@ -32,7 +29,7 @@ class Layers {
         this.layers.forEach((layer) => {
             let layer_range = layer.getAttribute('data-range');
             let layer_width = layer.offsetWidth;
-            let layer_inclination = parseInt(layer_range * cursor_inclination_percentage - layer_width * 0.1);
+            let layer_inclination = parseInt(-1 * layer_range * cursor_inclination_percentage - layer_width * 0.1);
             this._moveLayer(layer, layer_inclination);
         });
     }

@@ -1,4 +1,4 @@
-function ajax(url, methodType) {
+function ajax(url, methodType, type = 'json') {
     return new Promise(function (resolve, reject) {
         const xhr = new XMLHttpRequest();
         xhr.open(methodType, url, true);
@@ -8,8 +8,12 @@ function ajax(url, methodType) {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     let response = xhr.responseText;
-                    let responseJSON = JSON.parse(response);
-                    resolve(responseJSON);
+                    if (type == 'json') {
+                        let responseJSON = JSON.parse(response);
+                        resolve(responseJSON);
+                    } else {
+                        resolve(response);
+                    }
                 } else {
                     reject(xhr.status);
                 }
