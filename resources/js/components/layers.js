@@ -8,7 +8,7 @@ class Layers {
 
     _loadLayers() {
         window.onload = () => {
-            this.layer_container.classList.remove('hero__layers--hidden');
+            this.layer_container.classList.remove('hero__layers--loading');
         }
     }
 
