@@ -81,7 +81,7 @@ gulp.task('css', ['css-lint'], function () {
 });
 
 gulp.task('js', function () {
-    return runSequence('js-vendor', 'js-scripts', 'js-build', function () {
+    return runSequence( 'js-scripts', 'js-build', function () {
         console.log('JS finish.');
     });
 });
