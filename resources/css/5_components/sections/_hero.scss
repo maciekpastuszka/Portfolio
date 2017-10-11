@@ -15,11 +15,12 @@
   justify-content: center;
   padding: 0 1em;
   flex-wrap: wrap;
-  transform: opacity 1s;
+  transition: opacity 2s, z-index 2s;
 }
 
 .hero__container--hidden {
   opacity: 0;
+  z-index: -1;
 }
 
 .hero__header {
@@ -72,7 +73,7 @@
   height: 100%;
   background-color: #210a34;
   z-index: 2;
-  transition: opacity 1s;
+  transition: opacity 2s, z-index 2s;
   &:before {
     position: absolute;
     content: " ";
@@ -98,6 +99,7 @@
 
 .hero__layers--hidden {
   opacity: 0;
+  z-index: -1;
 }
 
 .hero__vr {
@@ -134,7 +136,7 @@
 .hero__vr-loader--complete {
   &:before {
     width: 100%;
-    transition: width 0.5s ease-in-out, opacity 1s linear;
+    transition: width 0.5s ease-in-out, opacity 1s ease-in;
     opacity: 0;
   }
 }

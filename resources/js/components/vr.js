@@ -4,6 +4,9 @@ class Vr {
     constructor(vr_container) {
         this.vr_container = vr_container;
         this.vr_show_btn = document.querySelector('.hero__btn--vr');
+        this.vr_loader = document.querySelector('.hero__vr-loader');
+        this.hero_layers = document.querySelector('.hero__layers');
+        this.hero_container = document.querySelector('.hero__container');
         this.state = {
             vr_loaded: false
         }
@@ -28,6 +31,8 @@ class Vr {
 
     _toggleVrMode() {
         console.log('toggle vr mode');
+        this.hero_layers.classList.toggle('hero__layers--hidden');
+        this.hero_container.classList.toggle('hero__container--hidden');
     }
 
     _loadAframe() {
@@ -36,18 +41,15 @@ class Vr {
                 /**
                  * Start loading, fetch script and run aframe then show VR mode
                  */
-
-                // start loader
+                this.vr_loader.classList.add('hero__vr-loader--start');
                 this._addAframeScript()
                     .then(this._triggerDOMContentLoadedEvent)
                     .then(() => ajax('aframe/portfolio.html', 'GET', 'text'))
                     .then((data) => {
                         this.vr_container.innerHTML = data;
                         this.state.vr_loaded = true;
-                        //end loader
-
+                        this.vr_loader.classList.add('hero__vr-loader--complete');
                         resolve('script loaded');
-
                     });
             } else {
                 /**
@@ -60,7 +62,9 @@ class Vr {
 
     _events() {
         this.vr_show_btn.addEventListener('click', () => {
-            this._loadAframe().then(this._toggleVrMode);
+            this._loadAframe().then(() => {
+                this._toggleVrMode();
+            });
         });
     }
 
