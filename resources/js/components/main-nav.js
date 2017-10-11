@@ -1,8 +1,8 @@
 class MainNav {
     constructor(nav) {
         this.nav = nav;
-        this.nav_toggle = nav.querySelector('.js-main-nav__toggle');
-        this.nav_colapse = nav.querySelector('.js-main-nav__colapse');
+        this.nav_toggle = nav.querySelector('.main-nav__toggle');
+        this.nav_colapse = nav.querySelector('.main-nav__colapse');
         this.state = {
             scroll: true
         };

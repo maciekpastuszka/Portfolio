@@ -3,7 +3,7 @@ import ajax from './ajax';
 class Vr {
     constructor(vr_container) {
         this.vr_container = vr_container;
-        this.vr_show_btn = document.querySelector('.js-show-vr');
+        this.vr_show_btn = document.querySelector('.hero__btn--vr');
         this.state = {
             vr_loaded: false
         }
