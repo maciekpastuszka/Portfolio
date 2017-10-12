@@ -1,4 +1,4 @@
-# [ http://maciejpastuszka.pl]()
+# [ maciejpastuszka.pl]( http://maciejpastuszka.pl)
 
 ##Build
 ### Development build
@@ -20,4 +20,4 @@ JS ES6, ES6 Modules, Browserify, Babel
 Karma, Mocha, Chai, Stylelint
 
 ##Vendor libraries
-Aframe [https://github.com/aframevr/aframe]()
+Aframe [https://github.com/aframevr/aframe](https://github.com/aframevr/aframe)
