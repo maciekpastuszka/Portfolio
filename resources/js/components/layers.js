@@ -9,7 +9,7 @@ class Layers {
     _loadLayers() {
         window.onload = () => {
             this.layer_container.classList.remove('hero__layers--loading');
-        }
+        };
     }
 
     _moveLayer(layer, layer_inclination) {

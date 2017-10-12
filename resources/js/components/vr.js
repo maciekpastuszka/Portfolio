@@ -9,7 +9,7 @@ class Vr {
         this.hero_container = document.querySelector('.hero__container');
         this.state = {
             vr_loaded: false
-        }
+        };
     }
 
     _addAframeScript() {
