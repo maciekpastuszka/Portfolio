@@ -1,8 +1,4 @@
-
-
-
 <a-scene fog="type: linear; color: #000; far: 3.8; near: 0" vr-mode-ui="enabled: true" stats>
-
     <a-camera cursor-visible="true" position="-0.1 1.3 2" rotation="0 0 0" id="camera"></a-camera>
     <a-entity id="room" position="0 1.25 0">
 
@@ -17,16 +13,13 @@
             <!-- window -->
             <a-entity id="window" position="-1.55 -0.3 0">
                 <a-cube width="1.2" height="0.05" depth="0.2" color="#311909"></a-cube>
-
                 <a-cube width="0.05" position="-0.45 0.6 -0.02" height="1.2" depth="0.03"></a-cube>
                 <a-cube width="0.05" position="0.44 0.6 -0.02" height="1.2" depth="0.03"></a-cube>
                 <a-cube width="0.85" position="0 0.6 -0.02" height="0.05" depth="0.03"></a-cube>
                 <a-cube width="0.85" position="0 1.2 -0.02" height="0.05" depth="0.03"></a-cube>
-
                 <a-image src="img/aframe/window.png" width="0.78" position="0 0.97 -0.01" height="0.4" visible="true"></a-image>
             </a-entity>
 
-       
             <a-image src="img/aframe/clock.png" id="clock" position="0.7 0.7 0.04" width="0.4" height="0.6" visible="true">
                 <a-animation id="clock_animation" attribute="position" from="0.7 0.7 0.04" to="0.7 0.51 0.04" fill="forwards" direction="alternate" begin="start"></a-animation>
             </a-image>
@@ -90,12 +83,8 @@
             <a-cube width="0.2" depth="0.8" height="0.6" position="1 0.3 0.4" color="#051e10"></a-cube>
         </a-entity>
 
-
         <!-- left -->
         <a-plane position="-2.5 0 2.5" rotation="0 90 0" width="5" height="2.5" color="#190629"></a-plane>
-
-
-
 
         <!-- right -->
         <a-cube position="2.5 0 2.5" rotation="0 90 0" width="5" height="2.5" depth="0.01" color="#190629"></a-cube>
@@ -116,4 +105,3 @@
 
     <a-sky color="#ECECEC"></a-sky>
 </a-scene>
-
