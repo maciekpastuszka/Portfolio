@@ -1,6 +1,6 @@
 # [ maciejpastuszka.pl]( http://maciejpastuszka.pl)
 
-##Build
+## Build
 ### Development build
 ```npm run dev```
 
@@ -13,11 +13,11 @@
 ### Unit tests
 ```npm run test```
 
-##Technologies & techniques used
+## Technologies & techniques used
 HTML5
 CSS3 (Sass), BEM, ITCSS
 JS ES6, ES6 Modules, Browserify, Babel
 Karma, Mocha, Chai, Stylelint
 
-##Vendor libraries
+## Vendor libraries
 Aframe [https://github.com/aframevr/aframe](https://github.com/aframevr/aframe)
