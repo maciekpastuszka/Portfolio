@@ -78,7 +78,6 @@ class Vr {
     }
 
     _toggleVrMode() {
-        console.log('toggle vr mode');
         this.hero_layers.classList.toggle('hero__layers--hidden');
         this.hero_container.classList.toggle('hero__container--hidden');
     }
