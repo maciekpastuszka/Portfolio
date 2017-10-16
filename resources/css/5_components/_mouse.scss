@@ -1,0 +1,48 @@
+.mouse {
+  position: relative;
+  width: 49px;
+  height: 70px;
+  border: 5px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 20px 20px 25px 25px;
+  display: none;
+  @include rwd(small) {
+    display: block;
+  }
+}
+
+.mouse:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 4px solid #ffffff;
+  width: calc(50% - 2px);
+  height: 30%;
+  background: rgba(255, 255, 255, 0.5);
+  border-top-left-radius: 14px;
+}
+
+.mouse:after {
+  content: " ";
+  position: absolute;
+  top: 30%;
+  left: 0;
+  border-bottom: 4px solid #ffffff;
+  width: 100%;
+}
+
+.mouse__click {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid transparent;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 50%;
+  left: -8px;
+  top: -8px;
+  transform: rotate(-45deg);
+}
