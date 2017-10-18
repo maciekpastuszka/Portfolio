@@ -8,6 +8,7 @@ class Vr {
         this.vr_loader = document.querySelector('.hero__vr-loader');
         this.hero_layers = document.querySelector('.hero__layers');
         this.hero_container = document.querySelector('.hero__container');
+        this.mouse_animation = document.querySelector('.mouse');
         this.state = {
             vr_loaded: false
         };
@@ -30,6 +31,7 @@ class Vr {
                     .then(() => {
                         this.state.vr_loaded = true;
                         this.vr_loader.classList.add('hero__vr-loader--complete');
+                        this.mouse_animation.classList.add('mouse--start');
                         resolve('aframe loaded');
                     });
             } else {
