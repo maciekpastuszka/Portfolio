@@ -1,3 +1,4 @@
+import Promise from 'es6-promise';
 import ajax from './ajax';
 
 class Vr {
@@ -65,18 +66,18 @@ class Vr {
             let loaded_aframe_images = 0;
             const aframe_images = this.vr_container.querySelectorAll('a-image');
 
-            aframe_images.forEach((el) => {
+            for (let i = 0; i < aframe_images.length; i++) {
+                let image = aframe_images[i];
                 let temp_image = new Image();
                 temp_image.onload = () => {
-                    el.src = this.src;
+                    image.src = this.src;
                     loaded_aframe_images++;
-
                     if (loaded_aframe_images == aframe_images.length) {
                         resolve('images loaded');
                     }
                 };
-                temp_image.src = el.getAttribute('src');
-            });
+                temp_image.src = image.getAttribute('src');
+            }
         });
     }
 

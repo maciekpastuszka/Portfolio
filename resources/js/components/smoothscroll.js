@@ -1,3 +1,5 @@
+import Promise from 'es6-promise';
+
 class SmoothScroll {
     constructor(speed = 0.5) {
         this.speed = speed;
@@ -36,12 +38,13 @@ class SmoothScroll {
     }
 
     events() {
-        this.links.forEach((link) => {
+        for (let i = 0; i < this.links.length; i++) {
+            let link = this.links[i];
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 this.scrollTo(link.hash.substr(1));
             });
-        });
+        }
     }
 
     init() {

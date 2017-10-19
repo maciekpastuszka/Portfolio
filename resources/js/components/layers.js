@@ -26,12 +26,13 @@ class Layers {
         let cursor_inclination = cursor_position - half_page_width;
         let cursor_inclination_percentage = cursor_inclination / half_page_width;
 
-        this.layers.forEach((layer) => {
+        for (let i = 0; i < this.layers.length; i++) {
+            let layer = this.layers[i];
             let layer_range = layer.getAttribute('data-range');
             let layer_width = layer.offsetWidth;
             let layer_inclination = parseInt(-1 * layer_range * cursor_inclination_percentage - layer_width * 0.1);
             this._moveLayer(layer, layer_inclination);
-        });
+        }
     }
 
     _mouseEventDebounce() {

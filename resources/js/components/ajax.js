@@ -1,3 +1,5 @@
+import Promise from 'es6-promise';
+
 function ajax(url, methodType, type = 'json') {
     return new Promise(function (resolve, reject) {
         const xhr = new XMLHttpRequest();
