@@ -17,7 +17,7 @@ class Layers {
 
         if (layer_inclination != this.inclination_state[layer_id]) {
             this.inclination_state[layer_id] = layer_inclination;
-            layer.style.transform = `translateX(${layer_inclination}px)`;
+            layer.style.transform = `translateX(${layer_inclination}px) translateZ(0)`;
         }
     }
 
@@ -49,7 +49,7 @@ class Layers {
                 scrollInit = false;
                 this._calcInclination(event.pageX);
             }
-        }, 60);
+        }, 10);
     }
 
     init() {
