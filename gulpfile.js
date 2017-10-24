@@ -30,7 +30,8 @@ const sourcemaps = require('gulp-sourcemaps'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create(),
     args = require('yargs').argv,
-    gulpif = require('gulp-if');
+    gulpif = require('gulp-if'),
+    htmlmin = require('gulp-htmlmin');
 
 
 /**
@@ -48,8 +49,19 @@ console.log('ENV: ' + args.env);
 
 gulp.task('default', function () {
     runSequence(
-        ['css', 'js', 'images'], ['fonts']
+        ['css', 'js', 'images'], ['fonts', 'move-aframe', 'minify-html']
     );
+});
+
+gulp.task('minify-html', function () {
+    return gulp.src(src + '*.html')
+        .pipe(gulpif(isProduction, {collapseWhitespace: true}))
+        .pipe(gulp.dest(dest));
+});
+
+gulp.task('move-aframe', function () {
+    return gulp.src(src + 'aframe/**')
+        .pipe(gulp.dest(dest + 'aframe'));
 });
 
 gulp.task('css-lint', function () {
@@ -81,7 +93,7 @@ gulp.task('css', ['css-lint'], function () {
 });
 
 gulp.task('js', function () {
-    return runSequence( 'js-scripts', 'js-build', function () {
+    return runSequence('js-scripts', 'js-build', function () {
         console.log('JS finish.');
     });
 });

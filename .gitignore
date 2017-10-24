@@ -1,7 +1,5 @@
 node_modules/
-public/css/
-public/js/
-public/img/
+public/
 .idea/
 resources/js/temp/
 
