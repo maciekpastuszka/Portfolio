@@ -47,15 +47,15 @@ const isDevelopment = args.env === 'development';
 console.log('ENV: ' + args.env);
 
 
-gulp.task('default', function () {
+gulp.task('default', ['minify-html', 'move-aframe'], function () {
     runSequence(
-        ['css', 'js', 'images'], ['fonts', 'move-aframe', 'minify-html']
+        ['css', 'js', 'images', 'fonts']
     );
 });
 
 gulp.task('minify-html', function () {
     return gulp.src(src + '*.html')
-        .pipe(gulpif(isProduction, {collapseWhitespace: true}))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(dest));
 });
 
