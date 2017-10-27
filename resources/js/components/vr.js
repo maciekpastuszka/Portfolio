@@ -48,7 +48,7 @@ class Vr {
         return new Promise((resolve, reject) => {
             const aframe_script = document.createElement('script');
             aframe_script.setAttribute('src', '/aframe/aframe.min.js');
-            document.querySelector('body').appendChild(aframe_script);
+            document.querySelector('head').appendChild(aframe_script);
             aframe_script.addEventListener('load', () => {
                 resolve();
             });
