@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Maciej Pastuszka | Portfolio
+    </title>
+    <link rel='stylesheet' href='css/main.css' type='text/css' media='all'>
+</head>
+
+<body>
+<nav class="main-nav">
+    <div class="container">
+        <a href="/" class="main-nav__logo"><img src="/img/logo.png">
+            <h1 class="main-nav__logo-title">Front-end Developer Maciej Pastuszka</h1></a>
+
+        <button class="main-nav__toggle">
+            <span class="main-nav__toggle-bar"></span>
+        </button>
+
+        <div class="main-nav__colapse">
+            <ul class="main-nav__list" role="navigation">
+                <li class="main-nav__list-item"><a href="#about" class="main-nav__list-link js-anchor">About me</a></li>
+                <li class="main-nav__list-item"><a href="#skills" class="main-nav__list-link js-anchor">Skills</a></li>
+                <li class="main-nav__list-item"><a href="#realizations" class="main-nav__list-link js-anchor">Realizations</a>
+                </li>
+                <li class="main-nav__list-item"><a href="#contact" class="main-nav__list-link js-anchor">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="main-nav__social">
+                <li class="main-nav__social-icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank"><i
+                        class="icon icon--facebook">Facebook</i></a></li>
+                <li class="main-nav__social-icon"><a href="https://www.linkedin.com/in/maciejpastuszka" target="_blank"><i
+                        class="icon icon--linkedin">Linkedin</i></a></li>
+                <li class="main-nav__social-icon"><a href="https://github.com/maciekpastuszka" target="_blank"><i
+                        class="icon icon--github">Github</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header id="hero" class="hero">
+    <div class="hero__vr">
+        <div class="hero__vr-container"></div>
+        <div class="hero__vr-loader"></div>
+        <div class="hero__vr-mouse">
+            <div class="mouse"><span class="mouse__click"></span></div>
+        </div>
+        <button class="btn btn--default btn--default-fill hero__btn--vr-close" role="button">Close VR
+        </button>
+    </div>
+
+    <div class="hero__container">
+        <div class="hero__header">
+            <span class="h1 hero__header-title">Hi, I'm Front-end Developer</span>
+            <span class="h3 hero__header-subtitle">Maciej Pastuszka</span>
+        </div>
+
+        <div class="hero__footer">
+            <a href="#realizations" class="btn btn--secondary hero__btn js-anchor"> Realizations</a>
+            <button class="btn btn--default btn--default-fill hero__btn hero__btn--vr" role="button"><i
+                    class="icon icon--vr hero__buttons-icon"></i> VR Version
+            </button>
+        </div>
+    </div>
+
+    <div class="hero__layers hero__layers--loading js-hero__layers">
+        <div class="layer layer--0" data-id="layer0" data-range="0"></div>
+        <div class="layer layer--1" data-id="layer-1" data-range="20"></div>
+        <div class="layer layer--2" data-id="layer2" data-range="30"></div>
+        <div class="layer layer--3" data-id="layer3" data-range="70"></div>
+        <div class="layer layer--4" data-id="layer4" data-range="90"></div>
+        <div class="layer layer--5" data-id="layer5" data-range="150"></div>
+    </div>
+</header>
+
+<main>
+    <section class="section section--padding about" id="about">
+        <div class="container">
+            <header>
+                <h2 class="h2 section__title">About me</h2>
+            </header>
+
+            <div class="row">
+                <picture class="md-4 sm-6 xs-12">
+                    <img src="/img/me.jpg" alt="About me" class="about__image">
+                </picture>
+
+                <div class="about__article md-8 sm-6 xs-12">
+                    <p>Hi, I'm Front-end developer. The most important for me are <strong>quality of code</strong>,
+                        <strong>communication</strong> and <strong>learning new things</strong>.
+                        I value experience exchange that's why I like to <strong>work in team</strong> and often I take
+                        part in <strong>local IT events</strong></p>
+                    <p>I'am connected with IT industry since 2009 when at the first year of study I worked as a graphic
+                        designer.
+                        Since that time I had been searching my path, I tried different specialization from as I
+                        mentioned designer through web developer to CIO at startup.
+                        Additionally while studying I attended a students organization in which I was Vice prezident
+                        marketing and IT knowledge I translated into marketing activities. </p>
+                    <p>Above experience, both as a regular employee and also freelancer drove me to the front-end
+                        developer path, where I have been focusing for almost two years.</p>
+                    <a class="btn btn--default" role="link" href="/maciejpastuszka.pdf"> Download CV</a>
+                </div>
+            </div>
+            <div class="about__skills skills" id="skills">
+                <div class="skills__section md-4">
+                    <h3 class="h4">Very good</h3>
+                    <ul class="skills__list">
+                        <li class="skills__list-element">HTML5</li>
+                        <li class="skills__list-element">CSS3, Sass</li>
+                        <li class="skills__list-element">RWD</li>
+                        <li class="skills__list-element">JS (ES5, ES6)</li>
+                        <li class="skills__list-element">Gulp</li>
+                    </ul>
+                </div>
+
+                <div class="skills__section md-4">
+                    <h3 class="h4">Intermediate</h3>
+                    <ul class="skills__list">
+                        <li class="skills__list-element">React</li>
+                        <li class="skills__list-element">Git</li>
+                    </ul>
+                </div>
+
+                <div class="skills__section md-4">
+                    <h3 class="h4">Basic</h3>
+                    <ul class="skills__list">
+                        <li class="skills__list-element">Karma, Mocha, Chai</li>
+                        <li class="skills__list-element">Redux</li>
+                        <li class="skills__list-element">Webpack</li>
+                        <li class="skills__list-element">Type Script</li>
+                        <li class="skills__list-element">Angular</li>
+                        <li class="skills__list-element">Ionic</li>
+                        <li class="skills__list-element">PHP</li>
+                        <li class="skills__list-element">MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="skills__section md-6">
+                    <h3 class="h4">Other</h3>
+                    <ul class="skills__list">
+                        <li class="skills__list-element">DRY</li>
+                        <li class="skills__list-element">KISS</li>
+                        <li class="skills__list-element">BEM</li>
+                        <li class="skills__list-element">ITCSS</li>
+                        <li class="skills__list-element">Mobile first</li>
+                        <li class="skills__list-element">Performance optimization</li>
+                        <li class="skills__list-element">Jira</li>
+                        <li class="skills__list-element">Slack</li>
+                        <li class="skills__list-element">Bitbucket</li>
+                        <li class="skills__list-element">Gitlab</li>
+                        <li class="skills__list-element">Gitlab CI</li>
+                        <li class="skills__list-element">Photoshop</li>
+                        <li class="skills__list-element">Web storm</li>
+                    </ul>
+                </div>
+
+                <div class="skills__section md-6">
+                    <h3 class="h4">Soft skills</h3>
+                    <ul class="skills__list">
+                        <li class="skills__list-element">Public speaking</li>
+                        <li class="skills__list-element">Proactivity</li>
+                        <li class="skills__list-element">Team player</li>
+                        <li class="skills__list-element">Team management</li>
+                        <li class="skills__list-element">Goal oriented</li>
+                        <li class="skills__list-element">English B2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--padding learning">
+        <header>
+            <h2 class="h2 section__title">
+                Learning path
+            </h2>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="h4 learning__stage-title">
+                        Currently
+                    </h3>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">React</li>
+                        <li class="learning__list-element">Redux</li>
+                        <li class="learning__list-element">Jest, Mocha, Chai</li>
+                    </ul>
+                </section>
+
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="h4 learning__stage-title">
+                        Closest future
+                    </h3>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">React native</li>
+                        <li class="learning__list-element">Enzyme</li>
+                    </ul>
+                </section>
+
+                <section class="learning__stage md-4 sm-6 xs-12">
+                    <h3 class="h4 learning__stage-title">
+                        Further future
+                    </h3>
+                    <ul class="learning__list">
+                        <li class="learning__list-element">Node.js</li>
+                        <li class="learning__list-element">PWA</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--padding projects" id="realizations">
+        <header>
+            <h2 class="h2 section__title">
+                Github projects
+            </h2>
+            <p class="h4 section__subtitle">A few sandbox project created for skills improvement and testing new
+                solutions.</p>
+        </header>
+
+        <div class="container projects__container">
+            <div class="row">
+                <div class="project sm-6 md-4">
+                    <a href="https://github.com/maciekpastuszka/portfolio/" target="_blank">
+                        <div class="project__thumbnail project__thumbnail--portfolio">
+                        </div>
+
+                        <h3 class="h4 project__title">
+                            maciejpastuszka.pl
+                        </h3>
+                    </a>
+                    <h4 class="project__subtitle">This site.
+                        <span class="project__subtitle-technologies">HTML5, Sass, ES6, WebVR, ITCSS, BEM</span>
+                    </h4>
+                </div>
+
+                <div class="project sm-6 md-4">
+                    <a href="https://github.com/maciekpastuszka/Starter-pack" target="_blank">
+                        <div class="project__thumbnail project__thumbnail--starter">
+                        </div>
+
+                        <h3 class="h4 project__title">
+                            Starter pack
+                        </h3>
+                    </a>
+                    <h4 class="project__subtitle">Project starter boilerplate
+                        <span class="project__subtitle-technologies">Sass, ITCSS, Gulp, Browserify</span>
+                    </h4>
+                </div>
+
+                <div class="project sm-12 md-4">
+                    <a href="https://github.com/maciekpastuszka/Youtube-Player" target="_blank">
+                        <div class="project__thumbnail project__thumbnail--youtube">
+                        </div>
+
+                        <h3 class="h4 project__title">
+                            Youtube Player
+                        </h3>
+                    </a>
+                    <h4 class="project__subtitle">Youtube voice controled player
+                        <span class="project__subtitle-technologies">ES6, React, Redux, Youtube API</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn--primary btn--primary-fill" role="link" href="https://github.com/maciekpastuszka"
+           target="_blank"> Github profile</a>
+    </section>
+
+    <section class="section section--padding-top portfolio" id="portfolio">
+        <header>
+            <h2 class="h2 section__title">
+                Sample commercial projects
+            </h2>
+            <p class="h4 section__subtitle">Currently I do this kind of project very rarely because I prefer to work
+                on more complex solutions that requires team engagement. </p>
+        </header>
+
+        <div class="portfolio__container">
+            <a href="http://swimmingchallenge.pl/" target="_blank" class="portfolio__element portfolio__element--pokaz">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Pokaz Slajdów</h3>
+                    <span class="portfolio__element-desc">Wordpress, Custom CSS, ITCSS, BEM</span>
+                    <span class="portfolio__element-date">04.2017</span>
+                </div>
+            </a>
+
+            <a href="http://swimmingchallenge.pl/" target="_blank"
+               class="portfolio__element portfolio__element--swimming">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Swimming Challenge</h3>
+                    <span class="portfolio__element-desc">Wordpress, Sass, Bootstrap grid</span>
+                    <span class="portfolio__element-date">02.2016</span>
+                </div>
+            </a>
+
+            <a href="http://dentysta.lublin.pl/" target="_blank"
+               class="portfolio__element portfolio__element--dentysta">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Dentysta Lublin</h3>
+                    <span class="portfolio__element-desc">Wordpress, Bootstrap</span>
+                    <span class="portfolio__element-date">01.2016</span>
+                </div>
+            </a>
+
+            <a href="http://dermashop.pl/" target="_blank" class="portfolio__element portfolio__element--dermashop">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Dermashop</h3>
+                    <span class="portfolio__element-desc">Shoplo</span>
+                    <span class="portfolio__element-date">11.2015</span>
+                </div>
+            </a>
+
+            <a href="http://starachowicka.pl/" target="_blank"
+               class="portfolio__element portfolio__element--starachowicka">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Gazeta Starachowicka</h3>
+                    <span class="portfolio__element-desc">PHP, Bootstrap</span>
+                    <span class="portfolio__element-date">01.2015</span>
+                </div>
+            </a>
+
+            <a href="http://athlestat.pl/" target="_blank" class="portfolio__element portfolio__element--athlestat">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Athlestat</h3>
+                    <span class="portfolio__element-desc">PHP, Bootstrap</span>
+                    <span class="portfolio__element-date">12.2014</span>
+                </div>
+            </a>
+
+            <a href="http://nutricus.pl/" target="_blank" class="portfolio__element portfolio__element--nutricus">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">Nutricus</h3>
+                    <span class="portfolio__element-desc">Wordpress, Bootstrap</span>
+                    <span class="portfolio__element-date">10.2014</span>
+                </div>
+            </a>
+
+            <a href="http://aiesec.pl/" target="_blank" class="portfolio__element portfolio__element--aiesec">
+                <div class="portfolio__element-content">
+                    <h3 class="portfolio__element-title">AIESEC</h3>
+                    <span class="portfolio__element-desc">Wordpress, Multisite, Foundation</span>
+                    <span class="portfolio__element-date">02.2013</span>
+                </div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="contact">
+    <div class="container">
+        <h2 class="h2 section__title">Contact</h2>
+        <div class="footer__contact">
+            <span class="footer__contact-element">+48 796 946 849</span>
+            <span class="footer__contact-element">
+                <a href="mailto:maciej.pastuszka@gmail.com">maciej.pastuszka@gmail.com</a>
+            </span>
+        </div>
+
+        <ul class="footer__social">
+            <li class="footer__icon"><a href="https://www.facebook.com/maciekpastuszka" target="_blank">
+                <i class="icon icon--facebook"></i> Facebook</a>
+            </li>
+            <li class="footer__icon"><a href="https://www.linkedin.com/in/maciejpastuszka" target="_blank">
+                <i class="icon icon--linkedin"></i> Linkedin</a>
+            </li>
+            <li class="footer__icon"><a href="https://github.com/maciekpastuszka" target="_blank">
+                <i class="icon icon--github"></i> Github</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer__copy">© 2017 | Maciej Pastuszka
+        <a class="footer__top" href="#hero"><i class="icon icon--arrow"></i></a>
+    </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-27018704-9', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
