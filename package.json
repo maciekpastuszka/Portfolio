@@ -28,7 +28,7 @@
     "gulp-sass-glob": "^1.0.8",
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-stylelint": "^4.0.0",
+    "gulp-stylelint": "^6.0.0",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.4",
     "karma": "^0.13.9",
