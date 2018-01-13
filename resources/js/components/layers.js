@@ -15,7 +15,7 @@ class Layers {
     _moveLayer(layer, layer_inclination) {
         let layer_id = layer.getAttribute('data-id');
 
-        if (layer_inclination != this.inclination_state[layer_id]) {
+        if (layer_inclination !== this.inclination_state[layer_id]) {
             this.inclination_state[layer_id] = layer_inclination;
             layer.style.transform = `translateX(${layer_inclination}px) translateZ(0)`;
         }

@@ -17,7 +17,7 @@ class SmoothScroll {
                 time += this.speed;
                 if (start_position < target_position) {
                     document.documentElement.scrollTop += time;
-                    if (document.documentElement.scrollTop > target_position || document.documentElement.scrollHeight - document.documentElement.scrollTop == document.documentElement.clientHeight) {
+                    if (document.documentElement.scrollTop > target_position || document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight) {
                         clearInterval(scroll_animation_interval);
                         resolve('scrolled');
                     }

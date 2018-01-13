@@ -72,7 +72,7 @@ class Vr {
                 temp_image.onload = () => {
                     image.src = this.src;
                     loaded_aframe_images++;
-                    if (loaded_aframe_images == aframe_images.length) {
+                    if (loaded_aframe_images === aframe_images.length) {
                         resolve('images loaded');
                     }
                 };
