@@ -49,7 +49,7 @@ class Layers {
                 scrollInit = false;
                 this._calcInclination(event.pageX);
             }
-        }, 10);
+        }, 200);
     }
 
     init() {
