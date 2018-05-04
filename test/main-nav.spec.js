@@ -1,6 +1,5 @@
 import chai from 'chai';
 chai.should();
-
 import MainNav from '../resources/js/components/main-nav';
 
 describe('Main-nav', () => {
