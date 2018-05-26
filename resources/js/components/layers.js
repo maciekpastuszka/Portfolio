@@ -54,8 +54,12 @@ class Layers {
 
     init() {
         if (this.layer_container) {
-            this._mouseEventDebounce();
-            this._loadLayers();
+            try {
+                this._mouseEventDebounce();
+                this._loadLayers();
+            } catch (e) {
+                console.warn(e);
+            }
         }
     }
 }

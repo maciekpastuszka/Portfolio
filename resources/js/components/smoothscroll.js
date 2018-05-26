@@ -48,7 +48,13 @@ class SmoothScroll {
     }
 
     init() {
-        this.events();
+        if (this.links) {
+            try {
+                this.events();
+            } catch (e) {
+                console.warn(e);
+            }
+        }
     }
 }
 

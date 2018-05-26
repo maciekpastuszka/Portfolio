@@ -43,8 +43,12 @@ class MainNav {
 
     init() {
         if (this.nav) {
-            this.events();
-            this.scroll();
+            try {
+                this.events();
+                this.scroll();
+            } catch (e) {
+                console.warn(e);
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ class Vr {
     constructor(vr_container) {
         this.vr_container = vr_container;
         this.vr_show_btn = document.querySelector('.hero__btn--vr');
-        this.vr_hide = document.querySelector('.hero__btn--vr-close');
+        this.vr_hide_btn = document.querySelector('.hero__btn--vr-close');
         this.vr_loader = document.querySelector('.hero__vr-loader');
         this.hero_layers = document.querySelector('.hero__layers');
         this.hero_container = document.querySelector('.hero__container');
@@ -93,13 +93,19 @@ class Vr {
             });
         });
 
-        this.vr_hide.addEventListener('click', () => {
+        this.vr_hide_btn.addEventListener('click', () => {
             this._toggleVrMode();
         });
     }
 
     init() {
-        this._events();
+        if (this.vr_container) {
+            try {
+                this._events();
+            } catch (e) {
+                console.warn(e);
+            }
+        }
     }
 }
 
